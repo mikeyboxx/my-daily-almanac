@@ -28,42 +28,48 @@
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a> -->
             
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <!-- Our website icon -->
+               <a class="navbar-item" href="">
+                    <img src="" width="112" height="28">
+               </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
       
-        <!-- this will contain the logo, title and a drop-down menu -->
+        <!-- title and a drop-down menu  has-dropdown -->
+        <h1>My Daily Almanac</h1>
         <div class="navbar-menu custom-navbar-menu">
-            <h1>My Daily Almanac</h1>
+           
             <div class="navbar-end">
                 <a class="navbar-item">
                     Edit Preferences
                 </a>
-            <div class="navbar-item has-dropdown is-hoverable">
+            </div>
+            <div class="navbar-item is-hoverable" id="menu">
                 <a class="navbar-link">
                     Menu
                 </a>
       
                 <div class="navbar-dropdown">
                     <a class="navbar-item">
-                        About
+                        About-item1
                     </a>
                     <a class="navbar-item">
-                        Jobs
+                        Jobs-item2
                     </a>
                     <a class="navbar-item">
-                        Contact
+                        Contact-item3
                     </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item">
-                        Report an issue
+                        Report an issue-item4
                     </a>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </nav>
     
     <!-- this will contain the content boxes with API data -->
@@ -90,6 +96,7 @@
     
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./assets/js/script.js"></script>
     
 
 

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+// Crypto API
+// https://rapidapi.com/apidojo/api/investing-cryptocurrency-markets/?utm_source=RapidAPI.com%2Fguides&utm_medium=DevRel&utm_campaign=DevRel 
+=======
+// this gets the geolocation info of the user
+>>>>>>> 8b6468966d4f12422e2764e1c5347eb4aa2b60e9
 var userObj = {
     name: 'Michael Nabatov',
     sign: 'aries'
@@ -100,3 +108,4 @@ coinGeckoApi(userObj);
 
 
 
+>>>>>>> aebd9c97791826ad6e9a79a1804a43c027bc1957

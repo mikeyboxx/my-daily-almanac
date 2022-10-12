@@ -1,10 +1,13 @@
 * {
     /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #top {
     height: 100px;
-    /* font-size: 1.5em; */
+    font-size: 1.5em;
     border: 1px solid red;
 }
 

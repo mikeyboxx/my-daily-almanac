@@ -13,14 +13,15 @@ function renderWelcomeDialog(obj, fromContainer){
     }
     
 
-    // simulating save button 
-    // assuming this is coming from form button handler 
-    // list of preferences from which you build checkboxes
-    // list of zodiac signs, with text, and icons (download and store in img dir or use Emojis)
+    // simulating save button assuming that below code will be executed by form button handler which will:
+    // generate list of preferences from which you build checkboxes
+    // generate list of zodiac signs, with text, and icons (download and store in img dir or use Emojis)
+    // generate list of favorite cuisines
     obj.name = 'Michael Nabatov';
-    obj.sign = 'aries';
+    obj.zodiacSign = 'aries';
     obj.zodiacIcon = '♈︎';
     obj.pet = 'dog';
+    obj.favoriteCuisine = 'italian';
     obj.preferences = ['horoscope', 'weather', 'crypto'];
     
 
@@ -39,6 +40,10 @@ function renderCrypto(obj){
     console.log(obj);
 }
 
+function renderRecipes(obj){
+    console.log(obj);
+}
+
 async function secondTimeRender(obj){
     console.log(obj);
 }
@@ -49,9 +54,6 @@ async function secondTimeRender(obj){
 async function firstTimeRender(obj){
     let resp = {};
 
-
-    
-
     const options = {
         method: 'POST',
         headers: {
@@ -59,14 +61,13 @@ async function firstTimeRender(obj){
             'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
         }
     };
-    console.log('obj',obj);
-    await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${obj.sign}&day=today`, options)
+    await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${obj.zodiacSign}&day=today`, options)
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
         
     obj.horoscope = resp;
-    renderHoroscope(resp);
+    renderHoroscope(obj.horoscope);
 
     await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)
         .then(response => response.json())
@@ -77,7 +78,7 @@ async function firstTimeRender(obj){
     obj.latitude = resp.latitude;    
     obj.longitude = resp.longitude;  
 
-    await fetch(`https://api.weather.gov/points/${resp.latitude},${resp.longitude}`)
+    await fetch(`https://api.weather.gov/points/${obj.latitude},${obj.longitude}`)
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
@@ -86,19 +87,40 @@ async function firstTimeRender(obj){
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
-    
-    renderWeather(resp.properties.periods);
+
     obj.weather = resp.properties.periods;  // array 2 forecasts per day (i.e. day, night)
+    renderWeather(obj.weather);
     
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
     
-    let arr = resp.slice(0,15);    
+    let arr = resp.slice(0,15);    // take top 15 cryptos
     renderCrypto(arr);
     obj.crypto = arr;  // array
 
+    let apiKey = '81f0122781e2478fb85469f755df1399';
+    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${obj.favoriteCuisine}`)
+        .then(response => response.json())
+        .then(response => resp = response)
+        .catch(err => {console.error(err); return err});
+
+    obj.recipeList = resp.results;  // array
+    
+    arr =[];
+    for (let i=0; i < obj.recipeList.length; i++){
+        await fetch(`https://api.spoonacular.com/recipes/${obj.recipeList[i].id}/information?apiKey=${apiKey}`)
+        .then(response => response.json())
+        .then(response => resp = response)
+        .catch(err => {console.error(err); return err});
+        arr.push(resp);
+    }
+    
+    obj.recipeDetail = arr;
+    renderRecipes(obj);
+
+    // save to local storage
     localStorage.setItem('userObj', JSON.stringify(obj));
 }
 
@@ -106,6 +128,7 @@ async function firstTimeRender(obj){
 function start(){
     var userObj = JSON.parse(localStorage.getItem('userObj'));
     // first time
+    console.log(userObj);
     if (userObj === null){
         userObj = {};
         renderWelcomeDialog(userObj, 'welcome');
@@ -154,7 +177,6 @@ var userObj = start();
         // if date is selected show a Text Area Dialog box, showing the date and saved text (read only), with a close button (close button will hide this container)
     // click on Edit button 
         // Text Area Dialog box appears with editable text area, save button and cancel button
-    
 
 // Text Area Dialog box (triggered from clicked Edit button in Text Pad container)
     // click on Save button
@@ -162,7 +184,6 @@ var userObj = start();
         // save to local storage
     // click on Cancel button
         // hide the dialog box
-
 
 // Menu container
     // click on Edit Preferences link

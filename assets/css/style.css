@@ -53,17 +53,40 @@ label{
 /*  */
 
 
+.navbar-brand, .navbar-tabs {
+    flex-grow: 1;
+}
+
+/* added comment */
+
 .navbar h1{
     width: 100%;
     display: block;
+    font-size: 15px;
     /* background: green; */
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .navbar-brand, .navbar-tabs {
     flex-grow: 1;
 }
 
-/* added comment */
+.navbar-menu {
+    flex-grow:unset;
+}
+/* nav{
+    height: 250px;
+} */
+#logo{
+    width: 75px;
+    height: 75px;
+}
+@media screen and (min-width: 800px){
+    .navbar h1{
+        font-size: 2rem;
+    }
+}

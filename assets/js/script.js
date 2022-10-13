@@ -15,14 +15,14 @@ function renderWelcomeDialog(obj, fromContainer){
 
     // simulating save button assuming that below code will be executed by form button handler which will:
     // generate list of preferences from which you build checkboxes
-    // generate list of zodiac signs, with text, and icons (download and store in img dir or use Emojis)
-    // generate list of favorite cuisines
+    // generate list of zodiac signs, with text (dates), and icons (download and store in img dir or use Emojis)
+    // generate list of favorite cuisines 
     obj.name = 'Michael Nabatov';
     obj.zodiacSign = 'aries';
     obj.zodiacIcon = '♈︎';
     obj.pet = 'dog';
     obj.favoriteCuisine = 'italian';
-    obj.preferences = ['horoscope', 'weather', 'crypto'];
+    obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
 
     firstTimeRender(obj);
@@ -30,6 +30,13 @@ function renderWelcomeDialog(obj, fromContainer){
 
 function renderHoroscope(obj){
     console.log(obj);
+    let containerEl = $('<div>');
+    // generate the container html
+    // ...
+    // ...
+
+    return containerEl;
+
 }
 
 function renderWeather(obj){
@@ -101,8 +108,8 @@ async function firstTimeRender(obj){
         .catch(err => {console.error(err); return err});
     
     let arr = resp.slice(0,15);    // take top 15 cryptos
-    renderCrypto(arr);
     obj.crypto = arr;  // array
+    renderCrypto(arr);
 
 
     let apiKey = '81f0122781e2478fb85469f755df1399';
@@ -121,7 +128,7 @@ async function firstTimeRender(obj){
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
     console.log(resp);
-    // obj.recipes = resp.recipes;  // array
+    // obj.cocktail = resp.recipes;  // array
     
     renderCocktails(obj);
     // save to local storage
@@ -171,11 +178,15 @@ var userObj = start();
     // change name of button to "Save", display cancel/X button
 
 // Content container
+    // one box per api 
+    // each box will be fixed width and height
     // one per preference
     // scroll to the right or left
+    // scroll up and down within each preference content box
 
 // Text Pad container (bottom of the page)
     // (text area is protected you cannot click on it)
+    // will have a title (current date)
     // dropdown list of saved/archived dates of saved text items for viewing only (might appear in drop down menu also, maybe???)
         // read local storage to build list of dates
         // if date is selected show a Text Area Dialog box, showing the date and saved text (read only), with a close button (close button will hide this container)
@@ -197,7 +208,6 @@ var userObj = start();
 
 
     
-
 
 
 

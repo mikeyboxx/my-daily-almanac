@@ -23,20 +23,24 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation" >
         <div class="navbar-brand" id="top">
-            <!-- <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="https://bulma.io">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-            </a> -->
+            </a>
             
             <!-- Our website icon -->
-               <a class="navbar-item" href="">
+               <!-- <a class="navbar-item" href="">
                     <img src="" width="112" height="28">
-               </a>
+               </a> -->
                <h1>My Daily Almanac</h1>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"  id="btn">
+               <a id="edit-preferences">
+                Edit preferences
+              </a>
+            <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"  id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
+
         </div>
         <!-- title and a drop-down menu   -->
        
@@ -45,50 +49,62 @@
             <div class="navbar-end">
                 
             </div>
-            <div class="navbar-item is-hoverable">
+            <div class="navbar-item is-hoverable navbar-end">
+             
                 <a class="navbar-link">
-                    Menu
+                  Archived Notes
                 </a>
       
                 <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    13-Oct-2022
+                  </a>
                     <a class="navbar-item">
-                        New user - add preferences
+                        12-Oct-2022
                     </a>
                     <a class="navbar-item">
-                        Edit preferences
+                      11-Oct-2022
                     </a>
                     <a class="navbar-item">
-                        Archive Journals
+                      10-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      09-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      08-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      07-Oct-2022
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Report an issue-item4
+                    <a class="navbar-item" id="new-user">
+                        New user
                     </a>
                 </div>
             </div>
         <!-- </div> -->
     </nav>
-
-    <div class="modal" id="preferences">
-     <div class="modal-background"></div>
-     <div class="modal-card">
-       <header class="modal-card-head">
-         <p class="modal-card-title">Modal title</p>
-         <button class="delete" aria-label="close"></button>
-       </header>
-       <section class="modal-card-body">
-          <form >
-               <input type="checkbox">item1
-         </form>
-       </section>
-       <footer class="modal-card-foot">
-         <button class="button is-success">Save changes</button>
-         <button class="button">Cancel</button>
-       </footer>
-     </div>
-   </div>
-    <div id="dialog" title="Basic dialog">
-     <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+    <form  class="modal modal-background" id="preferences">
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Enter your Details</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+      <label>Enter your Name<input type="text" id="name"></label>
+      <label>Select your Date of birth<input type="date" id="dob"></label>
+      <label>Select your preferences</label>
+      <label><input type="checkbox" id="Horoscope">Horoscope</label>
+      <label><input type="checkbox" id="Cocktail">Cocktail</label>
+      <label><input type="checkbox" id="Weather">Weather</label>
+      <label><input type="checkbox" id="Recipes">Recipes</label>
+      <label><input type="checkbox" id="Pet">Pet</label>
+      <button class="button is-success" id="save">Save changes</button>
+      <button class="button">Cancel</button>
+    </section>
+      </div>
+    </form>
    </div>
     <!-- this will contain the content boxes with API data -->
     <div class="section" id="middle">
@@ -132,7 +148,8 @@
 
 
     <!-- <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script> -->
-    <script src="./assets/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/nav-bar.js"></script>
 
 </body>
 </html>

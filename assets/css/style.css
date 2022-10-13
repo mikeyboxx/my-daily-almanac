@@ -8,30 +8,43 @@
 #top {
     height: 100px;
     font-size: 1.5em;
+    /* border: 1px solid red; */
+}
+#top *{
     border: 1px solid red;
 }
-
 h1 {
     font-size: 1.5em;
     text-align: center;
-    margin-left: 250px;
+    /* margin-left: 250px; */
 }
 
 #middle {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 400px;
     /* font-size: 1.5em; */
 }
 
 #bottom {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 100px;
     /* font-size: 1.5em; */
 }
 /* added comment */
 
-
+#top{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
 /* to show menu items when user click hamburger menu */
 .showMenu {
     display: block;
+}
+label{
+    display: block;
+}
+#preferences *{
+   padding: 10px;
+   /* margin: 10px; */
 }

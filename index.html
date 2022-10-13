@@ -22,8 +22,8 @@
     <title>My Daily Almanac</title>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation" id="top">
-        <div class="navbar-brand">
+    <nav class="navbar" role="navigation" aria-label="main navigation" >
+        <div class="navbar-brand" id="top">
             <!-- <a class="navbar-item" href="https://bulma.io">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a> -->
@@ -32,6 +32,7 @@
                <a class="navbar-item" href="">
                     <img src="" width="112" height="28">
                </a>
+               <h1>My Daily Almanac</h1>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"  id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -39,13 +40,11 @@
             </a>
         </div>
         <!-- title and a drop-down menu   -->
-        <h1>My Daily Almanac</h1>
+       
         <div class="has-dropdown navbar-menu custom-navbar-menu"  id="menu">
            
             <div class="navbar-end">
-                <a class="navbar-item">
-                    Edit Preferences
-                </a>
+                
             </div>
             <div class="navbar-item is-hoverable">
                 <a class="navbar-link">
@@ -54,13 +53,13 @@
       
                 <div class="navbar-dropdown">
                     <a class="navbar-item">
-                        About-item1
+                        New user - add preferences
                     </a>
                     <a class="navbar-item">
-                        Jobs-item2
+                        Edit preferences
                     </a>
                     <a class="navbar-item">
-                        Contact-item3
+                        Archive Journals
                     </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item">
@@ -70,6 +69,25 @@
             </div>
         <!-- </div> -->
     </nav>
+
+    <div class="modal" id="preferences">
+     <div class="modal-background"></div>
+     <div class="modal-card">
+       <header class="modal-card-head">
+         <p class="modal-card-title">Modal title</p>
+         <button class="delete" aria-label="close"></button>
+       </header>
+       <section class="modal-card-body">
+          <form >
+               <input type="checkbox">item1
+         </form>
+       </section>
+       <footer class="modal-card-foot">
+         <button class="button is-success">Save changes</button>
+         <button class="button">Cancel</button>
+       </footer>
+     </div>
+   </div>
     <div id="dialog" title="Basic dialog">
      <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
    </div>
@@ -91,7 +109,18 @@
         <div></div>
      
     </div>
-
+    <!-- <div id="modal-js-example" class="modal">
+     <div class="modal-background"></div>
+   
+     <div class="modal-content">
+       <div class="box">
+         <p>Modal JS example</p>
+         Your content 
+       </div>
+     </div>
+   
+     <button class="modal-close is-large" aria-label="close"></button>
+   </div> -->
 </body>
 
 
@@ -99,6 +128,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/nav-bar.js"></script>
 
 
     <!-- <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script> -->

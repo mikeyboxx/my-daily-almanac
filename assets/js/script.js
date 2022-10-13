@@ -28,16 +28,6 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-function renderHoroscope(obj){
-    console.log(obj);
-    let containerEl = $('<div>');
-    // generate the container html
-    // ...
-    // ...
-
-    return containerEl;
-
-}
 
 function renderWeather(obj){
     console.log(obj);

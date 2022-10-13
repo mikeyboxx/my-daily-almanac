@@ -78,9 +78,7 @@ label{
 .navbar-menu {
     flex-grow:unset;
 }
-/* nav{
-    height: 250px;
-} */
+
 #logo{
     width: 75px;
     height: 75px;

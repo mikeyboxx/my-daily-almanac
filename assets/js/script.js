@@ -130,7 +130,7 @@ async function firstTimeRender(obj){
     console.log(resp);
     // obj.cocktail = resp.recipes;  // array
     
-    renderCocktails(obj);
+    renderCocktails(resp);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
 }

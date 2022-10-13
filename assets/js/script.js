@@ -28,32 +28,29 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-function renderHoroscope(obj){
-    console.log(obj);
-    let containerEl = $('<div>');
-    // generate the container html
-    // ...
-    // ...
+// function renderHoroscope(obj){
+//     console.log(obj);
+//     let containerEl = $('<div>');
+//     // generate the container html
+//     // ...
+//     // ...
 
-    return containerEl;
+//     return containerEl;
 
-}
+// }
 
-function renderWeather(obj){
-    console.log(obj);
-}
+// function renderWeather(obj){
+//     console.log(obj);
+// }
 
-function renderCrypto(obj){
-    console.log(obj);
-}
+// function renderCrypto(obj){
+//     console.log(obj);
+// }
 
-function renderRecipes(obj){
-    console.log(obj);
-}
+// function renderRecipes(obj){
+//     console.log(obj);
+// }
 
-function renderCocktails(obj){
-    console.log(obj);
-}
 
 async function secondTimeRender(obj){
     console.log(obj);

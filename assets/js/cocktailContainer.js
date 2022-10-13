@@ -1,5 +1,8 @@
+var middle = $('middle')
+
 function renderCocktails(obj){
     console.log(obj);
+    let containerEl
 }
 
 //await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)

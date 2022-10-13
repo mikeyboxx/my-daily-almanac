@@ -28,13 +28,17 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-function renderCrypto(obj){
-    console.log(obj);
-}
+// function renderCrypto(obj){
+//     console.log(obj);
+// }
 
-function renderRecipes(obj){
-    console.log(obj);
-}
+// function renderCrypto(obj){
+//     console.log(obj);
+// }
+
+// function renderRecipes(obj){
+//     console.log(obj);
+// }
 
 async function secondTimeRender(obj){
     console.log(obj);
@@ -57,7 +61,10 @@ async function firstTimeRender(obj){
         .catch(err => {console.error(err); return err});
         
     obj.horoscope = resp;
-    renderHoroscope(obj.horoscope);
+    // renderHoroscope(obj.horoscope);
+    var containerEl =  renderHoroscope(obj.horoscope);
+    $("#horoscope-element").append(containerEl);
+    
 
     await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)
         .then(response => response.json())
@@ -102,6 +109,7 @@ async function firstTimeRender(obj){
     renderRecipes(obj);
 
 
+<<<<<<< HEAD
     await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
         .then(response => response.json())
         .then(response => resp = response)
@@ -110,6 +118,18 @@ async function firstTimeRender(obj){
      obj.cocktail = resp;  // array
     
     renderCocktails(resp);
+=======
+    // await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+    //     .then(response => response.json())
+    //     .then(response => resp = response)
+    //     .catch(err => {console.error(err); return err});
+    // console.log(resp);
+    // // obj.cocktail = resp.recipes;  // array
+    
+    // renderCocktails(obj);
+    // save to local storage
+    // localStorage.setItem('userObj', JSON.stringify(obj));
+>>>>>>> 0568596246f573d7928dfe1759b70af4aafe8884
 }
 
 

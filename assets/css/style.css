@@ -9,6 +9,27 @@ h1 {
     margin-left: 250px;
 }
 
+.horoscope-card {
+    padding: 10px;
+    text-align: center;
+}
+
+.horoscope-heading {
+
+    font-size: 215%;
+}
+
+.horoscope-dates {
+
+    font-size: 21px;
+}
+.todays-horoscope {
+
+    font-size: 18px;
+}
+
+
+
 #middle {
     border: 1px solid red;
     height: 400px;
@@ -19,6 +40,10 @@ h1 {
     height: 300px;
 }
 
+<<<<<<< HEAD
 .card-custom {
     flex: 20%;
 }
+=======
+/* added comment */
+>>>>>>> 0568596246f573d7928dfe1759b70af4aafe8884

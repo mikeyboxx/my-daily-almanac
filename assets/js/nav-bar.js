@@ -5,12 +5,13 @@ var preferencesForm = document.getElementById("preferences");
 var EditpreferencesForm = document.getElementById("edit-preferences");
 var NewUserForm = document.getElementById("new-user");
 var saveBtn = document.getElementById("save");
-var userName=document.getElementById("name").value;
-var userDob=document.getElementById("dob").value;
-preferencesForm.style.display="none";
+//var userName=document.getElementById("name").value;
+//var userDob=document.getElementById("dob").value;
+// preferencesForm.style.display="none";
 
 // eventlistner for hamburgur menu
 navBtn.addEventListener("click",function(){
+     
     if(menu.classList.contains("showMenu")){
           menu.classList.remove("showMenu");//remove the class showmenu from menu element
     }
@@ -19,10 +20,10 @@ navBtn.addEventListener("click",function(){
     }
 });
   
-     // $( ".navbar-item" ).on( "click", function() {
-     //      preferencesForm.style.display="block";
-     //      menu.classList.remove("showMenu");
-     // });
+     $( ".navbar-item" ).on( "click", function() {
+          preferencesForm.style.display="block";
+          menu.classList.remove("showMenu");
+     });
      EditpreferencesForm.addEventListener( "click", function() {
           preferencesForm.style.display="block";
 

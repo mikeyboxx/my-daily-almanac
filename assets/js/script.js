@@ -1,27 +1,56 @@
 
+// need handler to save personal profile to object passed
+function renderWelcomeDialog(obj, fromContainer){
+    console.log(obj);
 
-var userObj = {
-    name: 'Michael Nabatov',
-    sign: 'aries'
+    if (fromContainer === 'welcome') {
+        // came from Welcome Dialog box
+    }
+
+    if (fromContainer === 'preferences') {
+        // came from Edit Preferences Dialog box
+        // hide name and zodiac input
+    }
+    
+
+    // simulating save button 
+    // assuming this is coming from form button handler 
+    // list of preferences from which you build checkboxes
+    // list of zodiac signs, with text, and icons (download and store in img dir or use Emojis)
+    obj.name = 'Michael Nabatov';
+    obj.sign = 'aries';
+    obj.zodiacIcon = '♈︎';
+    obj.pet = 'dog';
+    obj.preferences = ['horoscope', 'weather', 'crypto'];
+    
+
+    firstTimeRender(obj);
 }
-// this gets the geolocation info of the user
-// async function bigDataCloudApi(obj){
-    //     let resp = {};
-    //     let requests = ['clien-ip', 'client-info', 'reverse-geocode-client'];
-    
-    //     await fetch(`https://api.bigdatacloud.net/data/${requests[2]}`)
-    //         .then(response => response)
-    //         .then(response => {console.log(response); resp = response})
-    //         .catch(err => {console.error(err); return err});
-    
-    //     obj.city = resp.city;    
-    //     obj.latitude = resp.latitude;    
-    //     obj.longitude = resp.longitude;  
-    // }
-    
 
-async function aztroAPi(obj, sign, day){
+function renderHoroscope(obj){
+    console.log(obj);
+}
+
+function renderWeather(obj){
+    console.log(obj);
+}
+
+function renderCrypto(obj){
+    console.log(obj);
+}
+
+async function secondTimeRender(obj){
+    console.log(obj);
+}
+
+
+
+
+async function firstTimeRender(obj){
     let resp = {};
+
+
+    
 
     const options = {
         method: 'POST',
@@ -30,35 +59,18 @@ async function aztroAPi(obj, sign, day){
             'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
         }
     };
-
-    await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=${day}`, options)
+    console.log('obj',obj);
+    await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${obj.sign}&day=today`, options)
         .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
-        .catch(err => {console.error(err); return err});
-
-    obj.horoscope = resp;
-};
-
-
-async function punkApi(obj){
-    let resp = {};
-
-    await fetch('https://api.punkapi.com/v2/beers')
-        .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
         
-    obj.beerRecipes = resp;  // array of recipes
-}
+    obj.horoscope = resp;
+    renderHoroscope(resp);
 
-async function weatherGovApi(obj){
-    let resp = {};
-
-    let request = 'reverse-geocode-client';
-
-    await fetch(`https://api.bigdatacloud.net/data/${request}`)
+    await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)
         .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
     
     obj.city = resp.city;    
@@ -67,36 +79,100 @@ async function weatherGovApi(obj){
 
     await fetch(`https://api.weather.gov/points/${resp.latitude},${resp.longitude}`)
         .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
 
     await fetch(resp.properties.forecast)
         .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
     
+    renderWeather(resp.properties.periods);
     obj.weather = resp.properties.periods;  // array 2 forecasts per day (i.e. day, night)
-};
-
-
-async function coinGeckoApi(obj){
-    var coinsRequests = ['list','markets?vs_currency=usd']
     
-    await fetch(`https://api.coingecko.com/api/v3/coins/${coinsRequests[1]}`)
+    await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
-        .then(response => {console.log(response); resp = response})
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
     
-    obj.crypto = resp;  // array
-};
+    let arr = resp.slice(0,15);    
+    renderCrypto(arr);
+    obj.crypto = arr;  // array
+
+    localStorage.setItem('userObj', JSON.stringify(obj));
+}
+
+
+function start(){
+    var userObj = JSON.parse(localStorage.getItem('userObj'));
+    // first time
+    if (userObj === null){
+        userObj = {};
+        renderWelcomeDialog(userObj, 'welcome');
+        
+    } else {
+        secondTimeRender(userObj);
+    }
+
+    return userObj;
+}
+
+var userObj = start();
+
+
+// USER INTERACTIONS
+
+// Welcome Dialog container
+    // name: input text area
+        // required
+        // max 150 chars
+    // favorite pet: dropdown list
+        // limit them for now to cat, dog, or none
+    // zodiac sign: dropdown list with date, text, icon
+        // can be a global array with text, and icons
+    // preferences: checkboxes (choices will be hardcoded for now) must be stored in global var
+        // at least one must be selected
+    // "Enter your personal almanac" save button  (need event handler/listener function for callback)
+        // save name, fav pet, zodiac info, and an array of preferences in User Object
+        // hide dialog
+        // get all API data based on preferences
+        // render all content sections based on preferences
+        // save User Object in local storage
+
+// Edit Preferences Dialog container
+    // same as Welcome Dialog Box, except hide and exclude from logic name and zodiac
+    // change name of button to "Save", display cancel/X button
+
+// Content container
+    // one per preference
+    // scroll to the right or left
+
+// Text Pad container (bottom of the page)
+    // (text area is protected you cannot click on it)
+    // dropdown list of saved/archived dates of saved text items for viewing only (might appear in drop down menu also, maybe???)
+        // read local storage to build list of dates
+        // if date is selected show a Text Area Dialog box, showing the date and saved text (read only), with a close button (close button will hide this container)
+    // click on Edit button 
+        // Text Area Dialog box appears with editable text area, save button and cancel button
+    
+
+// Text Area Dialog box (triggered from clicked Edit button in Text Pad container)
+    // click on Save button
+        // save the text and date (pulled from moment.js - current date) in Archived list global array
+        // save to local storage
+    // click on Cancel button
+        // hide the dialog box
+
+
+// Menu container
+    // click on Edit Preferences link
+        // display Edit Preference Dialog container
+    // click on Archived Texts link
 
 
 
-// bigDataCloudApi(userObj);
-aztroAPi(userObj, userObj.sign, 'today');
-punkApi(userObj);
-weatherGovApi(userObj);
-coinGeckoApi(userObj);
+    
+
 
 
 

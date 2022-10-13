@@ -100,28 +100,19 @@ async function firstTimeRender(obj){
     renderCrypto(arr);
     obj.crypto = arr;  // array
 
-    let apiKey = '81f0122781e2478fb85469f755df1399';
-    await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${obj.favoriteCuisine}`)
-        .then(response => response.json())
-        .then(response => resp = response)
-        .catch(err => {console.error(err); return err});
 
-    obj.recipeList = resp.results;  // array
-    
-    arr =[];
-    for (let i=0; i < obj.recipeList.length; i++){
-        await fetch(`https://api.spoonacular.com/recipes/${obj.recipeList[i].id}/information?apiKey=${apiKey}`)
+    let apiKey = '81f0122781e2478fb85469f755df1399';
+    await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
-        arr.push(resp);
-    }
     
-    obj.recipeDetail = arr;
+    obj.recipes = resp.recipes;  // array
+    
     renderRecipes(obj);
 
     // save to local storage
-    localStorage.setItem('userObj', JSON.stringify(obj));
+    // localStorage.setItem('userObj', JSON.stringify(obj));
 }
 
 

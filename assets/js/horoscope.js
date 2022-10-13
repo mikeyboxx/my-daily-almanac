@@ -1,5 +1,3 @@
-var middle = $("#middle")
-
 function renderHoroscope(obj){
     console.log(obj);
     let containerEl = $('<div>');

@@ -69,7 +69,7 @@ async function firstTimeRender(obj){
     obj.horoscope = resp;
     // renderHoroscope(obj.horoscope);
     var containerEl =  renderHoroscope(obj.horoscope);
-    $("#middle").append(containerEl);
+    $("#horoscope-element").append(containerEl);
     
 
     await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)

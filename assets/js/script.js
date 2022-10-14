@@ -1,5 +1,15 @@
+
 // Crypto API
 // https://rapidapi.com/apidojo/api/investing-cryptocurrency-markets/?utm_source=RapidAPI.com%2Fguides&utm_medium=DevRel&utm_campaign=DevRel
+// current day
+// var currentDay = moment();
+// if the date is in the past then user can only read notes
+// when user click on edit button a text area will appear
+// if it is present day then user can edit text
+// User will have a save button to save to local storage
+// $("#currentDay").text(currentDay.format("LLLL"));
+// function dailyTime() {
+//     $("#")
 
 // need handler to save personal profile to object passed
 function renderWelcomeDialog(obj, fromContainer){
@@ -26,20 +36,9 @@ function renderWelcomeDialog(obj, fromContainer){
     obj.favoriteCuisine = 'italian';
     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
-
-    firstTimeRender(obj);
+    // return obj;
+    // firstTimeRender(obj);
 }
-
-
-
-// 
-function renderCrypto(obj){
-//     console.log(obj);
-// }
-
-// function renderRecipes(obj){
-//     console.log(obj);
-// }
 
 async function secondTimeRender(obj){
     console.log(obj);
@@ -123,17 +122,21 @@ async function firstTimeRender(obj){
     $('#middle').append(cocktailEl);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
+    // renderTextPad(obj);
 }
 
 
 function start(){
     var userObj = JSON.parse(localStorage.getItem('userObj'));
     
+    console.log('start');
     // first time
     console.log(userObj);
     if (userObj === null){
         userObj = {};
         renderWelcomeDialog(userObj, 'welcome');
+        console.log(userObj);
+        firstTimeRender(userObj);
         
     } else {
         secondTimeRender(userObj);
@@ -142,7 +145,7 @@ function start(){
     return userObj;
 }
 
-
+console.log('hi');
 var userObj = start();
 
 
@@ -196,7 +199,6 @@ var userObj = start();
     // click on Edit Preferences link
         // display Edit Preference Dialog container
     // click on Archived Texts link
-}
 
 
     

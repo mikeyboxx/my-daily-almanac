@@ -80,29 +80,42 @@
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <label>Enter your Name<input type="text" id="name"></label>
+                <label for="name">Enter your Name</label>
+                <input type="text" id="name">
                 <!-- <label>Select your Date of birth<input type="date" id="dob"></label> -->
-                <label>Select your pet<select name="pets" id="pets">
+                <label for="pets">Select your pet</label>
+                <select name="pets" id="pets">
                     <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
                     <option value="none">none</option>
-                  </select></label>
-                  <label>Select your favorite cuisine<select name="cuisine" id="cuisine">
+                </select>
+                <label for="cuisine">Select your favorite cuisine</label>
+                <select name="cuisine" id="cuisine">
                     <option value="italian">Italian</option>
                     <option value="french">French</option>
                     <option value="mediterranean ">Mediterranean </option>
-                  </select></label>
-                  <label>Select your Zodiac sign<select name="Zodiac" id="Zodiac">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                  </select></label>
-                <label>Select your preferences</label>
-                <label><input type="checkbox" id="horoscope">Horoscope</label>
-                <label><input type="checkbox" id="cocktail">Cocktail</label>
-                <label><input type="checkbox" id="weather">Weather</label>
-                <label><input type="checkbox" id="recipes">Recipes</label>
-                <label><input type="checkbox" id="pet">Pet</label>
+                </select>
+                <label for="zodiac">Select your Zodiac sign</label>
+                <select name="Zodiac" id="zodiac">
+                    <!-- options will be generated in javascript -->
+                </select>
+                <p>Select your preferences<p>
+                <label for="horoscope">Horoscope</label>
+                <input type="checkbox" id="horoscope" value="Horoscope">
+
+                <label for="cocktail">Cocktail</label>
+                <input type="checkbox" id="cocktail" value="Cocktail">
+
+                <label for="weather">Weather</label>
+                <input type="checkbox" id="weather" value="Weather">
+                
+                <label for="recipes">Recipes</label>
+                <input type="checkbox" id="recipes" value="Recipes">
+
+                <label for="pet">Pet</label>
+                <input type="checkbox" id="pet" value="Pet">
+                <!-- first time hide cancel button, save button preferably should have different text -->
+                <!-- second time save button preferably should have Save Changes as text -->
                 <button class="button is-success" id="save">Save changes</button>
                 <button class="button">Cancel</button>
             </section>

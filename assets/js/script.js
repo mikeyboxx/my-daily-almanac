@@ -37,7 +37,7 @@ function renderWelcomeDialog(obj, fromContainer){
     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
     // return obj;
-    // firstTimeRender(obj);
+    firstTimeRender(obj);
 }
 
 async function secondTimeRender(obj){
@@ -87,16 +87,16 @@ async function firstTimeRender(obj){
     let weatherEl = renderWeather(obj.weather);
     $('#middle').append(weatherEl);
         
-    await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
-        .then(response => response.json())
-        .then(response => resp = response)
-        .catch(err => {console.error(err); return err});
+    // await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
+    //     .then(response => response.json())
+    //     .then(response => resp = response)
+    //     .catch(err => {console.error(err); return err});
 
-        let arr = resp.slice(0,15);    // take top 15 cryptos
-    obj.crypto = arr;  // array
-    let cryptoEl = renderCrypto(obj.crypto);
+    //     let arr = resp.slice(0,15);    // take top 15 cryptos
+    // obj.crypto = arr;  // array
+    // let cryptoEl = renderCrypto(obj.crypto);
     
-    $('#middle').append(cryptoEl);
+    // $('#middle').append(cryptoEl);
    
 
 
@@ -122,7 +122,7 @@ async function firstTimeRender(obj){
     $('#middle').append(cocktailEl);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
-    // renderTextPad(obj);
+    renderTextPad(obj);
 }
 
 
@@ -133,10 +133,12 @@ function start(){
     // first time
     console.log(userObj);
     if (userObj === null){
-        userObj = {};
+        userObj = {
+            archivedNotes: []
+        };
         renderWelcomeDialog(userObj, 'welcome');
         console.log(userObj);
-        firstTimeRender(userObj);
+        // firstTimeRender(userObj);
         
     } else {
         secondTimeRender(userObj);
@@ -145,7 +147,6 @@ function start(){
     return userObj;
 }
 
-console.log('hi');
 var userObj = start();
 
 

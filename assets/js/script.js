@@ -41,9 +41,9 @@ function renderWelcomeDialog(obj, fromContainer){
 
 
 
-function renderCrypto(obj){
-    console.log(obj);
-}
+// function renderCrypto(obj){
+//     console.log(obj);
+// }
 
 // function renderRecipes(obj){
 //     console.log(obj);
@@ -103,7 +103,9 @@ async function firstTimeRender(obj){
     
     let arr = resp.slice(0,15);    // take top 15 cryptos
     obj.crypto = arr;  // array
-    renderCrypto(arr);
+    let cryptoEl = renderCrypto(obj.crypto);
+    $('#middle').append(cryptoEl);
+   
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';

@@ -28,9 +28,6 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-function renderWeather(obj){
-    console.log(obj);
-}
 
 
 // function renderCrypto(obj){
@@ -41,12 +38,9 @@ function renderWeather(obj){
 //     console.log(obj);
 // }
 
-
 async function secondTimeRender(obj){
     console.log(obj);
 }
-
-
 
 
 async function firstTimeRender(obj){
@@ -88,7 +82,7 @@ async function firstTimeRender(obj){
 
     obj.weather = resp.properties.periods;  // array 2 forecasts per day (i.e. day, night)
     renderWeather(obj.weather);
-    
+        
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
         .then(response => resp = response)

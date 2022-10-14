@@ -1,10 +1,3 @@
-* {
-    /* border: 1px solid red; */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 
 h1 {
     font-size: 1em;
@@ -57,6 +50,25 @@ label{
     flex-grow: 1;
 }
 
+#top {
+    height: 100px;
+    border: 1px solid red;
+}
+
+
+#middle {
+    border: 1px solid red;
+    height: 400px;
+}
+
+#bottom {
+    border: 1px solid red;
+    height: 300px;
+}
+
+.card-custom {
+    flex: 20%;
+}
 /* added comment */
 
 .navbar h1{

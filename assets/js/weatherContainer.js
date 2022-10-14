@@ -1,7 +1,9 @@
 function renderWeather(obj){
     console.log(obj);
 
-    $(weatherCardsContainer).empty();
+    let boxEl = $('<div>').addClass("column is-half  ");
+    let weatherEl = $('<div>').addClass('box middle-box');
+    let cardContainerEl = $('<div>').addClass('columns');
     
     let ctr = 0;
     let currDt = moment().format('MM/DD');
@@ -10,7 +12,7 @@ function renderWeather(obj){
         let objDtTime = obj[i].startTime.slice(0,16).substr(11,5);
         if (objDt > currDt && objDtTime === '06:00' && ctr < 5) {
             ctr++;
-            let colEl = $('<div>').addClass('column is-flex');
+            let colEl = $('<div>').addClass('column is-flex ');
             let cardEl  = $('<div>').addClass('card');
             let cardHeaderEl  = $('<div>').addClass('card-header');
             let h2El  = $('<h2>').text(obj[i].name.slice(0,3).toUpperCase());
@@ -42,8 +44,10 @@ function renderWeather(obj){
 
             $(cardEl).append(cardContentEl);
             $(colEl).append(cardEl);
-            $(weatherCardsContainer).append(colEl);
+            $(cardContainerEl).append(colEl);
         }
     }
-    return weatherCardsContainer;
+    $(weatherEl).append(cardContainerEl);
+    $(boxEl).append(weatherEl);
+    return boxEl;
 }

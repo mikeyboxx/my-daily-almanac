@@ -93,12 +93,13 @@ async function firstTimeRender(obj){
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
 
-        let arr = resp.slice(0,15);    // take top 15 cryptos
+    let arr = resp.slice(0,15);    // take top 15 cryptos
     obj.crypto = arr;  // array
     let cryptoEl = renderCrypto(obj.crypto);
     
     $('#middle').append(cryptoEl);
    
+
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';
@@ -123,7 +124,7 @@ async function firstTimeRender(obj){
     $('#middle').append(cocktailEl);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
-    // renderTextPad(obj);
+    renderTextPad(obj);
 }
 
 
@@ -135,25 +136,23 @@ function start(){
         userObj = {
             archivedNotes: []
         };
-
         renderWelcomeDialog(userObj, 'welcome');
-        console.log(userObj);
-        firstTimeRender(userObj);
+        // firstTimeRender(userObj);
         
     } else {
-        secondTimeRender(userObj);
+        firstTimeRender(userObj);
     }
     
     return userObj;
 }
 
+start();
 
 
 
 // global
 // var archivedNotes = [];
 // var userObj = {};
-start();
 
 
 

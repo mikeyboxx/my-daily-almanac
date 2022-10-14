@@ -124,36 +124,62 @@
 
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="section columns is-multiline " >
-        <!-- <div class="middle-box columns">
-            <div class="columns" id="weatherCardsContainer"> -->
+        <div class="middle-box columns">
+            <div class="columns" id="weatherCardsContainer">
                 <!-- to be generated in javascript -->
-            <!-- </div>
-        </div> -->
+            </div>
+        </div>
 
     </div>
-    
+
+    <!-- <table id = crypto-table class="table">
+        <thead>
+          <tr>
+            <th><abbr title="Crypto Image">Crypto Image</abbr></th>
+            <th><abbr title="Crypto Coin">Crypto Coin</abbr></th>
+            <th><abbr title="Market Cap Rank">Market Cap Rank</abbr></th>
+            <th><abbr title="Current Market Price">Current Market Price</abbr></th>
+            <th><abbr title="Price Change in Last 24 hours">Price Change in Last 24 hours</abbr></th>
+          </tr>
+        </thead>
+        <tbody id="crypto-body">
+            <tr>
+              <td> <img src="" alt="" ></td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </tbody>
+    </table> -->
+
     <!-- this will contain the text-pad  -->
-        <div class="section is-centered" id="bottom">
-            <div class="column is-responsive is-four-fifths">
-                <div class="column is-half is-offset-4">
-                    <h3 id="currentDay"></h3>
-                </div>
-                <div class="column">
-                    <p class="bd-notification is-info">
-                        <input class="input show" type="text" value="This text is readonly" readonly>
-                    </p>
-                
-                    <div class="columns is-mobile">
-                        <div class="column is-responsive is-narrow-mobile is-narrow-tablet is-narrow-desktop is-offset-4">
-                            <button class="button is-danger bd-notification is-medium" type="button">EDIT</button>
-                        </div>
-                        <div class="column">
-                            <button class="button is-info bd-notification is-medium" type="button">Archive</button>
-                        </div>
-                    </div>
+   
+    <div class="section" id="bottom">
+        <div class="columns is-centered is-narrow-mobile is-narrow-tablet is-narrow-desktop">
+            <div class="column title">My Thought</div>
+            <div class="column title" id="currentDay"></div>
+            <div class="column">
+                <button class="button is-danger bd-notification is-medium" id="saveNotes" type="submit">SAVE</button>
+            </div>
+        </div>
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="control">
+                    <textarea class="textarea is-large has-fixed-size" id="notes" placeholder="Write what you are thinking here!"></textarea>
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="container" id="container">
+        <div></div>
+     
+    </div>
+   
+</body>
+
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -162,6 +188,8 @@
     <script src="./assets/js/cocktailContainer.js"></script>
     <script src="./assets/js/cryptoContainer.js"></script>
     <script src="./assets/js/nav-bar.js"></script>
+    <script src="./assets/js/textPad.js"></script>
     <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

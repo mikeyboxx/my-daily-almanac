@@ -2,14 +2,8 @@
 h1 {
     font-size: 1em;
     text-align: center;
-    /* margin-left: 15vw;
-    margin-right: 15vw; */
 }
 
-
-/* .button {
-    margin: 150px 0 0 500px;
-} */
 .show {
     display: block;
 }
@@ -17,15 +11,6 @@ h1 {
 .hide {
     display: none;
 }
-/* added comment */
-/* added comment */
-/* 
-#top, #menu {
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-} */
-/* to show menu items when user click hamburger menu */
 .showMenu {
     display: block;
 }
@@ -37,22 +22,9 @@ label{
    /* margin: 10px; */
 }
 
-/* @media screen and (min-width: 800px){
-    #top, #menu {
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-    }
-} */
-/*  */
-
-
 .navbar-brand, .navbar-tabs {
     flex-grow: 1;
 }
-
-
-/* added comment */
 
 .navbar h1{
     width: 100%;
@@ -85,21 +57,15 @@ label{
 }
 
 .middle-box {
-    /* font-size: .8em; */
-    /* width: 200px; */
     height: 300px;
-    /* border: 1px solid black; */
     overflow: scroll;
-    /* flex: 20%; */
     margin: 4px;
-    /* padding: 35px; */
 }
 
 #top {
     height: 100px;
     border: 1px solid red;
 }
-
 
 #middle {
     /* border: 1px solid red; */

@@ -1,5 +1,6 @@
 // var middle = $('#middle')
 
+// made a for loop to populate data dynamically on top 10 crypto coins in a hardcoded table using bulma 
 
 function renderCrypto(obj){
     var cryptoBodyElement = $('#crypto-body');
@@ -20,7 +21,7 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement)
         cryptoBodyElement.append(tableRowElement)
     }
-    // return cryptoBodyElement;
+    return cryptoBodyElement;
 
 //     //Object 0 - Coin 1 of 10
     
@@ -73,7 +74,7 @@ function renderCrypto(obj){
 //     pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[2].price_change_24h}`);
 //     containerEl.append(pEl)    
 
-//     //Object 3 - Coin 4 of 15
+//     //Object 3 - Coin 4 of 10
     
 //     pEl = $('<img>').attr("src", obj[3].image);
 //     containerEl.append(pEl)
@@ -90,7 +91,7 @@ function renderCrypto(obj){
 //     pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[3].price_change_24h}`);
 //     containerEl.append(pEl)    
 
-// //Object 4 - Coin 5 of 15
+// //Object 4 - Coin 5 of 10
     
 // pEl = $('<img>').attr("src", obj[4].image);
 // containerEl.append(pEl)
@@ -107,7 +108,7 @@ function renderCrypto(obj){
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[4].price_change_24h}`);
 // containerEl.append(pEl) 
 
-// //Object 5 - Coin 6 of 15
+// //Object 5 - Coin 6 of 10
     
 // pEl = $('<img>').attr("src", obj[5].image);
 // containerEl.append(pEl)
@@ -124,7 +125,7 @@ function renderCrypto(obj){
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[5].price_change_24h}`);
 // containerEl.append(pEl)   
 
-// //Object 6 - Coin 7 of 15
+// //Object 6 - Coin 7 of 10
     
 // pEl = $('<img>').attr("src", obj[6].image);
 // containerEl.append(pEl)
@@ -141,7 +142,7 @@ function renderCrypto(obj){
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[6].price_change_24h}`);
 // containerEl.append(pEl)  
 
-// //Object 7 - Coin 8 of 15
+// //Object 7 - Coin 8 of 10
     
 // pEl = $('<img>').attr("src", obj[7].image);
 // containerEl.append(pEl)
@@ -158,7 +159,7 @@ function renderCrypto(obj){
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[7].price_change_24h}`);
 // containerEl.append(pEl)  
 
-// //Object 8 - Coin 9 of 15
+// //Object 8 - Coin 9 of 10
     
 // pEl = $('<img>').attr("src", obj[8].image);
 // containerEl.append(pEl)
@@ -175,7 +176,7 @@ function renderCrypto(obj){
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[8].price_change_24h}`);
 // containerEl.append(pEl)  
 
-// //Object 9 - Coin 10 of 15
+// //Object 9 - Coin 10 of 10
     
 // pEl = $('<img>').attr("src", obj[9].image);
 // containerEl.append(pEl)

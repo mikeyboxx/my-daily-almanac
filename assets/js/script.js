@@ -1,3 +1,14 @@
+// Crypto API
+// https://rapidapi.com/apidojo/api/investing-cryptocurrency-markets/?utm_source=RapidAPI.com%2Fguides&utm_medium=DevRel&utm_campaign=DevRel
+// current day
+var currentDay = moment();
+// if the date is in the past then user can only read notes
+// when user click on edit button a text area will appear
+// if it is present day then user can edit text
+// User will have a save button to save to local storage
+$("#currentDay").text(currentDay.format("LLLL"));
+// function dailyTime() {
+//     $("#")
 
 // need handler to save personal profile to object passed
 function renderWelcomeDialog(obj, fromContainer){
@@ -30,10 +41,10 @@ function renderWelcomeDialog(obj, fromContainer){
 
 
 
-
+// 
 function renderCrypto(obj){
-    console.log(obj);
-}
+//     console.log(obj);
+// }
 
 // function renderRecipes(obj){
 //     console.log(obj);
@@ -93,7 +104,9 @@ async function firstTimeRender(obj){
     
     let arr = resp.slice(0,15);    // take top 15 cryptos
     obj.crypto = arr;  // array
-    renderCrypto(arr);
+    let cryptoEl = renderCrypto(obj.crypto);
+    $('#middle').append(cryptoEl);
+   
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';

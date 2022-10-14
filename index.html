@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xxjapp/xdialog@3/xdialog.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-    
-
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>My Daily Almanac</title>
 </head>
@@ -70,9 +68,7 @@
                         10-07-2022
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" id="new-user">
-                        New user
-                    </a>
+                    <a class="navbar-item" id="new-user">New user</a>
                 </div>
             </div>
         </div>
@@ -114,79 +110,45 @@
     </form>
 
     <!-- this will contain the content boxes with API data -->
-
-        <div class="cocktail container">
-
-
-         </div>    
-    <div class="section p-1" id="middle">
-        <div id="horoscope-element">
-
-        </div>
-    </nav>
-
-    <!-- this will contain the content boxes with API data -->
-    <div id="middle" class="columns" >
-        <div class="column" id="weather">
-            <div class="columns" id="weatherCardsContainer">
+    <div id="middle" class="section columns is-multiline " >
+        <!-- <div class="middle-box columns">
+            <div class="columns" id="weatherCardsContainer"> -->
                 <!-- to be generated in javascript -->
-            </div>    
-        </div> 
+            <!-- </div>
+        </div> -->
 
-        <div class="cocktail">
-            <!-- to be generated in javascript -->
-        </div> 
     </div>
     
     <!-- this will contain the text-pad  -->
-<div class="section" id="bottom">
-    <div class="columns is-centered">
-        <div class="column is-responsive is-four-fifths">
-            <div class="column is-half is-offset-4">
-            <h3 id="currentDay"></h3>
-            </div>
-            <div class="column">
-            <p class="bd-notification is-info"><input class="input show" type="text" value="This text is readonly" readonly></p>
-            
-            <div class="columns is-mobile">
-                <!-- <div class="modal">
-                    <div class="modal-background"></div>
-                    <div class="modal-card"> -->
-                <div class="column is-responsive is-narrow-mobile is-narrow-tablet is-narrow-desktop is-offset-4">
-              <button class="button is-danger bd-notification is-medium" type="button">EDIT</button>
-            </div>
-            <div class="column">
-                <button class="button is-info bd-notification is-medium" type="button">Archive</button>
+        <div class="section is-centered" id="bottom">
+            <div class="column is-responsive is-four-fifths">
+                <div class="column is-half is-offset-4">
+                    <h3 id="currentDay"></h3>
+                </div>
+                <div class="column">
+                    <p class="bd-notification is-info">
+                        <input class="input show" type="text" value="This text is readonly" readonly>
+                    </p>
+                
+                    <div class="columns is-mobile">
+                        <div class="column is-responsive is-narrow-mobile is-narrow-tablet is-narrow-desktop is-offset-4">
+                            <button class="button is-danger bd-notification is-medium" type="button">EDIT</button>
+                        </div>
+                        <div class="column">
+                            <button class="button is-info bd-notification is-medium" type="button">Archive</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-            </div>
-          </div>
-        </div>
-    <div class="columns" id="bottom">
-
-    </div>
-   
-
-
-
-    <div class="container" id="container">
-        <div></div>
-     
-    </div>
-   
-</body>
-
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
     <script src="./assets/js/weatherContainer.js"></script>
     <script src="./assets/js/horoscope.js"></script>
     <script src="./assets/js/cocktailContainer.js"></script>
     <script src="./assets/js/cryptoContainer.js"></script>
     <script src="./assets/js/nav-bar.js"></script>
     <script src="./assets/js/script.js"></script>
-    
-    
 </body>
 </html>

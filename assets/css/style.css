@@ -6,17 +6,7 @@ h1 {
     margin-right: 15vw; */
 }
 
-#middle {
-    /* border: 1px solid red; */
-    height: 400px;
-    /* font-size: 1.5em; */
-}
 
-#bottom {
-    /* border: 1px solid red; */
-    height: 100px;
-    /* font-size: 1.5em; */
-}
 /* .button {
     margin: 150px 0 0 500px;
 } */
@@ -61,25 +51,7 @@ label{
     flex-grow: 1;
 }
 
-#top {
-    height: 100px;
-    border: 1px solid red;
-}
 
-
-#middle {
-    border: 1px solid red;
-    height: 400px;
-}
-
-#bottom {
-    border: 1px solid red;
-    height: 300px;
-}
-
-.card-custom {
-    flex: 20%;
-}
 /* added comment */
 
 .navbar h1{
@@ -110,4 +82,42 @@ label{
     .navbar h1{
         font-size: 2rem;
     }
+}
+
+.middle-box {
+    /* font-size: .8em; */
+    /* width: 200px; */
+    height: 300px;
+    /* border: 1px solid black; */
+    overflow: scroll;
+    /* flex: 20%; */
+    margin: 4px;
+    /* padding: 35px; */
+}
+
+#top {
+    height: 100px;
+    border: 1px solid red;
+}
+
+
+#middle {
+    /* border: 1px solid red; */
+    height: 400px;
+    overflow: auto;
+}
+
+#bottom {
+    border: 1px solid red;
+    /* height: 300px; */
+}
+
+.card-custom {
+    flex: 20%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    /* object-fit: cover; */
 }

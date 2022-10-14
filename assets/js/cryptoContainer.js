@@ -48,5 +48,35 @@ function renderCrypto(obj){
 
     return boxEl;
  }
+
+ async function cryptoRefresh(){
+    await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
+    .then(response => response.json())
+    .then(response => resp = response)
+    .catch(err => {console.error(err); return err});
+    for (var i=0; i<10; i++){
+        var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[i].current_price));
+        $(`#coinPrice${i}`).text(n)
+        console.log(n)
+        var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[i].price_change_24h));
+        $(`#coinPriceChange${i}`).text(n)
+        
+    }
+    
+}
+// pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
+
+    // middle.append(containerEl)
+
+
+
+
+// fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//             renderCrypto(data); 
+//         } )
+//         .catch(err => {console.error(err); return err});
     
     

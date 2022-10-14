@@ -4,8 +4,10 @@ var zodiac=[{
      "date":"March 21–April 19"
 }
 ]
+//document.getElementById('zodiac').value = "10";
+$("#zodiac").val("14");
 //alert(zodiac[0].name+zodiac[0].date);
-//document.getElementById("Zodiac").option.value=zodiac[0].name+zodiac[0].date;
+//document.getElementById("zodiac").o=zodiac[0].name+zodiac[0].date;
 // :taurus: Taurus (Bull): April 20–May 20
 // :gemini: Gemini (Twins): May 21–June 21
 // :cancer: Cancer (Crab): June 22–July 22
@@ -21,8 +23,8 @@ var userObj={};
 var navBtn=document.getElementById("btn");
 var menu = document.getElementById("menu");
 var preferencesForm = document.getElementById("preferences");
-var EditpreferencesForm = document.getElementById("edit-preferences");
-var NewUserForm = document.getElementById("new-user");
+var editpreferencesForm = document.getElementById("edit-preferences");
+var newUserForm = document.getElementById("new-user");
 var saveBtn = document.getElementById("save");
 //var userName=document.getElementById("name").value;
 //var userDob=document.getElementById("dob").value;
@@ -43,13 +45,13 @@ navBtn.addEventListener("click",function(){
      //      preferencesForm.style.display="block";
      //      menu.classList.remove("showMenu");
      // });
-     EditpreferencesForm.addEventListener( "click", function() {
+     editpreferencesForm.addEventListener( "click", function() {
           preferencesForm.style.display="block";
           document.getElementById("name").disabled=true;
           document.getElementById("Zodiac").disabled=true;
           menu.classList.remove("showMenu");
      });
-     NewUserForm.addEventListener( "click", function() {
+     newUserForm.addEventListener( "click", function() {
           preferencesForm.style.display="block";
           menu.classList.remove("showMenu");
      });

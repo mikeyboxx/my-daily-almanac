@@ -41,9 +41,9 @@ function renderWelcomeDialog(obj, fromContainer){
 
 
 
-// function renderCrypto(obj){
-//     console.log(obj);
-// }
+function renderCrypto(obj){
+    console.log(obj);
+}
 
 // function renderRecipes(obj){
 //     console.log(obj);
@@ -70,7 +70,8 @@ async function firstTimeRender(obj){
         .catch(err => {console.error(err); return err});
         
     obj.horoscope = resp;
-    renderHoroscope(obj.horoscope);
+    let horoscopeEl =  renderHoroscope(obj.horoscope);
+    $('#middle').append(horoscopeEl);
 
     await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)
         .then(response => response.json())
@@ -92,7 +93,8 @@ async function firstTimeRender(obj){
         .catch(err => {console.error(err); return err});
 
     obj.weather = resp.properties.periods;  // array 2 forecasts per day (i.e. day, night)
-    renderWeather(obj.weather);
+    let weatherEl = renderWeather(obj.weather);
+    $('#middle').append(weatherEl);
         
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
@@ -104,25 +106,26 @@ async function firstTimeRender(obj){
     renderCrypto(arr);
 
 
-    let apiKey = '81f0122781e2478fb85469f755df1399';
-    await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)
-        .then(response => response.json())
-        .then(response => resp = response)
-        .catch(err => {console.error(err); return err});
-    
-    obj.recipes = resp.recipes;  // array
-    
-    renderRecipes(obj);
-
-
-    // await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+    // let apiKey = '81f0122781e2478fb85469f755df1399';
+    // await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)
     //     .then(response => response.json())
     //     .then(response => resp = response)
     //     .catch(err => {console.error(err); return err});
-    // console.log(resp);
-    // // obj.cocktail = resp.recipes;  // array
     
-    // renderCocktails(obj);
+    // obj.recipes = resp.recipes;  // array
+    
+    // renderRecipes(obj);
+
+
+    await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+        .then(response => response.json())
+        .then(response => resp = response)
+        .catch(err => {console.error(err); return err});
+    // console.log(resp);
+    obj.cocktail = resp;  // array
+    
+    let cocktailEl = renderCocktails(resp);
+    $('#middle').append(cocktailEl);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
 }

@@ -45,4 +45,5 @@ function renderWeather(obj){
             $(weatherCardsContainer).append(colEl);
         }
     }
+    return weatherCardsContainer;
 }

@@ -1,4 +1,4 @@
-var middle = $('#middle')
+// var middle = $('#middle')
 
 function renderCocktails(obj){
     console.log(obj);
@@ -22,7 +22,8 @@ function renderCocktails(obj){
     pEl = $('<p>').text(`Drink Instructions: ${obj.drinks[0].strInstructions}`);
     containerEl.append(pEl)
 
-    middle.append(containerEl)
+    // middle.append(containerEl)
+    return containerEl;
 }
 
 // var cocktailNameEl = document.createElement("div");
@@ -54,15 +55,15 @@ function renderCocktails(obj){
 
 
 
-fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
-.then(response => response.json())
-.then(data => {
-    // console.log(data)
-    // console.log(data.drinks[0].strDrink)
-    renderCocktails(data);
+// fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+// .then(response => response.json())
+// .then(data => {
+//     // console.log(data)
+//     // console.log(data.drinks[0].strDrink)
+//     renderCocktails(data);
 
-} )
-.catch(err => {console.error(err); return err});
+// } )
+// .catch(err => {console.error(err); return err});
 // console.log(resp);
 // obj.cocktail = resp.recipes;  // array
 

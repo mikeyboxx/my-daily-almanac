@@ -2,7 +2,8 @@
 
 function renderCocktails(obj){
     console.log(obj);
-    let containerEl = $('<div>');
+    let boxEl = $('<div>').addClass(" column is-half   ");
+    let containerEl = $('<div>').addClass('middle-box box ');
     //for (var i=0; i<obj.length; i++)
     //containerEl.append("<p>" + obj[i] + "<p>")
     //return containerEl;
@@ -23,7 +24,8 @@ function renderCocktails(obj){
     containerEl.append(pEl)
 
     // middle.append(containerEl)
-    return containerEl;
+    boxEl.append(containerEl)
+    return boxEl;
 }
 
 // var cocktailNameEl = document.createElement("div");

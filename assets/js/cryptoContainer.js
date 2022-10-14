@@ -4,7 +4,8 @@
 //     obj.crypto = arr;  // array
 
 function renderCrypto(obj){
-    let containerEl = $('<div>');
+    let boxEl = $('<div>').addClass('column  is-half');
+    let containerEl = $('<div>').addClass('middle-box box ');
 
     //Object 0 - Coin 1 of 15
     
@@ -174,9 +175,10 @@ pEl = $('<p>').text(`Current Market Price: ${obj[9].current_price}`);
 containerEl.append(pEl)
 
 pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
-containerEl.append(pEl)  
+containerEl.append(pEl);  
+boxEl.append(containerEl);  
 
-    return containerEl;
+    return boxEl;
     // middle.append(containerEl)
 }
 

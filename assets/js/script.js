@@ -28,9 +28,7 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-function renderCrypto(obj){
-    console.log(obj);
-}
+
 
 // function renderCrypto(obj){
 //     console.log(obj);
@@ -61,10 +59,7 @@ async function firstTimeRender(obj){
         .catch(err => {console.error(err); return err});
         
     obj.horoscope = resp;
-    // renderHoroscope(obj.horoscope);
-    var containerEl =  renderHoroscope(obj.horoscope);
-    $("#horoscope-element").append(containerEl);
-    
+    renderHoroscope(obj.horoscope);
 
     await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client`)
         .then(response => response.json())

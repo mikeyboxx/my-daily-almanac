@@ -17,7 +17,7 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"></script>
     </script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xxjapp/xdialog@3/xdialog.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     
@@ -26,50 +26,93 @@
     <title>My Daily Almanac</title>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation" id="top">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-            </a>
-      
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <nav class="navbar" role="navigation" aria-label="main navigation" >
+        <div class="navbar-brand" id="top">
+          <a class="navbar-item" href="#">
+            <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo">
+          </a>
+            
+            <!-- Our website icon -->
+               <!-- <a class="navbar-item" href="">
+                    <img src="" width="112" height="28">
+               </a> -->
+               
+               <h1>My Daily Almanac</h1>
+              
+              
+            <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
+
         </div>
-      
-        <!-- this will contain the logo, title and a drop-down menu -->
-        <div class="navbar-menu custom-navbar-menu">
-            <h1>My Daily Almanac</h1>
+        <!-- title and a drop-down menu   -->
+       
+        <div id="menu" class="has-dropdown navbar-menu custom-navbar-menu" >
+           
             <div class="navbar-end">
-                <a class="navbar-item">
-                    Edit Preferences
-                </a>
-            <div class="navbar-item has-dropdown is-hoverable">
+                
+            </div>
+            <div class="navbar-item is-hoverable navbar-end"  >
+              <a id="edit-preferences">
+                Edit preferences 
+              </a>
                 <a class="navbar-link">
-                    Menu
+                  Archived Notes
                 </a>
       
                 <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    13-Oct-2022
+                  </a>
                     <a class="navbar-item">
-                        About
+                        12-Oct-2022
                     </a>
                     <a class="navbar-item">
-                        Jobs
+                      11-Oct-2022
                     </a>
                     <a class="navbar-item">
-                        Contact
+                      10-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      09-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      08-Oct-2022
+                    </a>
+                    <a class="navbar-item">
+                      07-Oct-2022
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Report an issue
+                    <a class="navbar-item" id="new-user">
+                        New user
                     </a>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </nav>
-    
+    <form  class="modal modal-background" id="preferences">
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Enter your Details</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+      <label>Enter your Name<input type="text" id="name"></label>
+      <label>Select your Date of birth<input type="date" id="dob"></label>
+      <label>Select your preferences</label>
+      <label><input type="checkbox" id="Horoscope">Horoscope</label>
+      <label><input type="checkbox" id="Cocktail">Cocktail</label>
+      <label><input type="checkbox" id="Weather">Weather</label>
+      <label><input type="checkbox" id="Recipes">Recipes</label>
+      <label><input type="checkbox" id="Pet">Pet</label>
+      <button class="button is-success" id="save">Save changes</button>
+      <button class="button">Cancel</button>
+    </section>
+      </div>
+    </form>
+   </div>
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="columns" >
         <div class="column" id="weather">
@@ -108,6 +151,27 @@
     <div class="columns" id="bottom">
 
     </div>
+
+      
+
+
+
+    <div class="container" id="container">
+        <div></div>
+     
+    </div>
+    <!-- <div id="modal-js-example" class="modal">
+     <div class="modal-background"></div>
+   
+     <div class="modal-content">
+       <div class="box">
+         <p>Modal JS example</p>
+         Your content 
+       </div>
+     </div>
+   
+     <button class="modal-close is-large" aria-label="close"></button>
+   </div> -->
 </body>
 
 
@@ -118,7 +182,7 @@
 <script src="./assets/js/weatherContainer.js"></script>
 <script src="./assets/js/cocktailContainer.js"></script>
 <script src="./assets/js/script.js"></script>
-<script src="./assets/js/horoscope.js"></script>
+<script src="./assets/js/nav-bar.js"></script>
 
 
 </body>

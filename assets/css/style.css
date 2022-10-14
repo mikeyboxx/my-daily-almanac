@@ -1,29 +1,66 @@
+<<<<<<< HEAD
+=======
+* {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+>>>>>>> 2b6c64b37126cb3b31d0622e6895d39f82021d85
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
-    margin-left: 250px;
+    /* margin-left: 15vw;
+    margin-right: 15vw; */
 }
 
-.horoscope-card {
-    padding: 10px;
-    text-align: center;
+#middle {
+    /* border: 1px solid red; */
+    height: 400px;
+    /* font-size: 1.5em; */
 }
 
-.horoscope-heading {
-
-    font-size: 215%;
+#bottom {
+    /* border: 1px solid red; */
+    height: 100px;
+    /* font-size: 1.5em; */
+}
+/* added comment */
+/* 
+#top, #menu {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+} */
+/* to show menu items when user click hamburger menu */
+.showMenu {
+    display: block;
+}
+label{
+    display: block;
+}
+#preferences *{
+   padding: 10px;
+   /* margin: 10px; */
 }
 
-.horoscope-dates {
+/* @media screen and (min-width: 800px){
+    #top, #menu {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+    }
+} */
+/*  */
 
-    font-size: 21px;
+
+.navbar-brand, .navbar-tabs {
+    flex-grow: 1;
 }
-.todays-horoscope {
 
-    font-size: 18px;
-}
-
+<<<<<<< HEAD
 #top {
     height: 100px;
     border: 1px solid red;
@@ -43,3 +80,38 @@ h1 {
 .card-custom {
     flex: 20%;
 }
+=======
+/* added comment */
+
+.navbar h1{
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    /* background: green; */
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.navbar-brand, .navbar-tabs {
+    flex-grow: 1;
+}
+
+.navbar-menu {
+    flex-grow:unset;
+}
+/* nav{
+    height: 250px;
+} */
+#logo{
+    width: 75px;
+    height: 75px;
+}
+@media screen and (min-width: 800px){
+    .navbar h1{
+        font-size: 2rem;
+    }
+}
+>>>>>>> 2b6c64b37126cb3b31d0622e6895d39f82021d85

@@ -148,11 +148,12 @@ function start(){
         userObj = {
             archivedNotes: []
         };
-        renderWelcomeDialog(userObj, 'welcome');
+        renderWelcomeDialog(userObj, true);
         console.log(userObj);
-        // firstTimeRender(userObj);
+        firstTimeRender(userObj);
         
     } else {
+        renderWelcomeDialog(userObj);
         firstTimeRender(userObj);
     }
 

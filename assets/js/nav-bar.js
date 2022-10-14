@@ -64,6 +64,8 @@ var preferencesForm = document.getElementById("preferences");
 var editPreferencesForm = document.getElementById("edit-preferences");
 //var newUserForm = document.getElementById("new-user");
 var saveBtn = document.getElementById("save");
+var cancelBtn = document.getElementById("cancel");
+
 
 
 // eventlistner for hamburgur menu
@@ -82,46 +84,61 @@ navBtn.addEventListener("click",function(){
      // });
      editPreferencesForm.addEventListener( "click", function() {
           preferencesForm.style.display="block";
+          cancelBtn.style.visibility = 'visible';
           document.getElementById("name").disabled=true;
           document.getElementById("zodiac").disabled=true;
           // document.getElementById("name").visibility=hidden;
           // document.getElementById("Zodiac").disabled=true;
           menu.classList.remove("showMenu");
      });
-     
-     function renderWelcomeDialog(obj, preferencesForm){
-          var saveBtnHandler = function (obj, event ){
+     // firstTime = false
+     function renderWelcomeDialog(obj, firstTime){
+         alert(firstTime);
+          if (firstTime) {
+               preferencesForm.style.display="block";
+               cancelBtn.style.visibility = 'hidden';
+               var saveBtnHandler = function (obj, event ){
                var userName=document.getElementById("name").value;
                var pet=document.getElementById("pets").value;
                var cuisine=document.getElementById("cuisine").value;
-               var Zodiac=document.getElementById("zodiac").value;
+               var zodiac=document.getElementById("zodiac").value;
                var preferenceArray=[];
                if ($('#horoscope').is(":checked")) {
-                         preferenceArray.push("horoscope");
-                    }
+                    preferenceArray.push("horoscope");
+               }
                if ($('#cocktail').is(":checked")) {
-                         preferenceArray.push("cocktail");
-                    }
+                    preferenceArray.push("cocktail");
+               }
                if ($('#weather').is(":checked")) {
-                         preferenceArray.push("weather");
-                    }
+                    preferenceArray.push("weather");
+               }
                if ($('#recipes').is(":checked")) {
-                         preferenceArray.push("recipes");
-                    }
-               if ($('#pet').is(":checked")) {
-                         preferenceArray.push("pet");
-                    }
-                    userObj=[
+                    preferenceArray.push("recipes");
+               }
+               if ($('#crypto').is(":checked")) {
+                    preferenceArray.push("crypto");
+               }
+           //alert(preferenceArray);
+               userObj=[
                          {
-                              username: userName,
-                              pet: pet,
-                              cuisine: cuisine,
-                              Zodiac: zodiac,
-                              preferences: preferenceArray
+                         username: userName,
+                         pet: pet,
+                         cuisine: cuisine,
+                         zodiac: zodiac,
+                         preferences: preferenceArray
                          }
                ]
-              $(saveBtn).on('click', saveBtnHandler.bind(this, userObj));
-          }
+                    
+                   // console.log(obj);
+                    
+                    }
+                    $(saveBtn).on('click', saveBtnHandler.bind(this, userObj));
+                    firstTimeRender(userObj);
+               }
+               else{
+                    alert("welcome");
+               }
+              
      }
      //firstTimeRender(userObj);
      // saveBtn.addEventListener( "click", function() {

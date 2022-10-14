@@ -21,8 +21,8 @@ function renderHoroscope(obj){
         boxEl.append(pEl);
 
 
-        pEl = $('<p>').text("Lucky Number: " + obj.lucky_number).addClass("horoscope-content has-text-centered");
-        boxEl.append(pEl);
+        // pEl = $('<p>').text("Lucky Number: " + obj.lucky_number).addClass("horoscope-content has-text-centered");
+        // boxEl.append(pEl);
 
         pEl = $('<p>').text("Lucky Time: " + obj.lucky_time).addClass("horoscope-content has-text-centered");
         boxEl.append(pEl);

@@ -20,7 +20,7 @@ function renderCocktails(obj){
         containerEl.append(pEl)
     }
 
-    pEl = $('<p>').text(`${obj.drinks[0].strInstructions}`).addClass("has-text-weight-medium");
+    pEl = $('<p>').text(`${obj.drinks[0].strInstructions}`).addClass("has-text-weight-medium pt-1");
     containerEl.append(pEl)
 
     // middle.append(containerEl)

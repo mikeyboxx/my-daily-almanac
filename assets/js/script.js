@@ -6,7 +6,7 @@ var currentDay = moment();
 // when user click on edit button a text area will appear
 // if it is present day then user can edit text
 // User will have a save button to save to local storage
-$("#currentDay").text(currentDay.format("LLLL"));
+$("#currentDay").text(currentDay.format("MMM Do YYYY"));
 // function dailyTime() {
 //     $("#")
 

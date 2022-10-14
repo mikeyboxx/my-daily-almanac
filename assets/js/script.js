@@ -10,6 +10,7 @@ $("#currentDay").text(currentDay.format("LLLL"));
 // function dailyTime() {
 //     $("#")
 
+
 // need handler to save personal profile to object passed
 function renderWelcomeDialog(obj, fromContainer){
     console.log(obj);

@@ -101,10 +101,11 @@ async function firstTimeRender(obj){
         .then(response => response.json())
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
-    
-    let arr = resp.slice(0,15);    // take top 15 cryptos
+
+        let arr = resp.slice(0,15);    // take top 15 cryptos
     obj.crypto = arr;  // array
     let cryptoEl = renderCrypto(obj.crypto);
+    
     $('#middle').append(cryptoEl);
    
 
@@ -136,6 +137,7 @@ async function firstTimeRender(obj){
 
 function start(){
     var userObj = JSON.parse(localStorage.getItem('userObj'));
+    
     // first time
     console.log(userObj);
     if (userObj === null){
@@ -148,6 +150,7 @@ function start(){
 
     return userObj;
 }
+
 
 var userObj = start();
 

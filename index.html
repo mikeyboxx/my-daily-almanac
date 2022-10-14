@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xxjapp/xdialog@3/xdialog.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-    
-
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>My Daily Almanac</title>
 </head>
@@ -30,71 +28,41 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation" >
         <div class="navbar-brand" id="top">
-          <a class="navbar-item" href="#!">
-            <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
-          </a>
+            <a class="navbar-item" href="#!">
+                <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
+            </a>
             
-            <!-- Our website icon -->
-               <!-- <a class="navbar-item" href="">
-                    <img src="" width="112" height="28">
-               </a> -->
-               
-               <h1>My Daily Almanac</h1>
-              
-              
             <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
-
         </div>
-        <!-- title and a drop-down menu   -->
-       
-        <div id="menu" class="has-dropdown navbar-menu custom-navbar-menu" >
-            <div class="navbar-end">
-                
-            </div>
 
+        <h1>My Daily Almanac</h1>
+
+        <!-- title and a drop-down menu   -->
+        <div id="menu" class="has-dropdown navbar-menu custom-navbar-menu" >
+            <div class="navbar-end"></div>
             <div class="navbar-item is-hoverable navbar-end"  >
-                <a id="edit-preferences">
-                    Edit preferences 
-                </a>
-                <a class="navbar-link">
-                    Archived Notes
-                </a>
-      
+                <a id="edit-preferences">Edit preferences</a>
+                <a class="navbar-link">Archived Notes</a>
+                <!-- the dropdown items will be generated in javascript -->
                 <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        13-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        12-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        11-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        10-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        09-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        08-Oct-2022
-                    </a>
-                    <a class="navbar-item">
-                        07-Oct-2022
-                    </a>
+                    <a class="navbar-item">13-Oct-2022</a>
+                    <a class="navbar-item">12-Oct-2022</a>
+                    <a class="navbar-item">11-Oct-2022</a>
+                    <a class="navbar-item">10-Oct-2022</a>
+                    <a class="navbar-item">09-Oct-2022</a>
+                    <a class="navbar-item">08-Oct-2022</a>
+                    <a class="navbar-item">07-Oct-2022</a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item" id="new-user">
-                        New user
-                    </a>
+                    <a class="navbar-item" id="new-user">New user</a>
                 </div>
             </div>
         </div>
     </nav>
-
+    
     <form  class="modal modal-background" id="preferences">
         <div class="modal-card">
             <header class="modal-card-head">
@@ -117,16 +85,13 @@
     </form>
 
     <!-- this will contain the content boxes with API data -->
-    <div id="middle" class="columns" >
-        <div class="column" id="weather">
-            <div class="columns" id="weatherCardsContainer">
+    <div id="middle" class="section columns is-multiline " >
+        <!-- <div class="middle-box columns">
+            <div class="columns" id="weatherCardsContainer"> -->
                 <!-- to be generated in javascript -->
-            </div>    
-        </div> 
+            <!-- </div>
+        </div> -->
 
-        <div class="cocktail">
-            <!-- to be generated in javascript -->
-        </div> 
     </div>
     
     <!-- this will contain the text-pad  -->
@@ -136,19 +101,17 @@
             <div class="column title">My Thought</div>
             <div class="column title" id="currentDay"></div>
             <div class="column">
-                <button class="button is-danger bd-notification is-medium" type="button">SAVE</button>
+                <button class="button is-danger bd-notification is-medium" id="save" type="button">SAVE</button>
             </div>
         </div>
         <div class="columns is-centered">
             <div class="column">
                 <div class="control">
-                    <textarea class="textarea is-large" placeholder="Write what you are thinking here!"></textarea>
+                    <textarea class="textarea is-large has-fixed-size" placeholder="Write what you are thinking here!"></textarea>
                 </div>
             </div>
         </div>
     </div>
-
-
 
 
     <div class="container" id="container">
@@ -161,14 +124,11 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
     <script src="./assets/js/weatherContainer.js"></script>
     <script src="./assets/js/horoscope.js"></script>
     <script src="./assets/js/cocktailContainer.js"></script>
     <script src="./assets/js/cryptoContainer.js"></script>
     <script src="./assets/js/nav-bar.js"></script>
     <script src="./assets/js/script.js"></script>
-    
-    
 </body>
 </html>

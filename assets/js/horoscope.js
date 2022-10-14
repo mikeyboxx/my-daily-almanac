@@ -3,7 +3,7 @@ function renderHoroscope(obj){
     let containerEl = $('<div>').addClass(" column is-half");
     let boxEl = $('<div>').addClass("horoscope-card box middle-box");
     
-        var hEl = $('<h3>').text(userObj.zodiacIcon + userObj.zodiacSign).addClass("horoscope-heading is-capitalized has-text-centered is-size-4 has-text-weight-bold");
+        var hEl = $('<h3>').text(obj.zodiacIcon + obj.zodiacSign).addClass("horoscope-heading is-capitalized has-text-centered is-size-4 has-text-weight-bold");
         boxEl.append(hEl);
 
         // var pEl = $('<p>').text(obj.date_range).addClass("horoscope-dates has-text-centered");

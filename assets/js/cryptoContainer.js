@@ -3,6 +3,8 @@
 
 function renderCrypto(obj){
     var cryptoBodyElement = $('#crypto-body');
+    let boxEl = $('<div>').addClass('column  is-half');
+    let containerEl = $('<div>').addClass('middle-box box ');
 
     for ( var i=0; i<10; i++){
         var tableRowElement = $("<tr>")
@@ -193,6 +195,13 @@ function renderCrypto(obj){
 //     return containerEl;
 //     // middle.append(containerEl)
  }
+// pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
+// containerEl.append(pEl);  
+// boxEl.append(containerEl);  
+
+//     return boxEl;
+    // middle.append(containerEl)
+
 
 
 

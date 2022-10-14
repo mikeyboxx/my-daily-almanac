@@ -41,7 +41,8 @@ function renderWelcomeDialog(obj, fromContainer){
 
 
 
-// function renderCrypto(obj){
+// 
+function renderCrypto(obj){
 //     console.log(obj);
 // }
 
@@ -139,6 +140,7 @@ async function firstTimeRender(obj){
 
 function start(){
     var userObj = JSON.parse(localStorage.getItem('userObj'));
+    
     // first time
     console.log(userObj);
     if (userObj === null){
@@ -151,6 +153,7 @@ function start(){
 
     return userObj;
 }
+
 
 var userObj = start();
 
@@ -205,7 +208,7 @@ var userObj = start();
     // click on Edit Preferences link
         // display Edit Preference Dialog container
     // click on Archived Texts link
-
+}
 
 
     

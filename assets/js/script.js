@@ -35,8 +35,8 @@ function renderWelcomeDialog(obj, fromContainer){
     obj.favoriteCuisine = 'italian';
     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
-
-    firstTimeRender(obj);
+    return obj;
+    // firstTimeRender(obj);
 }
 
 
@@ -142,6 +142,7 @@ function start(){
     if (userObj === null){
         userObj = {};
         renderWelcomeDialog(userObj, 'welcome');
+        firstTimeRender(userObj);
         
     } else {
         secondTimeRender(userObj);

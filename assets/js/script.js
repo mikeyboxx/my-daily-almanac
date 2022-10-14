@@ -87,17 +87,18 @@ async function firstTimeRender(obj){
     let weatherEl = renderWeather(obj.weather);
     $('#middle').append(weatherEl);
         
-    // await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
-    //     .then(response => response.json())
-    //     .then(response => resp = response)
-    //     .catch(err => {console.error(err); return err});
+    await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
+        .then(response => response.json())
+        .then(response => resp = response)
+        .catch(err => {console.error(err); return err});
 
-    //     let arr = resp.slice(0,15);    // take top 15 cryptos
-    // obj.crypto = arr;  // array
-    // let cryptoEl = renderCrypto(obj.crypto);
+    let arr = resp.slice(0,15);    // take top 15 cryptos
+    obj.crypto = arr;  // array
+    let cryptoEl = renderCrypto(obj.crypto);
     
-    // $('#middle').append(cryptoEl);
+    $('#middle').append(cryptoEl);
    
+
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';
@@ -141,7 +142,7 @@ function start(){
         // firstTimeRender(userObj);
         
     } else {
-        secondTimeRender(userObj);
+        firstTimeRender(userObj);
     }
 
     return userObj;

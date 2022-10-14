@@ -20,13 +20,14 @@ navBtn.addEventListener("click",function(){
     }
 });
   
-     $( ".navbar-item" ).on( "click", function() {
+     $( "#new-user" ).on( "click", function() {
           preferencesForm.style.display="block";
           menu.classList.remove("showMenu");
      });
      EditpreferencesForm.addEventListener( "click", function() {
           preferencesForm.style.display="block";
-
+          document.getElementById("name").disabled=true;
+          document.getElementById("Zodiac").disabled=true;
           menu.classList.remove("showMenu");
      });
      NewUserForm.addEventListener( "click", function() {

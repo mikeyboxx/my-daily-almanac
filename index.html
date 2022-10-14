@@ -104,8 +104,22 @@
             <section class="modal-card-body">
                 <label>Enter your Name<input type="text" id="name"></label>
                 <!-- <label>Select your Date of birth<input type="date" id="dob"></label> -->
+                <label>Select your pet<select name="pets" id="pets">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="none">none</option>
+                  </select></label>
+                  <label>Select your favorite cuisine<select name="cuisine" id="cuisine">
+                    <option value="italian">Italian</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select></label>
+                  <label>Select your Zodiac sign<select name="Zodiac" id="Zodiac">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select></label>
                 <label>Select your preferences</label>
-      
                 <label><input type="checkbox" id="Horoscope">Horoscope</label>
                 <label><input type="checkbox" id="Cocktail">Cocktail</label>
                 <label><input type="checkbox" id="Weather">Weather</label>
@@ -128,27 +142,6 @@
 
         </div>
     </nav>
-
-    <form  class="modal modal-background" id="preferences">
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Enter your Details</p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <label>Enter your Name<input type="text" id="name"></label>
-                <label>Select your Date of birth<input type="date" id="dob"></label>
-                <label>Select your preferences</label>
-                <label><input type="checkbox" id="Horoscope">Horoscope</label>
-                <label><input type="checkbox" id="Cocktail">Cocktail</label>
-                <label><input type="checkbox" id="Weather">Weather</label>
-                <label><input type="checkbox" id="Recipes">Recipes</label>
-                <label><input type="checkbox" id="Pet">Pet</label>
-                <button class="button is-success" id="save">Save changes</button>
-                <button class="button">Cancel</button>
-            </section>
-        </div>
-    </form>
 
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="columns" >

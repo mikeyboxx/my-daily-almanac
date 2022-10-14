@@ -1,4 +1,4 @@
-// var middle = $('#middle')
+//var middle = $('#middle')
 
 // made a for loop to populate data dynamically on top 10 crypto coins in a hardcoded table using bulma 
 
@@ -7,31 +7,26 @@ function renderCrypto(obj){
     let boxEl = $('<div>').addClass('column  is-half');
     let containerEl = $('<div>').addClass('middle-box box ');
     let tableEl = $('<table>').addClass('table');
-    $(tableEl).attr('id', 'crypto-table');
+    tableEl.attr('id', 'crypto-table');
 
     let trEl = $('<tr>');
     let thEl = $('<th>').text('Crypto Image');
-    $(trEl).append(thEl);
+    trEl.append(thEl);
 
-    trEl = $('<tr>');
     thEl = $('<th>').text('Crypto Coin');
-    $(trEl).append(thEl);
+    trEl.append(thEl);
     
-    trEl = $('<tr>');
     thEl = $('<th>').text('Market Cap Rank');
-    $(trEl).append(thEl);
+    trEl.append(thEl);
 
-    trEl = $('<tr>');
     thEl = $('<th>').text('Current Market Price');
-    $(trEl).append(thEl);
+    trEl.append(thEl);
 
-    trEl = $('<tr>');
     thEl = $('<th>').text('Price Change in Last 24 Hours');
-    $(trEl).append(thEl);
+    trEl.append(thEl);
 
     let theadEl = $('<thead>').append(trEl);
-    $(tableEl).append(theadEl);
-
+    tableEl.append(theadEl);
 
 
     for ( var i=0; i<10; i++){
@@ -48,7 +43,7 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement)
         cryptoBodyElement.append(tableRowElement)
     }
-    $(tableEl).append(cryptoBodyElement);
+    tableEl.append(cryptoBodyElement);
     //return cryptoBodyElement;
 
 //     //Object 0 - Coin 1 of 10
@@ -223,12 +218,13 @@ function renderCrypto(obj){
 
 //     return containerEl;
 //     // middle.append(containerEl)
- }
-// pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
 containerEl.append(tableEl);  
 boxEl.append(containerEl);  
 
     return boxEl;
+ }
+// pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
+
     // middle.append(containerEl)
 
 

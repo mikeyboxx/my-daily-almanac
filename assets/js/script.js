@@ -89,18 +89,13 @@ async function firstTimeRender(obj){
         
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            renderCrypto(data); 
-            // obj.crypto = arr;  
-            // let cryptoEl = renderCrypto(obj.crypto);
-            // $('#middle').append(cryptoEl);
-               } )
+        .then(response => resp = response)
         .catch(err => {console.error(err); return err});
-    
-    // let arr = resp.slice(0,15);    // take top 15 cryptos
-   
-   
+
+        obj.crypto = resp;  
+        let cryptoEl = renderCrypto(obj.crypto);
+        $('#middle').append(cryptoEl);
+
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';

@@ -12,33 +12,33 @@
 //     $("#")
 
 // need handler to save personal profile to object passed
-function renderWelcomeDialog(obj, fromContainer){
-    console.log(obj);
+// function renderWelcomeDialog(obj, fromContainer){
+//     console.log(obj);
 
-    if (fromContainer === 'welcome') {
-        // came from Welcome Dialog box
-    }
+//     if (fromContainer === 'welcome') {
+//         // came from Welcome Dialog box
+//     }
 
-    if (fromContainer === 'preferences') {
-        // came from Edit Preferences Dialog box
-        // hide name and zodiac input
-    }
+//     if (fromContainer === 'preferences') {
+//         // came from Edit Preferences Dialog box
+//         // hide name and zodiac input
+//     }
     
 
     // simulating save button assuming that below code will be executed by form button handler which will:
     // generate list of preferences from which you build checkboxes
     // generate list of zodiac signs, with text (dates), and icons (download and store in img dir or use Emojis)
     // generate list of favorite cuisines 
-    obj.name = 'Michael Nabatov';
-    obj.zodiacSign = 'aries';
-    obj.zodiacIcon = '♈︎';
-    obj.pet = 'dog';
-    obj.favoriteCuisine = 'italian';
-    obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
+//     obj.name = 'Michael Nabatov';
+//     obj.zodiacSign = 'aries';
+//     obj.zodiacIcon = '♈︎';
+//     obj.pet = 'dog';
+//     obj.favoriteCuisine = 'italian';
+//     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
-    // return obj;
-    // firstTimeRender(obj);
-}
+//     // return obj;
+//     // firstTimeRender(obj);
+// }
 
 
 

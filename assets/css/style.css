@@ -6,53 +6,27 @@ h1 {
     margin-right: 15vw; */
 }
 
-
-/* .button {
-    margin: 150px 0 0 500px;
-} */
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-/* added comment */
-/* added comment */
-/* 
-#top, #menu {
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-} */
 /* to show menu items when user click hamburger menu */
 .showMenu {
     display: block;
 }
+form *{
+    padding:10px;
+    margin: 4px;
+}
 label{
-    display: block;
+    display: inline;
 }
 #preferences *{
    padding: 10px;
    /* margin: 10px; */
 }
 
-/* @media screen and (min-width: 800px){
-    #top, #menu {
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-    }
-} */
-/*  */
-
 
 .navbar-brand, .navbar-tabs {
     flex-grow: 1;
 }
 
-
-/* added comment */
 
 .navbar h1{
     width: 100%;
@@ -97,7 +71,7 @@ label{
 
 #top {
     height: 100px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 

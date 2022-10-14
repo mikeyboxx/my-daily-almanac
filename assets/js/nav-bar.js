@@ -1,24 +1,66 @@
 // varaibles
-var zodiac=[{
-     "name":"Aries (Ram)",
-     "date":"March 21–April 19"
-}
+var zodiac=[
+     {
+          "name":"Aries (Ram)",
+          "date":"March 21–April 19"
+     },
+     {
+          "name":"Taurus (Bull)",
+          "date":"April 20–May 20"
+     },
+     {
+          "name":"Gemini (Twins)",
+          "date":"May 21–June 21"
+     },
+     {
+          "name":"Cancer (Crab)",
+          "date":"June 22–July 22"
+     },
+     {
+          "name":"Leo (Lion)",
+          "date":"July 23–August 22"
+     },
+     {
+          "name":"Virgo (Virgin)",
+          "date":"August 23–September 22"
+     },
+     {
+          "name":"Libra (Balance)",
+          "date":"September 23–October 23"
+     },
+     {
+          "name":"Scorpius (Scorpion)",
+          "date":"October 24–November 21"
+     },
+     {
+          "name":"Sagittarius (Archer)",
+          "date":"November 22–December 21"
+     },
+     {
+          "name":"Capricornus (Goat)",
+          "date":"December 22–January 19"
+     },
+     {
+          "name":"Aquarius (Water Bearer)",
+          "date":"January 20–February 18"
+     },
+     {
+          "name":"Pisces (Fish)",
+          "date":"February 19–March 20"
+     }
 ]
 //document.getElementById('zodiac').value = "10";
-$("#zodiac").val("14");
+//$("#zodiac").val("14");
+var zodiacEl = document.getElementById("zodiac");
+for(var i=0;i<12;i++){
+     var option = document.createElement("option");
+     option.text = zodiac[i].name+zodiac[i].date;
+     zodiacEl.add(option);
+}
+
 //alert(zodiac[0].name+zodiac[0].date);
 //document.getElementById("zodiac").o=zodiac[0].name+zodiac[0].date;
-// :taurus: Taurus (Bull): April 20–May 20
-// :gemini: Gemini (Twins): May 21–June 21
-// :cancer: Cancer (Crab): June 22–July 22
-// :leo: Leo (Lion): July 23–August 22
-// :virgo: Virgo (Virgin): August 23–September 22
-// :libra: Libra (Balance): September 23–October 23
-// :scorpius: Scorpius (Scorpion): October 24–November 21
-// :sagittarius: Sagittarius (Archer): November 22–December 21
-// :capricorn: Capricornus (Goat): December 22–January 19
-// :aquarius: Aquarius (Water Bearer): January 20–February 18
-// :pisces: Pisces (Fish): February 19–March 20
+// :pisces: : 
 var userObj={};
 var navBtn=document.getElementById("btn");
 var menu = document.getElementById("menu");

@@ -96,7 +96,7 @@ async function firstTimeRender(obj){
         let cryptoEl = renderCrypto(obj.crypto);
         $('#middle').append(cryptoEl);
 
-
+    // setInterval(function, 3000)
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';
     // await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)

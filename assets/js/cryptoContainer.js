@@ -35,12 +35,13 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement)
         tableDataElement = $("<td>").text(obj[i].name);
         tableRowElement.append(tableDataElement)
-        tableDataElement = $("<td>").text(obj[i].market_cap_rank);
-        tableRowElement.append(tableDataElement)
+        // tableDataElement = $("<td>").text(obj[i].market_cap_rank);
+        // tableRowElement.append(tableDataElement)
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].current_price));
         tableDataElement = $("<td>").text(n);
         tableRowElement.append(tableDataElement)
-        tableDataElement = $("<td>").text(obj[i].price_change_24h);
+        var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].price_change_24h));
+        tableDataElement = $("<td>").text(n);
         tableRowElement.append(tableDataElement)
         cryptoBodyElement.append(tableRowElement)
     }

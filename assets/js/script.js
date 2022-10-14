@@ -92,12 +92,10 @@ async function firstTimeRender(obj){
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
 
-        let arr = resp.slice(0,15);    // take top 15 cryptos
-    obj.crypto = arr;  // array
-    let cryptoEl = renderCrypto(obj.crypto);
-    
-    $('#middle').append(cryptoEl);
-   
+        obj.crypto = resp;  
+        let cryptoEl = renderCrypto(obj.crypto);
+        $('#middle').append(cryptoEl);
+
 
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';

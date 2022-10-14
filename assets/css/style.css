@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-=======
-* {
-    /* border: 1px solid red; */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
->>>>>>> 2b6c64b37126cb3b31d0622e6895d39f82021d85
 
 h1 {
     font-size: 1em;
@@ -60,7 +50,6 @@ label{
     flex-grow: 1;
 }
 
-<<<<<<< HEAD
 #top {
     height: 100px;
     border: 1px solid red;
@@ -80,7 +69,6 @@ label{
 .card-custom {
     flex: 20%;
 }
-=======
 /* added comment */
 
 .navbar h1{
@@ -114,4 +102,3 @@ label{
         font-size: 2rem;
     }
 }
->>>>>>> 2b6c64b37126cb3b31d0622e6895d39f82021d85

@@ -97,7 +97,8 @@ async function firstTimeRender(obj){
     obj.weather = resp.properties.periods;  // array 2 forecasts per day (i.e. day, night)
     let weatherEl = renderWeather(obj.weather);
     $('#middle').append(weatherEl);
-        
+      
+    
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
         .then(response => response.json())
         .then(response => resp = response)
@@ -109,8 +110,7 @@ async function firstTimeRender(obj){
     
     $('#middle').append(cryptoEl);
    
-
-
+    setInterval(function(){cryptoRefresh()}, 60*1000)
 
     // let apiKey = '81f0122781e2478fb85469f755df1399';
     // await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)

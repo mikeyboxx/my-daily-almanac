@@ -28,9 +28,9 @@ function renderWelcomeDialog(obj, fromContainer){
     firstTimeRender(obj);
 }
 
-// function renderCrypto(obj){
-//     console.log(obj);
-// }
+function renderCrypto(obj){
+    console.log(obj);
+}
 
 // function renderCrypto(obj){
 //     console.log(obj);
@@ -109,16 +109,6 @@ async function firstTimeRender(obj){
     renderRecipes(obj);
 
 
-<<<<<<< HEAD
-    await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
-        .then(response => response.json())
-        .then(response => resp = response)
-        .catch(err => {console.error(err); return err});
-    console.log(resp);
-     obj.cocktail = resp;  // array
-    
-    renderCocktails(resp);
-=======
     // await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     //     .then(response => response.json())
     //     .then(response => resp = response)
@@ -129,7 +119,6 @@ async function firstTimeRender(obj){
     // renderCocktails(obj);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
->>>>>>> 0568596246f573d7928dfe1759b70af4aafe8884
 }
 
 

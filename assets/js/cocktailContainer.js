@@ -10,7 +10,7 @@ function renderCocktails(obj){
     var  pEl = $('<img>').attr("src", obj.drinks[0].strDrinkThumb).addClass("drink-image ");
     containerEl.append(pEl)
     
-    pEl = $('<p>').text(`${obj.drinks[0].strDrink}`).addClass("has-text-weight-bold");
+    pEl = $('<p>').text(`${obj.drinks[0].strDrink}`).addClass("has-text-weight-bold is-size-4");
     containerEl.append(pEl)
 
     for( var i=1; i<=15; i++){
@@ -20,7 +20,7 @@ function renderCocktails(obj){
         containerEl.append(pEl)
     }
 
-    pEl = $('<p>').text(`Instructions: ${obj.drinks[0].strInstructions}`);
+    pEl = $('<p>').text(`${obj.drinks[0].strInstructions}`).addClass("has-text-weight-medium");
     containerEl.append(pEl)
 
     // middle.append(containerEl)

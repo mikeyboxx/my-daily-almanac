@@ -123,7 +123,8 @@ img {
 }
 .drink-image {
     width: 90px;
-    height: 90px;
+    height: 120px;
     float: right;
-    
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
 }

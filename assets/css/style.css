@@ -4,6 +4,7 @@ h1 {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .show {
     display: block;
 }
@@ -11,21 +12,36 @@ h1 {
 .hide {
     display: none;
 }
+=======
+/* to show menu items when user click hamburger menu */
+>>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .showMenu {
     display: block;
 }
+form *{
+    padding:10px;
+    margin: 4px;
+}
 label{
-    display: block;
+    display: inline;
 }
 #preferences *{
    padding: 10px;
    /* margin: 10px; */
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .navbar-brand, .navbar-tabs {
     flex-grow: 1;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .navbar h1{
     width: 100%;
     display: block;
@@ -64,7 +80,7 @@ label{
 
 #top {
     height: 100px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #middle {
@@ -93,4 +109,7 @@ img {
     float: right;
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
+}
+#preferences .formHeader{
+    text-align: center;
 }

@@ -27,7 +27,7 @@
     // return obj;
     // localStorage.setItem('userObj', JSON.stringify(obj));
     // getApiDataAndRender(obj);
-}
+
 
 async function secondTimeRender(obj){
     console.log(obj);
@@ -36,6 +36,8 @@ async function secondTimeRender(obj){
 
 async function getApiDataAndRender(obj){
     let resp = {};
+    console.log(obj.preferences);
+    $('#middle').empty();
 
     if (obj.preferences.findIndex((el)=>el === 'horoscope') !== -1){
         const options = {
@@ -98,7 +100,7 @@ async function getApiDataAndRender(obj){
             .catch(err => {console.error(err); return err});
     }
     
-    if (obj.preferences.findIndex((el)=>el === 'cocktails') !== -1){
+    if (obj.preferences.findIndex((el)=>el === 'cocktail') !== -1){
         await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
             .then(response => response.json())
             .then(response =>  {
@@ -133,10 +135,10 @@ function start(){
             archivedNotes: []
         };
         renderWelcomeDialog(userObj, true);
-        getApiDataAndRender(userObj);
-        console.log(userObj);
+        // getApiDataAndRender(userObj);
+        // console.log(userObj);
     } else {
-        renderWelcomeDialog(userObj);
+        // renderWelcomeDialog(userObj);
         getApiDataAndRender(userObj);
         console.log(userObj);
     }

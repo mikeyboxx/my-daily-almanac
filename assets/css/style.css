@@ -4,17 +4,7 @@ h1 {
     text-align: center;
 }
 
-<<<<<<< HEAD
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-=======
 /* to show menu items when user click hamburger menu */
->>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .showMenu {
     display: block;
 }
@@ -30,18 +20,10 @@ label{
    /* margin: 10px; */
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .navbar-brand, .navbar-tabs {
     flex-grow: 1;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d056b9f8d40987b6c171e1801f4cbe7c2708b7ff
 .navbar h1{
     width: 100%;
     display: block;

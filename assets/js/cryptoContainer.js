@@ -21,7 +21,7 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement)
         cryptoBodyElement.append(tableRowElement)
     }
-    return cryptoBodyElement;
+    //return cryptoBodyElement;
 
 //     //Object 0 - Coin 1 of 10
     

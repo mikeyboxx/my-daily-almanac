@@ -208,7 +208,6 @@ var userObj = start();
     // click on Edit Preferences link
         // display Edit Preference Dialog container
     // click on Archived Texts link
-}
 
 
     

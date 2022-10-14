@@ -37,7 +37,8 @@ function renderWelcomeDialog(obj, fromContainer){
     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
     // return obj;
-    // firstTimeRender(obj);
+    // localStorage.setItem('userObj', JSON.stringify(obj));
+    firstTimeRender(obj);
 }
 
 async function secondTimeRender(obj){
@@ -127,13 +128,14 @@ async function firstTimeRender(obj){
 
 
 function start(){
-    var userObj = JSON.parse(localStorage.getItem('userObj'));
+    let userObj = JSON.parse(localStorage.getItem('userObj'));
     
-    console.log('start');
     // first time
-    console.log(userObj);
     if (userObj === null){
-        userObj = {};
+        userObj = {
+            archivedNotes: []
+        };
+
         renderWelcomeDialog(userObj, 'welcome');
         console.log(userObj);
         firstTimeRender(userObj);
@@ -141,12 +143,19 @@ function start(){
     } else {
         secondTimeRender(userObj);
     }
-
+    
     return userObj;
 }
 
-console.log('hi');
-var userObj = start();
+
+
+
+// global
+// var archivedNotes = [];
+// var userObj = {};
+start();
+
+
 
 
 // USER INTERACTIONS

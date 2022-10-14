@@ -1,4 +1,4 @@
-var middle = $('#middle')
+// var middle = $('#middle')
 
 // let arr = resp.slice(0,15);    // take top 15 cryptos
 //     obj.crypto = arr;  // array
@@ -176,16 +176,18 @@ containerEl.append(pEl)
 pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
 containerEl.append(pEl)  
 
-    middle.append(containerEl)
+    return containerEl;
+    // middle.append(containerEl)
 }
 
 
-fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            renderCrypto(data); 
-        } )
-        .catch(err => {console.error(err); return err});
+
+// fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//             renderCrypto(data); 
+//         } )
+//         .catch(err => {console.error(err); return err});
     
     

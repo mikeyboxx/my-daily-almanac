@@ -17,6 +17,17 @@ h1 {
     height: 100px;
     /* font-size: 1.5em; */
 }
+/* .button {
+    margin: 150px 0 0 500px;
+} */
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+/* added comment */
 /* added comment */
 /* 
 #top, #menu {

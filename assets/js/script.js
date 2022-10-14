@@ -62,7 +62,7 @@ async function getApiDataAndRender(obj){
             .then(response => {
                     resp = response;
                     obj.horoscope = resp;
-                    let horoscopeEl =  renderHoroscope(obj.horoscope);
+                    let horoscopeEl =  renderHoroscope(obj);
                     $('#middle').append(horoscopeEl);
                 })
             .catch(err => {console.error(err); return err});

@@ -1,5 +1,3 @@
-// var middle = $('#middle')
-
 function renderCocktails(obj){
     let boxEl = $('<div>').addClass(" column is-half   ");
     let containerEl = $('<div>').addClass('middle-box box ');

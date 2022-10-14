@@ -121,3 +121,9 @@ img {
     height: 50px;
     /* object-fit: cover; */
 }
+.drink-image {
+    width: 90px;
+    height: 90px;
+    float: right;
+    
+}

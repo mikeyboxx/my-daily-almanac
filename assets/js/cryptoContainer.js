@@ -16,7 +16,18 @@ function renderCrypto(obj){
     trEl = $('<tr>');
     thEl = $('<th>').text('Crypto Coin');
     $(trEl).append(thEl);
-    //....
+    
+    trEl = $('<tr>');
+    thEl = $('<th>').text('Market Cap Rank');
+    $(trEl).append(thEl);
+
+    trEl = $('<tr>');
+    thEl = $('<th>').text('Current Market Price');
+    $(trEl).append(thEl);
+
+    trEl = $('<tr>');
+    thEl = $('<th>').text('Price Change in Last 24 Hours');
+    $(trEl).append(thEl);
 
     let theadEl = $('<thead>').append(trEl);
     $(tableEl).append(theadEl);
@@ -28,13 +39,12 @@ function renderCrypto(obj){
         var tableDataElement = $("<td>").append($('<img>').attr("src", obj[i].image))
         tableRowElement.append(tableDataElement)
         tableDataElement = $("<td>").text(obj[i].name);
-        
         tableRowElement.append(tableDataElement)
-        tableDataElement = $("<td>").text(`Market Cap Rank: ${obj[i].market_cap_rank}`);
+        tableDataElement = $("<td>").text(obj[i].market_cap_rank);
         tableRowElement.append(tableDataElement)
-        tableDataElement = $("<td>").text(`Current Market Price: ${obj[i].current_price}`);
+        tableDataElement = $("<td>").text(obj[i].current_price);
         tableRowElement.append(tableDataElement)
-        tableDataElement = $("<td>").text(`Price Change in Last 24 hours: ${obj[i].price_change_24h}`);
+        tableDataElement = $("<td>").text(obj[i].price_change_24h);
         tableRowElement.append(tableDataElement)
         cryptoBodyElement.append(tableRowElement)
     }

@@ -37,7 +37,7 @@ function renderWelcomeDialog(obj, fromContainer){
     obj.preferences = ['horoscope', 'weather', 'crypto', 'recipes', 'bored', 'cocktails']; 
     
     // return obj;
-    // firstTimeRender(obj);
+    firstTimeRender(obj);
 }
 
 async function secondTimeRender(obj){
@@ -92,9 +92,12 @@ async function firstTimeRender(obj){
         .then(response => resp = response)
         .catch(err => {console.error(err); return err});
 
-        obj.crypto = resp;  
-        let cryptoEl = renderCrypto(obj.crypto);
-        $('#middle').append(cryptoEl);
+    let arr = resp.slice(0,15);    // take top 15 cryptos
+    obj.crypto = arr;  // array
+    let cryptoEl = renderCrypto(obj.crypto);
+    
+    $('#middle').append(cryptoEl);
+   
 
 
 
@@ -120,7 +123,7 @@ async function firstTimeRender(obj){
     $('#middle').append(cocktailEl);
     // save to local storage
     // localStorage.setItem('userObj', JSON.stringify(obj));
-    // renderTextPad(obj);
+    renderTextPad(obj);
 }
 
 
@@ -131,19 +134,20 @@ function start(){
     // first time
     console.log(userObj);
     if (userObj === null){
-        userObj = {};
+        userObj = {
+            archivedNotes: []
+        };
         renderWelcomeDialog(userObj, 'welcome');
         console.log(userObj);
-        firstTimeRender(userObj);
+        // firstTimeRender(userObj);
         
     } else {
-        secondTimeRender(userObj);
+        firstTimeRender(userObj);
     }
 
     return userObj;
 }
 
-console.log('hi');
 var userObj = start();
 
 

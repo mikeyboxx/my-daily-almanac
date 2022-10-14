@@ -28,41 +28,51 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation" >
         <div class="navbar-brand" id="top">
-            <a class="navbar-item" href="#!">
-                <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
-            </a>
-            
+            <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
+            <h1>My Daily Almanac</h1>
             <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
-        <h1>My Daily Almanac</h1>
-
         <!-- title and a drop-down menu   -->
         <div id="menu" class="has-dropdown navbar-menu custom-navbar-menu" >
-            <div class="navbar-end"></div>
             <div class="navbar-item is-hoverable navbar-end"  >
-                <a id="edit-preferences">Edit preferences</a>
-                <a class="navbar-link">Archived Notes</a>
-                <!-- the dropdown items will be generated in javascript -->
+                <a id="edit-preferences">
+                    Edit preferences 
+                </a>
+                <a class="navbar-link">
+                    Archived Notes
+                </a>
                 <div class="navbar-dropdown">
-                    <a class="navbar-item">13-Oct-2022</a>
-                    <a class="navbar-item">12-Oct-2022</a>
-                    <a class="navbar-item">11-Oct-2022</a>
-                    <a class="navbar-item">10-Oct-2022</a>
-                    <a class="navbar-item">09-Oct-2022</a>
-                    <a class="navbar-item">08-Oct-2022</a>
-                    <a class="navbar-item">07-Oct-2022</a>
+                    <a class="navbar-item">
+                        10-13-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-12-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-11-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-10-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-09-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-08-2022
+                    </a>
+                    <a class="navbar-item">
+                        10-07-2022
+                    </a>
                     <hr class="navbar-divider">
                     <a class="navbar-item" id="new-user">New user</a>
                 </div>
             </div>
         </div>
     </nav>
-    
     <form  class="modal modal-background" id="preferences">
         <div class="modal-card">
             <header class="modal-card-head">
@@ -71,13 +81,28 @@
             </header>
             <section class="modal-card-body">
                 <label>Enter your Name<input type="text" id="name"></label>
-                <label>Select your Date of birth<input type="date" id="dob"></label>
+                <!-- <label>Select your Date of birth<input type="date" id="dob"></label> -->
+                <label>Select your pet<select name="pets" id="pets">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="none">none</option>
+                  </select></label>
+                  <label>Select your favorite cuisine<select name="cuisine" id="cuisine">
+                    <option value="italian">Italian</option>
+                    <option value="french">French</option>
+                    <option value="mediterranean ">Mediterranean </option>
+                  </select></label>
+                  <label>Select your Zodiac sign<select name="Zodiac" id="Zodiac">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select></label>
                 <label>Select your preferences</label>
-                <label><input type="checkbox" id="Horoscope">Horoscope</label>
-                <label><input type="checkbox" id="Cocktail">Cocktail</label>
-                <label><input type="checkbox" id="Weather">Weather</label>
-                <label><input type="checkbox" id="Recipes">Recipes</label>
-                <label><input type="checkbox" id="Pet">Pet</label>
+                <label><input type="checkbox" id="horoscope">Horoscope</label>
+                <label><input type="checkbox" id="cocktail">Cocktail</label>
+                <label><input type="checkbox" id="weather">Weather</label>
+                <label><input type="checkbox" id="recipes">Recipes</label>
+                <label><input type="checkbox" id="pet">Pet</label>
                 <button class="button is-success" id="save">Save changes</button>
                 <button class="button">Cancel</button>
             </section>
@@ -86,11 +111,11 @@
 
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="section columns is-multiline " >
-        <!-- <div class="middle-box columns">
-            <div class="columns" id="weatherCardsContainer"> -->
+        <div class="middle-box columns">
+            <div class="columns" id="weatherCardsContainer">
                 <!-- to be generated in javascript -->
-            <!-- </div>
-        </div> -->
+            </div>
+        </div>
 
     </div>
     
@@ -101,13 +126,13 @@
             <div class="column title">My Thought</div>
             <div class="column title" id="currentDay"></div>
             <div class="column">
-                <button class="button is-danger bd-notification is-medium" id="save" type="button">SAVE</button>
+                <button class="button is-danger bd-notification is-medium" id="saveTextPad" type="submit">SAVE</button>
             </div>
         </div>
         <div class="columns is-centered">
             <div class="column">
                 <div class="control">
-                    <textarea class="textarea is-large has-fixed-size" placeholder="Write what you are thinking here!"></textarea>
+                    <textarea class="textarea is-large has-fixed-size" id="textPad" placeholder="Write what you are thinking here!"></textarea>
                 </div>
             </div>
         </div>

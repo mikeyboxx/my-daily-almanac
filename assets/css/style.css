@@ -186,11 +186,17 @@ h2{
     margin: 0;
     border: 0;
     font-family: 'EB Garamond', serif;
+    font-size: large;
+    text-align: center;
 }
 
-.column.title{
+.column-title{
     margin: 0;
     border: 0;
+}
+
+div.column.title{
+    text-align: center;
 }
 
 #form {
@@ -201,6 +207,14 @@ h2{
     border:0cm;
   } */
 
-#edit-preferences, #cuisin, #name, #zodiac, #save, #cancel, #notes, #saveNotes{
+ #name {
+    border: 1px solid black;
+ } 
+
+#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
     font-family: 'EB Garamond', serif;
 }  
+
+.is-justify-content-end{
+justify-content: center;
+}

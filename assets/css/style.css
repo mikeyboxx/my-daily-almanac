@@ -80,8 +80,9 @@ form *{
 }
 
 img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+    padding: 1px;
     /* object-fit: cover; */
 }
 .drink-image {
@@ -90,4 +91,25 @@ img {
     float: right;
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
+}
+#preferences .formHeader{
+    text-align: center;
+}
+
+.api-card {
+    background: linear-gradient(208.8deg, rgba(61, 249, 204, 0.2) 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.table td {
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+
+}
+.table th {
+    padding: 1px;
+    vertical-align: bottom;
 }

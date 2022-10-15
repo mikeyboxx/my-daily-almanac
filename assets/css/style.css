@@ -193,17 +193,14 @@ h2{
     border: 0;
 }
 
-#saveNotes{
-    font-family: 'EB Garamond', serif;
-}
-
-#notes{
-    font-family: 'EB Garamond', serif;
-}
 #form {
     margin: 20vh auto;
   }
-
+/* 
 #form input {
     border:0cm;
-  }
+  } */
+
+#edit-preferences, #cuisin, #name, #zodiac, #save, #cancel, #notes, #saveNotes{
+    font-family: 'EB Garamond', serif;
+}  

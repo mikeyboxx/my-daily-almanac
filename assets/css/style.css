@@ -17,7 +17,7 @@
 #top *{
     margin: 0px;
     padding: 15px;
-    background-color: rgb(230 226 230);
+    background-color: #e6e3e6;
     border-radius: 0px 0px 5px 5px;
 }
 
@@ -56,8 +56,13 @@ form *{
 }
 
 #logo{
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 90px;
+    padding: 0px;
+}
+
+#preferences .formHeader{
+    text-align: center;
 }
 
 @media screen and (min-width: 800px){
@@ -110,9 +115,7 @@ img {
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
 }
-#preferences .formHeader{
-    text-align: center;
-}
+
 
 .api-card {
     background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
@@ -176,7 +179,7 @@ h2{
 }
 
 #notes{
-    padding 0;
+    padding: 0;
 }
 
 #currentDay{
@@ -197,3 +200,10 @@ h2{
 #notes{
     font-family: 'EB Garamond', serif;
 }
+#form {
+    margin: 20vh auto;
+  }
+
+#form input {
+    border:0cm;
+  }

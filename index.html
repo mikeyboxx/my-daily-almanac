@@ -67,8 +67,8 @@
                     <a class="navbar-item">
                         10-07-2022
                     </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" id="new-user">New user</a>
+                    <!-- <hr class="navbar-divider">
+                    <a class="navbar-item" id="new-user">New user</a> -->
                 </div>
             </div>
         </div>
@@ -76,55 +76,59 @@
     <form  class="modal modal-background" id="preferences">
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Enter your Details</p>
+                <p  class="modal-card-title formHeader">Welcome to my daily Almanac</p>
+                <!-- <p class="modal-card-title formHeader">Enter your Details</p> -->
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <label for="name">Enter your Name</label>
-                <input type="text" id="name">
-                <!-- <label>Select your Date of birth<input type="date" id="dob"></label> -->
+                <input type="text" id="name"><br>
+                <!-- <label>Select your Date of birth<input type="date" id="dob"></label>
                 <label for="pets">Select your pet</label>
-                <select name="pets" id="pets">
+                 <select name="pets" id="pets">
                     <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
                     <option value="none">none</option>
-                </select>
+                </select><br> -->
                 <label for="cuisine">Select your favorite cuisine</label>
                 <select name="cuisine" id="cuisine">
                     <option value="italian">Italian</option>
                     <option value="french">French</option>
-                    <option value="mediterranean ">Mediterranean </option>
-                </select>
+                    <option value="mediteranean ">Mediteranean </option>
+                </select><br>
                 <label for="zodiac">Select your Zodiac sign</label>
                 <select name="Zodiac" id="zodiac">
                     <!-- options will be generated in javascript -->
-                </select>
+                </select><br>
                 <p>Select your preferences<p>
-                <label for="horoscope">Horoscope</label>
                 <input type="checkbox" id="horoscope" value="Horoscope">
+                <label for="horoscope">Horoscope</label>
 
-                <label for="cocktail">Cocktail</label>
                 <input type="checkbox" id="cocktail" value="Cocktail">
+                <label for="cocktail">Cocktail</label>
 
-                <label for="weather">Weather</label>
                 <input type="checkbox" id="weather" value="Weather">
-                
-                <label for="recipes">Recipes</label>
-                <input type="checkbox" id="recipes" value="Recipes">
+                <label for="weather">Weather</label>
 
+                <input type="checkbox" id="crypto" value="crypto">
+                <label for="crypto">Crypto</label>
+                
+                <!-- <label for="recipes">Recipes</label>
+                <input type="checkbox" id="recipes" value="Recipes"> -->
+<!-- 
                 <label for="pet">Pet</label>
-                <input type="checkbox" id="pet" value="Pet">
+                <input type="checkbox" id="pet" value="Pet"><br> -->
                 <!-- first time hide cancel button, save button preferably should have different text -->
                 <!-- second time save button preferably should have Save Changes as text -->
                 <button class="button is-success" id="save">Save changes</button>
-                <button class="button">Cancel</button>
+                <button class="button" id="cancel">Cancel</button>
             </section>
         </div>
     </form>
 
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="section columns is-multiline " >
-                <!-- to be generated in javascript -->
+       
     </div>
 
     <!-- <table id = crypto-table class="table">

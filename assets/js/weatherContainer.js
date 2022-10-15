@@ -2,7 +2,7 @@ function renderWeather(obj){
     console.log(obj);
 
     let boxEl = $('<div>').addClass("column is-half  ");
-    let weatherEl = $('<div>').addClass('box middle-box Frank');
+    let weatherEl = $('<div>').addClass('box middle-box api-card');
     let cardContainerEl = $('<div>').addClass('columns');
     
     let ctr = 0;

@@ -1,22 +1,22 @@
 // made a for loop to populate data dynamically on top 10 crypto coins in a hardcoded table using bulma 
 function renderCrypto(obj){
     var cryptoBodyElement = $('<tbody>').attr('id', 'crypto-body');
-    let boxEl = $('<div>').addClass('column  is-half');
+    let boxEl = $('<div>').addClass('column is-half');
     let containerEl = $('<div>').addClass('middle-box box');
-    let tableEl = $('<table>').addClass('table');
+    let tableEl = $('<table>').addClass('table is-striped');
     tableEl.attr('id', 'crypto-table');
 
     let trEl = $('<tr>');
-    let thEl = $('<th>').text('Crypto Image');
+    let thEl = $('<th>').text('Crypto ').css("padding-right", "1px");
     trEl.append(thEl);
 
-    thEl = $('<th>').text('Crypto Coin');
+    thEl = $('<th>').text('Coin');
     trEl.append(thEl);
     
-    thEl = $('<th>').text('Current Market Price');
+    thEl = $('<th>').text('Current Market Price').css("text-align", "right");
     trEl.append(thEl);
 
-    thEl = $('<th>').text('Price Change in Last 24hrs');
+    thEl = $('<th>').text('Price Change in Last 24hrs').css("text-align", "right");
     trEl.append(thEl);
 
     let theadEl = $('<thead>').append(trEl);
@@ -32,11 +32,11 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement);
 
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].current_price));
-        tableDataElement = $("<td>").text(n);
+        tableDataElement = $("<td>").text(n).css("text-align", "right");
         tableRowElement.append(tableDataElement);
         
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].price_change_24h));
-        tableDataElement = $("<td>").text(n);
+        tableDataElement = $("<td>").text(n).css("text-align", "right");
        
         tableRowElement.append(tableDataElement);
         cryptoBodyElement.append(tableRowElement);

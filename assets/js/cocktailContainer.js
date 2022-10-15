@@ -1,6 +1,6 @@
 function renderCocktails(obj){
     let boxEl = $('<div>').addClass(" column is-half   ");
-    let containerEl = $('<div>').addClass('middle-box box Frank');
+    let containerEl = $('<div>').addClass('middle-box box api-card');
     var  pEl = $('<img>').attr("src", obj.drinks[0].strDrinkThumb).addClass("drink-image ");
     containerEl.append(pEl);
     

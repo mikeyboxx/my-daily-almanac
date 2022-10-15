@@ -171,24 +171,35 @@ h2{
     margin: 0;
     border: 0;
     font-family: 'EB Garamond', serif;
+    font-size: large;
+    text-align: center;
 }
 
-.column.title{
+.column-title{
     margin: 0;
     border: 0;
 }
 
-#saveNotes{
-    font-family: 'EB Garamond', serif;
+div.column.title{
+    text-align: center;
 }
 
-#notes{
-    font-family: 'EB Garamond', serif;
-}
 #form {
     margin: 20vh auto;
   }
-
+/* 
 #form input {
     border:0cm;
-  }
+  } */
+
+ #name {
+    border: 1px solid black;
+ } 
+
+#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
+    font-family: 'EB Garamond', serif;
+}  
+
+.is-justify-content-end{
+justify-content: center;
+}

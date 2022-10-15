@@ -26,18 +26,15 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation" >
-        <div class="navbar-brand" id="top">
-            <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
+    <nav class="navbar" role="navigation" aria-label="main navigation" id="top">
+        <div class="navbar-brand">
+            <img src="./assets/images/Logo.png" id="logo" alt="this is a man with a book for a head">
             <h1>My Daily Almanac</h1>
-            <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
+            <!-- <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <!-- title and a drop-down menu   -->
-        <div id="menu" class="has-dropdown navbar-menu custom-navbar-menu" >
+            </a> -->
             <div class="navbar-item is-hoverable navbar-end"  >
                 <a id="edit-preferences">
                     Edit preferences 
@@ -48,11 +45,9 @@
         </div>
     </nav>
     <form  class="modal modal-background" id="preferences">
-        <div class="modal-card">
+        <div class="modal-card is-align-content-center" id="form">
             <header class="modal-card-head">
-                <p  class="modal-card-title formHeader">Welcome to my daily Almanac</p>
-                <!-- <p class="modal-card-title formHeader">Enter your Details</p> -->
-                <button class="delete" aria-label="close"></button>
+                <p  class="modal-card-title formHeader has-text-centered">Welcome to my daily Almanac</p>
             </header>
             <section class="modal-card-body">
                 <label for="name">Enter your Name</label>
@@ -68,11 +63,10 @@
                 <select name="cuisine" id="cuisine">
                     <option value="italian">Italian</option>
                     <option value="french">French</option>
-                    <option value="mediteranean ">Mediteranean </option>
+                    <option value="mediteranean">Mediteranean </option>
                 </select><br>
                 <label for="zodiac">Select your Zodiac sign</label>
                 <select name="Zodiac" id="zodiac">
-                    <!-- options will be generated in javascript -->
                 </select><br>
                 <p>Select your preferences<p>
                 <input type="checkbox" id="horoscope" value="Horoscope">
@@ -85,15 +79,13 @@
                 <label for="weather">Weather</label>
 
                 <input type="checkbox" id="crypto" value="crypto">
-                <label for="crypto">Crypto</label>
+                <label for="crypto">Crypto</label><br>
                 
                 <!-- <label for="recipes">Recipes</label>
-                <input type="checkbox" id="recipes" value="Recipes"> -->
-<!-- 
+                <input type="checkbox" id="recipes" value="Recipes">
                 <label for="pet">Pet</label>
                 <input type="checkbox" id="pet" value="Pet"><br> -->
-                <!-- first time hide cancel button, save button preferably should have different text -->
-                <!-- second time save button preferably should have Save Changes as text -->
+
                 <button class="button is-success" id="save">Save changes</button>
                 <button class="button" id="cancel">Cancel</button>
             </section>
@@ -104,7 +96,6 @@
     <div id="middle" class="section columns is-multiline " >
        <!-- to be generated in javascript -->
     </div>
-
 
     <!-- this will contain the text-pad  -->
     <div class="section" id="bottom">

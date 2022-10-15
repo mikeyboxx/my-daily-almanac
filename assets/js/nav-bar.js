@@ -62,6 +62,8 @@ var zodiacGroup=[
      }
 ]
 
+
+// to create zodiac dropdwn menu
 var zodiacEl = document.getElementById("zodiac");
 for(var i=0;i<12;i++){
      var option = document.createElement("option");
@@ -70,12 +72,12 @@ for(var i=0;i<12;i++){
      zodiacEl.add(option);
 }
 
-// var userObj={};
-var navBtn=document.getElementById("btn");
-var menu = document.getElementById("menu");
+// getting elements from DOM
+
+//var navBtn=document.getElementById("btn");
+//var menu = document.getElementById("menu");
 var preferencesForm = document.getElementById("preferences");
 var editPreferencesForm = document.getElementById("edit-preferences");
-//var newUserForm = document.getElementById("new-user");
 var user=document.getElementById("name");
 var cuisine=document.getElementById("cuisine");
 var zodiacDropdown=document.getElementById("zodiac");
@@ -90,228 +92,143 @@ var preferenceArray;
 
 
 // eventlistner for hamburgur menu
-navBtn.addEventListener("click",function(){
-    if(menu.classList.contains("showMenu")){
-          menu.classList.remove("showMenu");//remove the class showmenu from menu element
-    }
-    else {
-          menu.classList.add("showMenu");//add the class showmenu to menu element
-    }
-});
+
+// navBtn.addEventListener("click",function(){
+//     if(menu.classList.contains("showMenu")){
+//           menu.classList.remove("showMenu");//remove the class showmenu from menu element
+//     }
+//     else {
+//           menu.classList.add("showMenu");//add the class showmenu to menu element
+//     }
+// });
 
 
-     // $( "#new-user" ).on( "click", function() {
-     //      preferencesForm.style.display="block";
-     //      menu.classList.remove("showMenu");
-     // });
-    //  editPreferencesForm.addEventListener( "click", function() {
-    //       preferencesForm.style.display="block";
-    //       cancelBtn.style.visibility = 'visible';
-          
-    //       document.getElementById("name").disabled=true;
-    //       document.getElementById("zodiac").disabled=true;
-    //       // document.getElementById("name").visibility=hidden;
-    //       // document.getElementById("Zodiac").disabled=true;
-    //       menu.classList.remove("showMenu");
-    //  });
-     // firstTime = false
-     function renderWelcomeDialog(obj, firstTime = false){
-        //alert(firstTime);
+function renderWelcomeDialog(obj, firstTime = false){
         var editPreferencesCancelHandler = function(event) {
-            event.preventDefault();
-            preferencesForm.style.display="none";
-        };
+        event.preventDefault();
+        preferencesForm.style.display="none";
+};
+
 
         var editPreferencesFormHandler = function(obj, event) {
-                //console.dir(obj);
                 event.preventDefault();
-                menu.classList.remove("showMenu");
+                preferencesForm.style.display="block";
+                cancelBtn.style.visibility = 'visible';
+                let userName=obj.userName;
+                user.value=userName;
+                user.disabled=true;
+                zodiacDropdown.disabled=true;
+                let cuisineSel=obj.cuisine;
 
-            preferencesForm.style.display="block";
-            cancelBtn.style.visibility = 'visible';
-
-            //var userObj = JSON.parse(localStorage.getItem('userObj'));
-            let userName=obj.userName;
-            user.value=userName;
-            user.disabled=true;
-            zodiacDropdown.disabled=true;
-            let cuisineSel=obj.cuisine;
-            //alert(cuisineSel);
-            if(cuisineSel==="italian"){
-                cuisine.selectedIndex = 0;
-            }
-            if(cuisineSel==="french"){
-                cuisine.selectedIndex = 1;
-            }
-            if(cuisineSel==="mediteranean"){
-                cuisine.selectedIndex = 2;
-            }
-            let zodiacSel=obj.zodiacSign;
-            //alert(((zodiacGroup[0].name).toLowerCase()));
-            for(var j=0;j<zodiacGroup.length;j++){
-                //alert(((zodiacGroup[j].name).toLowerCase()).trim());
-                if(((zodiacGroup[j].name).toLowerCase()).trim()===zodiacSel){
-                        let zodiacIndex=zodiacGroup[j].index;
-                        zodiacDropdown.selectedIndex = zodiacIndex;
+                if(cuisineSel==="italian"){
+                        cuisine.selectedIndex = 0;
                 }
-            }
-            //zodiac.value=zodiac;
-            console.dir(zodiacSel);
-            //console.dir(userObj.preferences);
-            for(var i=0;i<obj.preferences.length;i++){
-                if(obj.preferences[i]==="horoscope"){
-                        horoscope.checked=true;
+
+                if(cuisineSel==="french"){
+                        cuisine.selectedIndex = 1;
                 }
-                if(obj.preferences[i]==="cocktail"){
-                        cocktail.checked=true;
+
+                if(cuisineSel==="mediteranean"){
+                        cuisine.selectedIndex = 2;
                 }
-                if(obj.preferences[i]==="weather"){
-                        weather.checked=true;
+
+                let zodiacSel=obj.zodiacSign;
+                for(var j=0;j<zodiacGroup.length;j++){
+                        if(((zodiacGroup[j].name).toLowerCase()).trim()===zodiacSel){
+                                let zodiacIndex=zodiacGroup[j].index;
+                                zodiacDropdown.selectedIndex = zodiacIndex;
+                        }
                 }
-                if(obj.preferences[i]==="crypto"){
-                        crypto.checked=true;
+
+                for(var i=0;i<obj.preferences.length;i++){
+                        if(obj.preferences[i]==="horoscope"){
+                                horoscope.checked=true;
+                        }
+                        if(obj.preferences[i]==="cocktail"){
+                                cocktail.checked=true;
+                        }
+                        if(obj.preferences[i]==="weather"){
+                                weather.checked=true;
+                        }
+                        if(obj.preferences[i]==="crypto"){
+                                crypto.checked=true;
+                        }
                 }
-            }
-
-        //     let userName=userObj.userName;
-        //     user.val(userName);
-        //     let userName=userObj.userName;
-        //     user.val(userName);
-        //     let userName=userObj.userName;
-        //     user.val(userName);
-
-        //console.dir(userObj);
-            //console.log(obj.preferences);
-            // read obj.preferences and restore checkbox values
-
-
-
-            // document.getElementById("name").visibility=hidden;
-            // document.getElementById("Zodiac").disabled=true;
 
         };
 
         var saveBtnHandler = function (obj, event ){
-            event.preventDefault();
-            var userName=document.getElementById("name").value;
-            var cuisine=document.getElementById("cuisine").value;
-            var zodiac=document.getElementById("zodiac").value;
-            preferenceArray=[];
-            if ($('#horoscope').is(":checked")) {
-                    preferenceArray.push("horoscope");
-            }
-            if ($('#cocktail').is(":checked")) {
-                    preferenceArray.push("cocktail");
-            }
-            if ($('#weather').is(":checked")) {
-                    preferenceArray.push("weather");
-            }
-            if ($('#recipes').is(":checked")) {
-                    preferenceArray.push("recipes");
-            }
-            if ($('#crypto').is(":checked")) {
-                    preferenceArray.push("crypto");
-            }
-            //console.log(preferenceArray);
-            let icon = '';
-            //console.log(zodiac);
-            zodiac = zodiac.toLowerCase();
-            switch (zodiac) {
-                case 'aries' :  icon = '♈️';
-                        break;
-                case 'taurus' : icon = '♉️';
-                        break;
-                case 'aquarius' :  icon = '♒️';
-                        break;
-                case 'capricorn' :  icon = '♑️';
-                        break;
-                case 'cancer' :  icon = '♋️';
-                        break;
-                case 'leo' :  icon = '♌️';
-                        break;
-                case 'virgo' :  icon = '♍️';
-                        break;
-                case 'libra' :  icon = '♎️';
-                        break;
-                case 'scorpio' :  icon = '♏️';
-                        break;
-                case 'sagitarius' :  icon = '♐️';
-                        break;
-                case 'pisces' :  icon = '♓️';
-                        break;
-                case 'gemini' :  icon = '♊️';
-                        break;
-            }
+                event.preventDefault();
+                var userName=document.getElementById("name").value;
+                var cuisine=document.getElementById("cuisine").value;
+                var zodiac=document.getElementById("zodiac").value;
+                preferenceArray=[];
 
-            obj.userName =  userName;
-            obj.cuisine = cuisine;
-            obj.zodiacSign =  zodiac;
-            obj.zodiacIcon = icon;
-            obj.preferences = preferenceArray;
+                if ($('#horoscope').is(":checked")) {
+                        preferenceArray.push("horoscope");
+                }
+                if ($('#cocktail').is(":checked")) {
+                        preferenceArray.push("cocktail");
+                }
+                if ($('#weather').is(":checked")) {
+                        preferenceArray.push("weather");
+                }
+                if ($('#recipes').is(":checked")) {
+                        preferenceArray.push("recipes");
+                }
+                if ($('#crypto').is(":checked")) {
+                        preferenceArray.push("crypto");
+                }
 
-            getApiDataAndRender(obj);
-            preferencesForm.style.display="none";
+                let icon = '';
+                zodiac = zodiac.toLowerCase();
+                switch (zodiac) {
+                        case 'aries' :  icon = '♈️';
+                                break;
+                        case 'taurus' : icon = '♉️';
+                                break;
+                        case 'aquarius' :  icon = '♒️';
+                                break;
+                        case 'capricorn' :  icon = '♑️';
+                                break;
+                        case 'cancer' :  icon = '♋️';
+                                break;
+                        case 'leo' :  icon = '♌️';
+                                break;
+                        case 'virgo' :  icon = '♍️';
+                                break;
+                        case 'libra' :  icon = '♎️';
+                                break;
+                        case 'scorpio' :  icon = '♏️';
+                                break;
+                        case 'sagitarius' :  icon = '♐️';
+                                break;
+                        case 'pisces' :  icon = '♓️';
+                                break;
+                        case 'gemini' :  icon = '♊️';
+                                break;
+                }
+
+                obj.userName =  userName;
+                obj.cuisine = cuisine;
+                obj.zodiacSign =  zodiac;
+                obj.zodiacIcon = icon;
+                obj.preferences = preferenceArray;
+
+                getApiDataAndRender(obj);
+                preferencesForm.style.display="none";
         }
-        
-        
+
+
         $(saveBtn).on('click', saveBtnHandler.bind(this, obj));
         $(cancelBtn).on('click', editPreferencesCancelHandler);
         $(editPreferencesForm).on('click', editPreferencesFormHandler.bind(this, obj));
-        
+
         if (firstTime){
-            preferencesForm.style.display="block";
-            cancelBtn.style.visibility = 'hidden';
+                preferencesForm.style.display="block";
+                cancelBtn.style.visibility = 'hidden';
         }
 
-            
-     }
+        
+}
      
-     //firstTimeRender(userObj);
-     // saveBtn.addEventListener( "click", function() {
-     //      var userName=document.getElementById("name").value;
-     //      var pet=document.getElementById("pets").value;
-     //      var cuisine=document.getElementById("cuisine").value;
-     //      var Zodiac=document.getElementById("zodiac").value;
-     //      var preferenceArray=[];
-     //      if ($('#horoscope').is(":checked")) {
-     //           preferenceArray.push("horoscope");
-     //       }
-     //      if ($('#cocktail').is(":checked")) {
-     //           preferenceArray.push("cocktail");
-     //       }
-     //      if ($('#weather').is(":checked")) {
-     //           preferenceArray.push("weather");
-     //       }
-     //      if ($('#recipes').is(":checked")) {
-     //           preferenceArray.push("recipes");
-     //       }
-     //      if ($('#pet').is(":checked")) {
-     //           preferenceArray.push("pet");
-     //       }
-     //       //alert(preferenceArray);
-     //       userObj=[
-     //                {
-     //                "username":userName,
-     //                "pet":pet,
-     //                "cuisine":cuisine,
-     //                "Zodiac":Zodiac,
-     //                "preferences":preferenceArray
-     //                }
-     //      ]
-     //      localStorage.setItem('userObj',JSON.stringify(userObj));
-     //      firstTimeRender(userObj);
-     //      //alert(cuisine);
-     //      // var Horoscope=document.getElementById("Horoscope");
-     //      // alert(Horoscope);
-
-     // });
-     // preferencesForm.style.display="block";
-     // menu.classList.remove("showMenu");
-// var userObj = JSON.parse(localStorage.getItem('userObj'));
-// if(userObj===null){
-//      preferencesForm.style.display="block";
-// }
-     // newUserForm.addEventListener( "click", function() {
-     //      preferencesForm.style.display="block";
-     //      menu.classList.remove("showMenu");
-     // });

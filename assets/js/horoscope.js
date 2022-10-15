@@ -1,7 +1,6 @@
 function renderHoroscope(obj){
-    console.log('horoscope');
     let containerEl = $('<div>').addClass(" column is-half");
-    let boxEl = $('<div>').addClass("horoscope-card box middle-box");
+    let boxEl = $('<div>').addClass("horoscope-card box middle-box api-card");
 
     var hEl = $('<h3>').text(obj.zodiacIcon + obj.zodiacSign).addClass("horoscope-heading is-capitalized has-text-centered is-size-4 has-text-weight-bold");
     boxEl.append(hEl);

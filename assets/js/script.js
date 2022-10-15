@@ -36,7 +36,7 @@ async function secondTimeRender(obj){
 
 async function getApiDataAndRender(obj){
     let resp = {};
-    console.log(obj.preferences);
+
     $('#middle').empty();
 
     if (obj.preferences.findIndex((el)=>el === 'horoscope') !== -1){
@@ -128,24 +128,21 @@ async function getApiDataAndRender(obj){
 
 function start(){
     let userObj = JSON.parse(localStorage.getItem('userObj'));
-    
     // first time
     if (userObj === null){
         userObj = {
             archivedNotes: []
+            
         };
         renderWelcomeDialog(userObj, true);
-        // getApiDataAndRender(userObj);
-        // console.log(userObj);
     } else {
-        console.log(userObj);
-        renderWelcomeDialog(userObj);
+        renderWelcomeDialog(userObj, false);
         getApiDataAndRender(userObj);
     }
 }
 
 
-start();
+var globalUserObject = start();
 
 
 // USER INTERACTIONS

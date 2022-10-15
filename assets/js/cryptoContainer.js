@@ -1,15 +1,9 @@
 // made a for loop to populate data dynamically on top 10 crypto coins in a hardcoded table using bulma 
 function renderCrypto(obj){
-<<<<<<< HEAD
-    let boxEl = $('<div>').addClass('column  is-half');
-    let containerEl = $('<div>').addClass('middle-box box ');
-    let tableEl = $('<table>').addClass('table');
-=======
     var cryptoBodyElement = $('<tbody>').attr('id', 'crypto-body');
     let boxEl = $('<div>').addClass('column is-half');
     let containerEl = $('<div>').addClass('middle-box box');
     let tableEl = $('<table>').addClass('table is-striped');
->>>>>>> 57a3cb51879f48d7f71d084d34b02e8bc89b1fc1
     tableEl.attr('id', 'crypto-table');
 
     let trEl = $('<tr>');

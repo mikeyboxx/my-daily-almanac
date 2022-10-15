@@ -54,6 +54,7 @@ var zodiacEl = document.getElementById("zodiac");
 for(var i=0;i<12;i++){
      var option = document.createElement("option");
      option.text = zodiac[i].name;
+     //option.text = zodiac[i].name+zodiac[i].date;
      zodiacEl.add(option);
 }
 
@@ -63,6 +64,13 @@ var menu = document.getElementById("menu");
 var preferencesForm = document.getElementById("preferences");
 var editPreferencesForm = document.getElementById("edit-preferences");
 //var newUserForm = document.getElementById("new-user");
+var user=document.getElementById("name");
+var cuisine=document.getElementById("cuisine");
+var zodiac=document.getElementById("zodiac");
+var horoscope=document.getElementById("horoscope");
+var cocktail=document.getElementById("cocktail");
+var weather=document.getElementById("weather");
+var crypto=document.getElementById("crypto");
 var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
 var preferenceArray;
@@ -94,17 +102,46 @@ navBtn.addEventListener("click",function(){
     //  });
      // firstTime = false
      function renderWelcomeDialog(obj, firstTime = false){
+        //alert(firstTime);
         var editPreferencesCancelHandler = function(event) {
             event.preventDefault();
             preferencesForm.style.display="none";
         };
 
         var editPreferencesFormHandler = function(obj, event) {
-            event.preventDefault();
+                event.preventDefault();
             preferencesForm.style.display="block";
             cancelBtn.style.visibility = 'visible';
-          //   var userObj = JSON.parse(localStorage.getItem('userObj'));
-          //   console.log("from local storage"+userObj);
+            var userObj = JSON.parse(localStorage.getItem('userObj'));
+            let userName=userObj.userName;
+            user.value=userName;
+            let zodiac=userObj.zodiacSign;
+            zodiac.value=zodiac;
+            let cuisine=userObj.cuisine;
+            cuisine.value=cuisine;
+            //console.dir(userObj.preferences);
+            for(var i=0;i<userObj.preferences.length;i++){
+                if(userObj.preferences[i]==="horoscope"){
+                        horoscope.checked=true;
+                }
+                if(userObj.preferences[i]==="cocktail"){
+                        cocktail.checked=true;
+                }
+                if(userObj.preferences[i]==="weather"){
+                        weather.checked=true;
+                }
+                if(userObj.preferences[i]==="crypto"){
+                        crypto.checked=true;
+                }
+            }
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+
+        //console.dir(userObj);
             //console.log(obj.preferences);
             // read obj.preferences and restore checkbox values
 

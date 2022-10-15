@@ -132,6 +132,7 @@ function start(){
     if (userObj === null){
         userObj = {
             archivedNotes: []
+            
         };
         renderWelcomeDialog(userObj, true);
     } else {

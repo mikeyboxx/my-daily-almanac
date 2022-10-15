@@ -138,9 +138,9 @@ function start(){
         // getApiDataAndRender(userObj);
         // console.log(userObj);
     } else {
-        // renderWelcomeDialog(userObj);
-        getApiDataAndRender(userObj);
         console.log(userObj);
+        renderWelcomeDialog(userObj);
+        getApiDataAndRender(userObj);
     }
 }
 

@@ -22,6 +22,8 @@ function renderCrypto(obj){
     let theadEl = $('<thead>').append(trEl);
     tableEl.append(theadEl);
 
+    var cryptoBodyElement = $('<tbody>').attr('id', 'crypto-body');
+
     for ( var i=0; i<10; i++){
         var tableRowElement = $("<tr>");
         

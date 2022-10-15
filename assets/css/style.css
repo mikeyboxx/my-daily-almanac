@@ -104,7 +104,7 @@ img {
 }
 
 .api-card {
-    background: linear-gradient(208.8deg, rgba(61, 249, 204, 0.2) 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
@@ -125,6 +125,30 @@ img {
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
+
+.card{
+    min-width: 98%;
+}
+
+.card-header{
+    padding: 2%;
+    text-align: center;
+}
+
+.card-content{
+ padding: 1rem;
+ text-align: center;
+}    
+
+.column-is-flex{
+    padding: 1rem;
+}
+
+
+h2{
+    font-weight: bold;
+}
+    
 .api-card-crypto {
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;

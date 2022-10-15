@@ -37,9 +37,13 @@ function renderTextPad(userObj){
             date: currentDayFormatted,
             text: userInput
         };
+        // if(date === currentDayFormatted) {
+
+        // }
+
         // find the index of current day
         // if index = -1 (not found)
-        //   obj.archivedNotes.push(note);
+          obj.archivedNotes.push(note);
         // else
         //    obj.archivedNotes[currentDayidx] = note;
 

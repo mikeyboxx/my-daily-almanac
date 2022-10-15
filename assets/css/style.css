@@ -125,12 +125,19 @@ img {
 
 .card-header{
     padding: 2%;
+    text-align: center;
 }
 
 .card-content{
- padding: .5rem;
+ padding: 1rem;
+ text-align: center;
 }    
 
 .column-is-flex{
-    
+    padding: 1rem;
+}
+
+
+h2{
+    font-weight: bold;
 }

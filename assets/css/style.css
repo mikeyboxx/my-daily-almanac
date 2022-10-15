@@ -2,12 +2,17 @@
 /* to show menu items when user click hamburger menu */
 /* .showMenu {
     display: block;
-} */
+} 
+
 
 #top {
     height: 100px;
+    width: 100%;
     /* border: 1px solid red; */
-}
+
+
+*{
+    font-family: 'EB Garamond', serif;}
 
 #top *{
     margin: 0px;
@@ -64,8 +69,11 @@ form *{
 .middle-box {
     height: 300px;
     overflow: auto;
-    margin: 4px;
+    margin: 0px;
     margin-bottom: 0;
+}
+.columns {
+    margin: 0;
 }
 
 #middle {
@@ -73,6 +81,8 @@ form *{
     height: 400px;
     overflow: auto;
     background-color: seashell;
+    width: 100%;
+    padding: 2%;
 }
 .columns:not(:last-child) {
     margin-bottom: 0px;
@@ -80,6 +90,7 @@ form *{
 
 #bottom {
     background-color: antiquewhite;
+    width: 100%;
 }
 
 .card-custom {
@@ -144,7 +155,6 @@ img {
     padding: 1rem;
 }
 
-
 h2{
     font-weight: bold;
 }
@@ -160,7 +170,25 @@ h2{
 }
 
 #bottom.section{
-    padding: 2%;
+    padding: 5%;
     margin: 0;
     border: 0;
+}
+
+#notes{
+    padding 0;
+}
+
+#currentDay{
+    margin: 0;
+    border: 0;
+}
+
+.column.title{
+    margin: 0;
+    border: 0;
+}
+
+#saveNotes{
+    font-family: 'EB Garamond', serif;
 }

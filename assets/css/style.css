@@ -171,9 +171,11 @@ h2{
     margin: 0;
     border: 0;
     font-family: 'EB Garamond', serif;
+    font-size: large;
+    text-align: center;
 }
 
-.column.title{
+.column-title{
     margin: 0;
     border: 0;
 }
@@ -181,20 +183,29 @@ h2{
 #saveNotes{
     font-family: 'EB Garamond', serif;
     font-size: 1rem;
-    background-color: #a0e0da;
-    color: black;
+    background-color: #2F7DB3;
 }
 
-#notes{
-    font-family: 'EB Garamond', serif;
+div.column.title {
+    text-align: center;
 }
+
 #form {
     margin: 20vh auto;
   }
-
+/* 
 #form input {
-    border: 0cm;
-  }
-#edit-preferences {
-    font-size: 20px;
+    border:0cm;
+  } */
+
+ #name {
+    border: 1px solid black;
+ } 
+
+#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
+    font-family: 'EB Garamond', serif;
+}  
+
+.is-justify-content-end{
+justify-content: center;
 }

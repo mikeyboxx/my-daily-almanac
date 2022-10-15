@@ -20,7 +20,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xxjapp/xdialog@3/xdialog.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Oswald:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Oswald:wght@500&family=Roboto:wght@100&display=swap">
+    
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>My Daily Almanac</title>
 </head>
@@ -30,18 +31,12 @@
         <div class="navbar-brand">
             <img src="./assets/images/Logo.png" id="logo" alt="this is a man with a book for a head">
             <h1>My Daily Almanac</h1>
-            <!-- <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a> -->
             <div class="navbar-item is-hoverable navbar-end"  >
-                <a id="edit-preferences">
-                    Edit preferences 
-                </a>
+                <a id="edit-preferences">Edit preferences</a>
             </div>
         </div>
     </nav>
+    
     <form  class="modal modal-background" id="preferences">
         <div class="modal-card is-align-content-center" id="form">
             <header class="modal-card-head">
@@ -49,14 +44,8 @@
             </header>
             <section class="modal-card-body">
                 <label for="name">Enter your Name</label>
-                <input type="text" id="name"><br>
-                <!-- <label>Select your Date of birth<input type="date" id="dob"></label>
-                <label for="pets">Select your pet</label>
-                 <select name="pets" id="pets">
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
-                    <option value="none">none</option>
-                </select><br> -->
+                <input type="text" id="name">
+                <br>
                 <label for="cuisine">Select your favorite cuisine</label>
                 <select name="cuisine" id="cuisine">
                     <option value="italian">Italian</option>
@@ -71,9 +60,13 @@
                     <option value="chinese">Chinese </option>
                     <option value="peruvian">Peruvian </option>
                 </select><br>
+                </select>
+                <br>
                 <label for="zodiac">Select your Zodiac sign</label>
                 <select name="Zodiac" id="zodiac">
-                </select><br>
+                    <!-- generated in javascript -->
+                </select>
+                <br>
                 <p>Select your preferences<p>
                 <input type="checkbox" id="horoscope" value="Horoscope">
                 <label for="horoscope">Horoscope</label>
@@ -86,11 +79,6 @@
 
                 <input type="checkbox" id="crypto" value="crypto">
                 <label for="crypto">Crypto</label><br>
-                
-                <!-- <label for="recipes">Recipes</label>
-                <input type="checkbox" id="recipes" value="Recipes">
-                <label for="pet">Pet</label>
-                <input type="checkbox" id="pet" value="Pet"><br> -->
 
                 <button class="button is-success" id="save">Save changes</button>
                 <button class="button" id="cancel">Cancel</button>
@@ -100,19 +88,35 @@
 
     <!-- this will contain the content boxes with API data -->
     <div id="middle" class="section columns is-multiline " >
-       
+       <!-- to be generated in javascript -->
     </div>
 
     <!-- this will contain the text-pad  -->
-   
     <div class="section" id="bottom">
         <div class="columns is-centered is-narrow-mobile is-narrow-tablet is-narrow-desktop">
             <div class="column title">My Thoughts</div>
             <div class="column title is-centered" id="currentDay"></div>
             <div class="column is-flex is-justify-content-end">
+                
+                <div id="archivedList" class="dropdown ">
+                    <div class="dropdown-trigger">
+                      <button style="border: none; margin-right: 10px" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Archived Notes</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                      <div id="dropdownContent" class="dropdown-content">
+                        <!-- to be generated in javascript -->
+                      </div>
+                    </div>
+                  </div>    
                 <button class="button is-danger bd-notification is-medium" id="saveNotes" type="submit">SAVE</button>
             </div>
         </div>
+        <p id="saveMsg"></p>
         <div class="columns is-centered">
             <div class="column">
                 <div class="control">
@@ -121,16 +125,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container" id="container">
-        <div></div>
-     
-    </div>
-   
-</body>
-
-
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/weatherContainer.js"></script>
@@ -140,6 +134,5 @@
     <script src="./assets/js/nav-bar.js"></script>
     <script src="./assets/js/textPad.js"></script>
     <script src="./assets/js/script.js"></script>
-
 </body>
 </html>

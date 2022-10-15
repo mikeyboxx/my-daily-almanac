@@ -1,5 +1,4 @@
 function renderHoroscope(obj){
-    console.log('horoscope');
     let containerEl = $('<div>').addClass(" column is-half");
     let boxEl = $('<div>').addClass("horoscope-card box middle-box");
 

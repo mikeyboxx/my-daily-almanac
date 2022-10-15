@@ -209,3 +209,10 @@ div.column.title {
 .is-justify-content-end{
 justify-content: center;
 }
+
+section.modal-card-body{
+    border-radius: 8px;
+}
+header.modal-card-head{
+    border-radius: 8px;
+} 

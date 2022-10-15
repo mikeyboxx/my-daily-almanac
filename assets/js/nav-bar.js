@@ -2,62 +2,62 @@
 var zodiacGroup=[
      {
           name:"Aries ",
-          date:"March 21–April 19",
+          date:"March 21-April 19",
           index:0
      },
      {
           name:"Taurus ",
-          date:"April 20–May 20",
+          date:"April 20-May 20",
           index:1
      },
      {
           name:"Gemini ",
-          date:"May 21–June 21",
+          date:"May 21-June 21",
           index:2
      },
      {
           name:"Cancer ",
-          date:"June 22–July 22",
+          date:"June 22-July 22",
           index:3
      },
      {
           name:"Leo ",
-          date:"July 23–August 22",
+          date:"July 23-August 22",
           index:4
      },
      {
           name:"Virgo ",
-          date:"August 23–September 22",
+          date:"August 23-September 22",
           index:5
      },
      {
           name:"Libra ",
-          date:"September 23–October 23",
+          date:"September 23-October 23",
           index:6
      },
      {
           name:"Scorpio ",
-          date:"October 24–November 21",
+          date:"October 24-November 21",
           index:7
      },
      {
           name:"Sagitarius ",
-          date:"November 22–December 21",
+          date:"November 22-December 21",
           index:8
      },
      {
           name:"Capricorn ",
-          date:"December 22–January 19",
+          date:"December 22-January 19",
           index:9
      },
      {
           name:"Aquarius ",
-          date:"January 20–February 18",
+          date:"January 20-February 18",
           index:10
      },
      {
           name:"Pisces ",
-          date:"February 19–March 20",
+          date:"February 19-March 20",
           index:11
      }
 ]

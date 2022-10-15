@@ -1,59 +1,72 @@
 // varaibles
-var zodiac=[
+var zodiacGroup=[
      {
           name:"Aries ",
-          date:"March 21–April 19"
+          date:"March 21–April 19",
+          index:0
      },
      {
           name:"Taurus ",
-          date:"April 20–May 20"
+          date:"April 20–May 20",
+          index:1
      },
      {
           name:"Gemini ",
-          date:"May 21–June 21"
+          date:"May 21–June 21",
+          index:2
      },
      {
           name:"Cancer ",
-          date:"June 22–July 22"
+          date:"June 22–July 22",
+          index:3
      },
      {
           name:"Leo ",
-          date:"July 23–August 22"
+          date:"July 23–August 22",
+          index:4
      },
      {
           name:"Virgo ",
-          date:"August 23–September 22"
+          date:"August 23–September 22",
+          index:5
      },
      {
           name:"Libra ",
-          date:"September 23–October 23"
+          date:"September 23–October 23",
+          index:6
      },
      {
           name:"Scorpio ",
-          date:"October 24–November 21"
+          date:"October 24–November 21",
+          index:7
      },
      {
           name:"Sagitarius ",
-          date:"November 22–December 21"
+          date:"November 22–December 21",
+          index:8
      },
      {
           name:"Capricorn ",
-          date:"December 22–January 19"
+          date:"December 22–January 19",
+          index:9
      },
      {
           name:"Aquarius ",
-          date:"January 20–February 18"
+          date:"January 20–February 18",
+          index:10
      },
      {
           name:"Pisces ",
-          date:"February 19–March 20"
+          date:"February 19–March 20",
+          index:11
      }
 ]
 
 var zodiacEl = document.getElementById("zodiac");
 for(var i=0;i<12;i++){
      var option = document.createElement("option");
-     option.text = zodiac[i].name;
+     option.text = zodiacGroup[i].name;
+     //option.text = zodiac[i].name+zodiac[i].date;
      zodiacEl.add(option);
 }
 
@@ -63,9 +76,17 @@ var menu = document.getElementById("menu");
 var preferencesForm = document.getElementById("preferences");
 var editPreferencesForm = document.getElementById("edit-preferences");
 //var newUserForm = document.getElementById("new-user");
+var user=document.getElementById("name");
+var cuisine=document.getElementById("cuisine");
+var zodiacDropdown=document.getElementById("zodiac");
+var horoscope=document.getElementById("horoscope");
+var cocktail=document.getElementById("cocktail");
+var weather=document.getElementById("weather");
+var crypto=document.getElementById("crypto");
+// var date=document.getElementById("date");
 var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
-
+var preferenceArray;
 
 
 // eventlistner for hamburgur menu
@@ -77,7 +98,8 @@ navBtn.addEventListener("click",function(){
           menu.classList.add("showMenu");//add the class showmenu to menu element
     }
 });
-  
+
+
      // $( "#new-user" ).on( "click", function() {
      //      preferencesForm.style.display="block";
      //      menu.classList.remove("showMenu");
@@ -94,25 +116,79 @@ navBtn.addEventListener("click",function(){
     //  });
      // firstTime = false
      function renderWelcomeDialog(obj, firstTime = false){
+        //alert(firstTime);
         var editPreferencesCancelHandler = function(event) {
             event.preventDefault();
             preferencesForm.style.display="none";
         };
 
         var editPreferencesFormHandler = function(obj, event) {
-            event.preventDefault();
+                //console.dir(obj);
+                event.preventDefault();
+                menu.classList.remove("showMenu");
+
             preferencesForm.style.display="block";
             cancelBtn.style.visibility = 'visible';
-            
-            console.log(obj.preferences);
+
+            //var userObj = JSON.parse(localStorage.getItem('userObj'));
+            let userName=obj.userName;
+            user.value=userName;
+            user.disabled=true;
+            zodiacDropdown.disabled=true;
+            let cuisineSel=obj.cuisine;
+            //alert(cuisineSel);
+            if(cuisineSel==="italian"){
+                cuisine.selectedIndex = 0;
+            }
+            if(cuisineSel==="french"){
+                cuisine.selectedIndex = 1;
+            }
+            if(cuisineSel==="mediteranean"){
+                cuisine.selectedIndex = 2;
+            }
+            let zodiacSel=obj.zodiacSign;
+            //alert(((zodiacGroup[0].name).toLowerCase()));
+            for(var j=0;j<zodiacGroup.length;j++){
+                //alert(((zodiacGroup[j].name).toLowerCase()).trim());
+                if(((zodiacGroup[j].name).toLowerCase()).trim()===zodiacSel){
+                        let zodiacIndex=zodiacGroup[j].index;
+                        zodiacDropdown.selectedIndex = zodiacIndex;
+                }
+            }
+            //zodiac.value=zodiac;
+            console.dir(zodiacSel);
+            //console.dir(userObj.preferences);
+            for(var i=0;i<obj.preferences.length;i++){
+                if(obj.preferences[i]==="horoscope"){
+                        horoscope.checked=true;
+                }
+                if(obj.preferences[i]==="cocktail"){
+                        cocktail.checked=true;
+                }
+                if(obj.preferences[i]==="weather"){
+                        weather.checked=true;
+                }
+                if(obj.preferences[i]==="crypto"){
+                        crypto.checked=true;
+                }
+            }
+
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+        //     let userName=userObj.userName;
+        //     user.val(userName);
+
+        //console.dir(userObj);
+            //console.log(obj.preferences);
             // read obj.preferences and restore checkbox values
 
 
-            document.getElementById("name").disabled=true;
-            document.getElementById("zodiac").disabled=true;
+
             // document.getElementById("name").visibility=hidden;
             // document.getElementById("Zodiac").disabled=true;
-            menu.classList.remove("showMenu");
+
         };
 
         var saveBtnHandler = function (obj, event ){
@@ -120,7 +196,7 @@ navBtn.addEventListener("click",function(){
             var userName=document.getElementById("name").value;
             var cuisine=document.getElementById("cuisine").value;
             var zodiac=document.getElementById("zodiac").value;
-            var preferenceArray=[];
+            preferenceArray=[];
             if ($('#horoscope').is(":checked")) {
                     preferenceArray.push("horoscope");
             }
@@ -136,9 +212,9 @@ navBtn.addEventListener("click",function(){
             if ($('#crypto').is(":checked")) {
                     preferenceArray.push("crypto");
             }
-            console.log(preferenceArray);
+            //console.log(preferenceArray);
             let icon = '';
-            console.log(zodiac);
+            //console.log(zodiac);
             zodiac = zodiac.toLowerCase();
             switch (zodiac) {
                 case 'aries' :  icon = '♈️';

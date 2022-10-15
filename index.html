@@ -26,8 +26,8 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation" >
-        <div class="navbar-brand" id="top">
+    <nav class="navbar" role="navigation" aria-label="main navigation" id="top">
+        <div class="navbar-brand">
             <img src="./assets/images/istockphoto-1208383124-1024x1024.jpg" id="logo" alt="this is a man with a book for a head">
             <h1>My Daily Almanac</h1>
             <a role="button" class="navbar-burger navbar-end" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="btn">
@@ -42,10 +42,11 @@
                 <a id="edit-preferences">
                     Edit preferences 
                 </a>
-                <a class="navbar-link">
+            </div>
+                <!-- <a class="navbar-link">
                     Archived Notes
                 </a>
-                <div class="navbar-dropdown">
+                <div class="navbar-dropdown" id="date">
                     <a class="navbar-item">
                         10-13-2022
                     </a>
@@ -66,19 +67,18 @@
                     </a>
                     <a class="navbar-item">
                         10-07-2022
-                    </a>
+                    </a> -->
                     <!-- <hr class="navbar-divider">
                     <a class="navbar-item" id="new-user">New user</a> -->
-                </div>
             </div>
         </div>
     </nav>
     <form  class="modal modal-background" id="preferences">
         <div class="modal-card">
             <header class="modal-card-head">
-                <p  class="modal-card-title formHeader">Welcome to my daily Almanac</p>
+                <p  class="modal-card-title formHeader has-text-centered">Welcome to my daily Almanac</p>
                 <!-- <p class="modal-card-title formHeader">Enter your Details</p> -->
-                <button class="delete" aria-label="close"></button>
+                <!-- <button class="delete" aria-label="close"></button> -->
             </header>
             <section class="modal-card-body">
                 <label for="name">Enter your Name</label>
@@ -94,7 +94,7 @@
                 <select name="cuisine" id="cuisine">
                     <option value="italian">Italian</option>
                     <option value="french">French</option>
-                    <option value="mediteranean ">Mediteranean </option>
+                    <option value="mediteranean">Mediteranean </option>
                 </select><br>
                 <label for="zodiac">Select your Zodiac sign</label>
                 <select name="Zodiac" id="zodiac">

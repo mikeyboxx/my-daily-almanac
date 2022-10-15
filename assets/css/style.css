@@ -57,6 +57,10 @@ form *{
     padding: 0px;
 }
 
+#preferences .formHeader{
+    text-align: center;
+}
+
 @media screen and (min-width: 800px){
     .navbar h1{
         font-size: 2rem;
@@ -106,9 +110,7 @@ img {
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
 }
-#preferences .formHeader{
-    text-align: center;
-}
+
 
 .api-card {
     background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
@@ -161,3 +163,10 @@ h2{
     border-radius: 10px;
 }
 
+#form {
+    margin: 20vh auto;
+  }
+
+#form input {
+    border:0cm;
+  }

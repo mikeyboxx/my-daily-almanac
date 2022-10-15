@@ -94,10 +94,7 @@ navBtn.addEventListener("click",function(){
     //  });
      // firstTime = false
      function renderWelcomeDialog(obj, firstTime = false){
-        obj.preferences = [];
-        console.log(obj, firstTime);
         var editPreferencesCancelHandler = function(event) {
-            console.log('cancel');
             event.preventDefault();
             preferencesForm.style.display="none";
         };
@@ -117,8 +114,8 @@ navBtn.addEventListener("click",function(){
             // document.getElementById("Zodiac").disabled=true;
             menu.classList.remove("showMenu");
         };
-        
-       var saveBtnHandler = function (obj, event ){
+
+        var saveBtnHandler = function (obj, event ){
             event.preventDefault();
             var userName=document.getElementById("name").value;
             var cuisine=document.getElementById("cuisine").value;
@@ -176,21 +173,23 @@ navBtn.addEventListener("click",function(){
             obj.zodiacIcon = icon;
             obj.preferences = preferenceArray;
 
-            preferencesForm.style.display="none";
-            // preferencesForm.style.display="block";
-            // cancelBtn.style.visibility = 'hidden';
             getApiDataAndRender(obj);
-        } 
-
-        $(cancelBtn).on('click', editPreferencesCancelHandler);
+            preferencesForm.style.display="none";
+        }
+        
+        
         $(saveBtn).on('click', saveBtnHandler.bind(this, obj));
+        $(cancelBtn).on('click', editPreferencesCancelHandler);
         $(editPreferencesForm).on('click', editPreferencesFormHandler.bind(this, obj));
-          
-        if (firstTime) {
-                preferencesForm.style.display="block";
-                cancelBtn.style.visibility = 'hidden';
-            } 
+        
+        if (firstTime){
+            preferencesForm.style.display="block";
+            cancelBtn.style.visibility = 'hidden';
+        }
+
+            
      }
+     
      //firstTimeRender(userObj);
      // saveBtn.addEventListener( "click", function() {
      //      var userName=document.getElementById("name").value;

@@ -65,7 +65,7 @@ var editPreferencesForm = document.getElementById("edit-preferences");
 //var newUserForm = document.getElementById("new-user");
 var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
-
+var preferenceArray;
 
 
 // eventlistner for hamburgur menu
@@ -94,10 +94,10 @@ navBtn.addEventListener("click",function(){
     //  });
      // firstTime = false
      function renderWelcomeDialog(obj, firstTime = false){
-        obj.preferences = [];
-        console.log(obj, firstTime);
+        //obj.preferences = [];
+        //console.log(obj, firstTime);
         var editPreferencesCancelHandler = function(event) {
-            console.log('cancel');
+            //console.log('cancel');
             event.preventDefault();
             preferencesForm.style.display="none";
         };
@@ -106,8 +106,9 @@ navBtn.addEventListener("click",function(){
             event.preventDefault();
             preferencesForm.style.display="block";
             cancelBtn.style.visibility = 'visible';
-            
-            console.log(obj.preferences);
+          //   var userObj = JSON.parse(localStorage.getItem('userObj'));
+          //   console.log("from local storage"+userObj);
+            //console.log(obj.preferences);
             // read obj.preferences and restore checkbox values
 
 
@@ -123,7 +124,7 @@ navBtn.addEventListener("click",function(){
             var userName=document.getElementById("name").value;
             var cuisine=document.getElementById("cuisine").value;
             var zodiac=document.getElementById("zodiac").value;
-            var preferenceArray=[];
+            preferenceArray=[];
             if ($('#horoscope').is(":checked")) {
                     preferenceArray.push("horoscope");
             }
@@ -139,9 +140,9 @@ navBtn.addEventListener("click",function(){
             if ($('#crypto').is(":checked")) {
                     preferenceArray.push("crypto");
             }
-            console.log(preferenceArray);
+            //console.log(preferenceArray);
             let icon = '';
-            console.log(zodiac);
+            //console.log(zodiac);
             zodiac = zodiac.toLowerCase();
             switch (zodiac) {
                 case 'aries' :  icon = '♈️';
@@ -189,6 +190,7 @@ navBtn.addEventListener("click",function(){
         if (firstTime) {
                 preferencesForm.style.display="block";
                 cancelBtn.style.visibility = 'hidden';
+                
             } 
      }
      //firstTimeRender(userObj);

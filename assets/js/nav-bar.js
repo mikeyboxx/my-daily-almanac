@@ -95,7 +95,7 @@ navBtn.addEventListener("click",function(){
      function renderWelcomeDialog(obj, firstTime){
          alert(firstTime);
           if (firstTime) {
-               preferencesForm.style.display="block";
+              // preferencesForm.style.display="block";
                cancelBtn.style.visibility = 'hidden';
                var saveBtnHandler = function (obj, event ){
                var userName=document.getElementById("name").value;

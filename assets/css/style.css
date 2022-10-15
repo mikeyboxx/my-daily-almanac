@@ -182,6 +182,7 @@ h2{
 #currentDay{
     margin: 0;
     border: 0;
+    font-family: 'EB Garamond', serif;
 }
 
 .column.title{
@@ -190,5 +191,9 @@ h2{
 }
 
 #saveNotes{
+    font-family: 'EB Garamond', serif;
+}
+
+#notes{
     font-family: 'EB Garamond', serif;
 }

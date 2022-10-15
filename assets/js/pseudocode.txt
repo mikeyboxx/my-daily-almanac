@@ -1,0 +1,63 @@
+
+
+// USER INTERACTIONS
+
+// Welcome Dialog container
+    // name: input text area
+        // required
+        // max 150 chars
+    // favorite pet: dropdown list
+        // limit them for now to cat, dog, or none
+    // zodiac sign: dropdown list with date, text, icon
+        // can be a global array with text, and icons
+    // preferences: checkboxes (choices will be hardcoded for now) must be stored in global var
+        // at least one must be selected
+    // "Enter your personal almanac" save button  (need event handler/listener function for callback)
+        // save name, fav pet, zodiac info, and an array of preferences in User Object
+        // hide dialog
+        // get all API data based on preferences
+        // render all content sections based on preferences
+        // save User Object in local storage
+
+// Edit Preferences Dialog container
+    // same as Welcome Dialog Box, except hide and exclude from logic name and zodiac
+    // change name of button to "Save", display cancel/X button
+
+// Content container
+    // one box per api 
+    // each box will be fixed width and height
+    // one per preference
+    // scroll to the right or left
+    // scroll up and down within each preference content box
+
+// Text Pad container (bottom of the page)
+    // (text area is protected you cannot click on it)
+    // will have a title (current date)
+    // dropdown list of saved/archived dates of saved text items for viewing only (might appear in drop down menu also, maybe???)
+        // read local storage to build list of dates
+        // if date is selected show a Text Area Dialog box, showing the date and saved text (read only), with a close button (close button will hide this container)
+    // click on Edit button 
+        // Text Area Dialog box appears with editable text area, save button and cancel button
+
+// Text Area Dialog box (triggered from clicked Edit button in Text Pad container)
+    // click on Save button
+        // save the text and date (pulled from moment.js - current date) in Archived list global array
+        // save to local storage
+    // click on Cancel button
+        // hide the dialog box
+
+// Menu container
+    // click on Edit Preferences link
+        // display Edit Preference Dialog container
+    // click on Archived Texts link
+
+
+ // let apiKey = '81f0122781e2478fb85469f755df1399';
+    // await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}&tags=${obj.favoriteCuisine}`)
+    //     .then(response => response.json())
+    //     .then(response => resp = response)
+    //     .catch(err => {console.error(err); return err});
+    
+    // obj.recipes = resp.recipes;  // array
+    
+    // renderRecipes(obj);

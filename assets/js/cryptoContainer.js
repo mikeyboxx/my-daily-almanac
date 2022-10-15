@@ -2,7 +2,7 @@
 function renderCrypto(obj){
     var cryptoBodyElement = $('<tbody>').attr('id', 'crypto-body');
     let boxEl = $('<div>').addClass('column  is-half');
-    let containerEl = $('<div>').addClass('middle-box box ');
+    let containerEl = $('<div>').addClass('middle-box box');
     let tableEl = $('<table>').addClass('table');
     tableEl.attr('id', 'crypto-table');
 

@@ -95,3 +95,9 @@ img {
 #preferences .formHeader{
     text-align: center;
 }
+
+.Frank {
+    background: linear-gradient(208.8deg, rgba(61, 249, 204, 0.2) 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}

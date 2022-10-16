@@ -1,4 +1,5 @@
 // varaibles
+// zodiac details
 var zodiacGroup=[
      {
           name:"Aries ",
@@ -74,8 +75,6 @@ for(var i=0;i<12;i++){
 
 // getting elements from DOM
 
-//var navBtn=document.getElementById("btn");
-//var menu = document.getElementById("menu");
 var preferencesForm = document.getElementById("preferences");
 var editPreferencesForm = document.getElementById("edit-preferences");
 var user=document.getElementById("name");
@@ -85,33 +84,20 @@ var horoscope=document.getElementById("horoscope");
 var cocktail=document.getElementById("cocktail");
 var weather=document.getElementById("weather");
 var crypto=document.getElementById("crypto");
-// var date=document.getElementById("date");
 var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
 var preferenceArray;
 
-
-// eventlistner for hamburgur menu
-
-// navBtn.addEventListener("click",function(){
-//     if(menu.classList.contains("showMenu")){
-//           menu.classList.remove("showMenu");//remove the class showmenu from menu element
-//     }
-//     else {
-//           menu.classList.add("showMenu");//add the class showmenu to menu element
-//     }
-// });
-
-
+// function to handle welcome dialog
 function renderWelcomeDialog(obj, firstTime = false){
         var editPreferencesCancelHandler = function(event) {
-        event.preventDefault();
+        event.stopPropagation();
         preferencesForm.style.display="none";
 };
 
-
+        // function to handle edit preference form if the user already exists
         var editPreferencesFormHandler = function(obj, event) {
-                event.preventDefault();
+                event.stopPropagation();
                 preferencesForm.style.display="block";
                 cancelBtn.style.visibility = 'visible';
                 let userName=obj.userName;
@@ -153,6 +139,7 @@ function renderWelcomeDialog(obj, firstTime = false){
                         cuisine.selectedIndex = 9;
                 }
 
+                // adding contents to zodiac drop down menu
                 let zodiacSel=obj.zodiacSign;
                 for(var j=0;j<zodiacGroup.length;j++){
                         if(((zodiacGroup[j].name).toLowerCase()).trim()===zodiacSel){
@@ -160,8 +147,16 @@ function renderWelcomeDialog(obj, firstTime = false){
                                 zodiacDropdown.selectedIndex = zodiacIndex;
                         }
                 }
+                horoscope.checked=false;
+                cocktail.checked=false;
+                weather.checked=false;
+                crypto.checked=false;
 
-                for(var i=0;i<obj.preferences.length;i++){
+                // to check or uncheck checkboxes based on user's saved preferences
+                for(var i=0;i<(obj.preferences.length);i++){
+                        if(obj.preferences[i]==="crypto"){
+                                crypto.checked=true;
+                        }
                         if(obj.preferences[i]==="horoscope"){
                                 horoscope.checked=true;
                         }
@@ -171,13 +166,11 @@ function renderWelcomeDialog(obj, firstTime = false){
                         if(obj.preferences[i]==="weather"){
                                 weather.checked=true;
                         }
-                        if(obj.preferences[i]==="crypto"){
-                                crypto.checked=true;
-                        }
                 }
 
         };
 
+        // function to handle save button
         var saveBtnHandler = function (obj, event ){
                 event.preventDefault();
                 var req=document.getElementById("required");
@@ -257,6 +250,7 @@ function renderWelcomeDialog(obj, firstTime = false){
         $(cancelBtn).on('click', editPreferencesCancelHandler);
         $(editPreferencesForm).on('click', editPreferencesFormHandler.bind(this, obj));
 
+        // for the first time user
         if (firstTime){
                 preferencesForm.style.display="block";
                 cancelBtn.style.visibility = 'hidden';

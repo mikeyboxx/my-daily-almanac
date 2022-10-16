@@ -11,13 +11,16 @@ function renderWeather(obj){
         if (objDt > currDt && objDtTime === '06:00' && ctr < 5) {
             ctr++;
             let colEl = $('<div>').addClass('column is-flex');
-            let cardEl  = $('<div>').addClass('card');
-            let cardHeaderEl  = $('<div>').addClass('card-header');
-            let h2El  = $('<h2>').text(obj[i].name.slice(0,3).toUpperCase());
-            let spanEl  = $('<span>').text(moment(obj[i].startTime.slice(0,16)).format('MM/DD'));
-
-            $(h2El).append(spanEl);
+            let cardEl  = $('<div>').addClass('card ');
+            let cardHeaderEl  = $('<div>').addClass('card-header is-flex is-flex-direction-column');
+            // let h2El  = $('<h2>').text(obj[i].name.slice(0,3).toUpperCase());
+            let h2El  = $('<h2>').text(obj[i].name);
             $(cardHeaderEl).append(h2El);
+            
+            // $(h2El).append(spanEl);
+            h2El  = $('<h2>').text(moment(obj[i].startTime.slice(0,16)).format('MM/DD'));
+            $(cardHeaderEl).append(h2El);
+           
             $(cardEl).append(cardHeaderEl);
 
             let cardContentEl = $('<div>').addClass('card-content');
@@ -25,19 +28,19 @@ function renderWeather(obj){
             let iEl = $('<i>').addClass('fa-solid fa-temperature-empty');
             $(pEl).append(iEl);
             
-            spanEl = $('<span>').text(obj[i].temperature + '°');
+            spanEl = $('<span>').text(obj[i].temperature + '°').css('margin-left','5px');
             $(pEl).append(spanEl);
             $(cardContentEl).append(pEl);
 
-            pEl = $('<p>').addClass('wind');
+            pEl = $('<p>').addClass('wind').css('margin-top','7px').css('line-height','1');
             iEl = $('<i>').addClass('fa fa-wind');
             $(pEl).append(iEl);
 
-            spanEl = $('<span>').text(obj[i].windSpeed);
+            spanEl = $('<span>').text(obj[i].windSpeed).css('margin-left','5px');
             $(pEl).append(spanEl);
             $(cardContentEl).append(pEl);
 
-            pEl = $('<p>').addClass('forecast').text(obj[i].shortForecast);
+            pEl = $('<p>').addClass('forecast').text(obj[i].shortForecast).css('margin-top','15px').css('line-height','1');
             $(cardContentEl).append(pEl);
 
             $(cardEl).append(cardContentEl);

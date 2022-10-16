@@ -13,7 +13,7 @@ function renderCrypto(obj){
     thEl = $('<th>').text('Coin');
     trEl.append(thEl);
     
-    thEl = $('<th>').text('Current Market Price').css("text-align", "right");
+    thEl = $('<th>').text('Current Market Price').css("text-align", "right").css("padding-right", "2px");
     trEl.append(thEl);
 
     thEl = $('<th>').text('Price Change in Last 24hrs').css("text-align", "right");

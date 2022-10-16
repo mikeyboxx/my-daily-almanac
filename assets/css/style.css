@@ -1,24 +1,5 @@
-
-/* to show menu items when user click hamburger menu */
-/* .showMenu {
-    display: block;
-} 
-
-
-#top {
-    height: 100px;
-    width: 100%;
-    /* border: 1px solid red; */
-
-
-*{
-    font-family: 'EB Garamond', serif;}
-
-#top *{
-    margin: 0px;
-    padding: 10px;
-    background-color: #e6e3e6;
-    border-radius: 0px 0px 5px 5px;
+* {
+    font-family: 'EB Garamond', serif;
 }
 
 form *{
@@ -30,71 +11,33 @@ img {
     width: 35px;
     height: 35px;
     padding: 1px;
-#preferences *{
-   padding: 10px;
-   /* margin: 10px; */
 }
 
 h1 {
-    font-size: 1.9em;
+    font-size: 2em;
+    font-weight: bolder;
 }
 
 h2{
     font-weight: bold;
 }
 
-.navbar {
-    /* margin: 0px; */
-    /* padding: 30px; */
+.navbar, .navbar-brand, .navbar-menu, .navbar h1  {
+    line-height: 1.1;
     background-color: #e6e3e6;
-    /* border-radius: 0px 0px 5px 5px; */
+    box-shadow:none;
+    padding: 0;
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 .navbar-brand {
-    width: 10%;
+    margin-top: -15px;
 }
-
-#edit-preferences {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.navbar h1{
-    width: 100%;
-    line-height: 1.1;
-    /* padding-top: 28px; */
-    /* display: block; */
-    /* font-size: 15px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* padding-top: 20px; */
-    /* font-size: 1.5em; */
-    /* margin-top: 10px; */
-    font-weight: bold;
-    text-align: center;
-}
-
-.navbar-brand .navbar-item {
-    /* padding: 0; */
-    /* flex-grow: 1; */
-}
-
-
-
-
-
-#preferences *{
-   padding: 10px;
-}
-
-
-
-
-
-
-
-
-
 
 #logo{
     width: 80px;
@@ -102,78 +45,55 @@ h2{
     padding: 0px;
 }
 
+.navbar h1{
+    padding-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-menu {
+    text-align: right;
+}
+
+.navbar-item {
+    line-height: 1.1;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#preferences *{
+   padding: 10px;
+}
+
 #preferences .formHeader{
     text-align: center;
 }
 
-/* @media screen and (min-width: 800px){
-    .navbar h1{
-        font-size: 2rem;
-    }
-} */
+#form {
+    margin: 20vh auto;
+}
 
-.middle-box {
-    height: 300px;
-    overflow: auto;
-    margin: 0px;
-    margin-bottom: 0;
+section.modal-card-body{
+    border-radius: 8px;
 }
-.columns {
-    margin: 0;
-}
+
+header.modal-card-head{
+    border-radius: 8px;
+} 
 
 #middle {
-    /* border: 1px solid red; */
     height: 400px;
     overflow: auto;
     background-color: seashell;
     width: 100%;
     padding: 2%;
 }
-.columns:not(:last-child) {
-    margin-bottom: 0px;
-}
 
-#bottom {
-    background-color: seashell;
-    width: 100%;
-}
-
-.card-custom {
-    flex: 20%;
-}
-
-
-.drink-image {
-    width: 90px;
-    height: 120px;
-    float: right;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
-}
-
-
-.api-card {
-    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
-    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-.table td {
-    padding-left: 1px;
-    padding-top: 1px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-
-}
-.table th {
-    padding: 1px;
-    vertical-align: bottom;
-}
-.weather-card {
-    background: linear-gradient(208.8deg, #cdf93d33 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
-    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+.middle-box {
+    height: 300px;
+    overflow: auto;
+    margin: 0px;
+    margin-bottom: 0;
 }
 
 .card{
@@ -190,20 +110,69 @@ h2{
  text-align: center;
 }    
 
-.column-is-flex{
-    padding: 1rem;
+.card-custom {
+    flex: 20%;
 }
 
+.weather-card {
+    background: linear-gradient(208.8deg, #cdf93d33 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
 
-    
+.api-card {
+    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
 .api-card-crypto {
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
 
+.drink-image {
+    width: 90px;
+    height: 120px;
+    float: right;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
+}
+
+.table td {
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+
+}
+.table th {
+    padding: 1px;
+    vertical-align: bottom;
+}
+
+.columns {
+    margin: 0;
+}
+
+.columns:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+.column-is-flex{
+    padding: 1rem;
+}
+
 .column-title{
     padding: 5%;
     margin: 5%;
+    margin: 0;
+    border: 0;
+}
+
+#bottom {
+    background-color: seashell;
+    width: 100%;
 }
 
 #bottom.section{
@@ -225,11 +194,6 @@ h2{
     text-align: center;
 }
 
-.column-title{
-    margin: 0;
-    border: 0;
-}
-
 #saveNotes{
     font-family: 'EB Garamond', serif;
     font-size: 1rem;
@@ -240,16 +204,7 @@ div.column.title {
     text-align: center;
     padding: 0;
     margin: 0;
-
 }
-
-#form {
-    margin: 20vh auto;
-  }
-/* 
-#form input {
-    border:0cm;
-  } */
 
  #name {
     border: 1px solid black;
@@ -260,12 +215,7 @@ div.column.title {
 }  
 
 .is-justify-content-end{
-justify-content: center;
+    justify-content: center;
 }
 
-section.modal-card-body{
-    border-radius: 8px;
-}
-header.modal-card-head{
-    border-radius: 8px;
-} 
+

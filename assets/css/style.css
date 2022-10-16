@@ -16,7 +16,7 @@
 
 #top *{
     margin: 0px;
-    padding: 15px;
+    padding: 10px;
     background-color: #e6e3e6;
     border-radius: 0px 0px 5px 5px;
 }
@@ -52,7 +52,7 @@ form *{
 }
 
 .navbar-menu {
-    flex-grow:unset;
+    flex-grow: unset;
 }
 
 #logo{
@@ -135,7 +135,7 @@ img {
     vertical-align: bottom;
 }
 .weather-card {
-    background: linear-gradient(208.8deg, rgba(205, 249, 61, 0.2) 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+    background: linear-gradient(208.8deg, #cdf93d33 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
@@ -187,20 +187,48 @@ h2{
     border: 0;
     text-align: center;
     font-family: 'EB Garamond', serif;
+    font-size: large;
+    text-align: center;
 }
 
-.column.title{
+.column-title{
     margin: 0;
     border: 0;
 }
 
 #saveNotes{
     font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    background-color: #2F7DB3;
 }
 
-#notes{
+div.column.title {
+    text-align: center;
+}
+
+#form {
+    margin: 20vh auto;
+  }
+/* 
+#form input {
+    border:0cm;
+  } */
+
+ #name {
+    border: 1px solid black;
+ } 
+
+#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
     font-family: 'EB Garamond', serif;
+}  
+
+.is-justify-content-end{
+justify-content: center;
 }
 
-
-
+section.modal-card-body{
+    border-radius: 8px;
+}
+header.modal-card-head{
+    border-radius: 8px;
+} 

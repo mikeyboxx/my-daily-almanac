@@ -261,7 +261,5 @@ function renderWelcomeDialog(obj, firstTime = false){
                 preferencesForm.style.display="block";
                 cancelBtn.style.visibility = 'hidden';
         }
-
-        
 }
      

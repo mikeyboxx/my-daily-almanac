@@ -2,7 +2,7 @@
 function renderCrypto(obj){
     var cryptoBodyElement = $('<tbody>').attr('id', 'crypto-body');
     let boxEl = $('<div>').addClass('column is-half');
-    let containerEl = $('<div>').addClass('middle-box box api-card-crypto');
+    let containerEl = $('<div>').addClass('middle-box box api-card-crypto is-flex');
     let tableEl = $('<table>').addClass('table is-striped');
     tableEl.attr('id', 'crypto-table');
 
@@ -13,7 +13,7 @@ function renderCrypto(obj){
     thEl = $('<th>').text('Coin');
     trEl.append(thEl);
     
-    thEl = $('<th>').text('Current Market Price').css("text-align", "right");
+    thEl = $('<th>').text('Current Market Price').css("text-align", "right").css("padding-right", "2px");
     trEl.append(thEl);
 
     thEl = $('<th>').text('Price Change in Last 24hrs').css("text-align", "right");

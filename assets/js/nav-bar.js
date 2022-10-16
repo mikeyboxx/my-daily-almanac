@@ -180,7 +180,12 @@ function renderWelcomeDialog(obj, firstTime = false){
 
         var saveBtnHandler = function (obj, event ){
                 event.preventDefault();
+                var req=document.getElementById("required");
+                req.textContent="";
                 var userName=document.getElementById("name").value;
+                if(userName===""){
+                        req.textContent="Name is required.";
+                }
                 var cuisine=document.getElementById("cuisine").value;
                 var zodiac=document.getElementById("zodiac").value;
                 preferenceArray=[];
@@ -200,7 +205,10 @@ function renderWelcomeDialog(obj, firstTime = false){
                 if ($('#crypto').is(":checked")) {
                         preferenceArray.push("crypto");
                 }
-
+                if(preferenceArray.length===0){
+                        let name=document.getElementById("required").textContent;
+                        req.textContent=name+"Select at least one preferences";
+                }
                 let icon = '';
                 zodiac = zodiac.toLowerCase();
                 switch (zodiac) {
@@ -235,9 +243,13 @@ function renderWelcomeDialog(obj, firstTime = false){
                 obj.zodiacSign =  zodiac;
                 obj.zodiacIcon = icon;
                 obj.preferences = preferenceArray;
-
-                getApiDataAndRender(obj);
-                preferencesForm.style.display="none";
+                if(userName!=="" && preferenceArray.length!==0){
+                        preferencesForm.style.display="none";
+                        getApiDataAndRender(obj);
+                }
+                else{
+                        preferencesForm.style.display="block";
+                }
         }
 
 

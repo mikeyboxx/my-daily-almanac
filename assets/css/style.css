@@ -28,8 +28,8 @@ h2{
 }
 
 .navbar, .navbar-brand, .navbar-menu, .navbar h1  {
-    background-color: #e5eccbf0;
     line-height: 1.1;
+    background-color: #e5eccbf0;
     box-shadow:none;
     padding: 0;
 }

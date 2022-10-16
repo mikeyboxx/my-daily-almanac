@@ -4,7 +4,7 @@
 
 html, body{
     height: 100%;
-    width: 100%;
+    width: 101.5%;
 }
 
 form *{
@@ -90,6 +90,10 @@ header.modal-card-head{
     border-radius: 8px;
 } 
 
+.label{
+    padding: 2px;
+}
+
 #middle {
     max-height: 500px;;
     overflow: auto;
@@ -142,14 +146,20 @@ header.modal-card-head{
 .api-card-crypto {
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    display: grid;
 }
-
+.horoscope {
+    padding-bottom: 8px;
+}
 .drink-image {
     width: 90px;
     height: 120px;
     float: right;
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
+}
+.table.is-striped {
+    flex: 100%;
 }
 
 .table td {
@@ -258,3 +268,4 @@ h2.column {
 #save, #cancel{
     margin: 20px 0;
 }
+

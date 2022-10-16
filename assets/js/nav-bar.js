@@ -131,6 +131,27 @@ function renderWelcomeDialog(obj, firstTime = false){
                 if(cuisineSel==="mediteranean"){
                         cuisine.selectedIndex = 2;
                 }
+                if(cuisineSel==="russian"){
+                        cuisine.selectedIndex = 3;
+                }
+                if(cuisineSel==="spanish"){
+                        cuisine.selectedIndex = 4;
+                }
+                if(cuisineSel==="lebanese"){
+                        cuisine.selectedIndex = 5;
+                }
+                if(cuisineSel==="indian"){
+                        cuisine.selectedIndex = 6;
+                }
+                if(cuisineSel==="japanese"){
+                        cuisine.selectedIndex = 7;
+                }
+                if(cuisineSel==="chinese"){
+                        cuisine.selectedIndex = 8;
+                }
+                if(cuisineSel==="peruvian"){
+                        cuisine.selectedIndex = 9;
+                }
 
                 let zodiacSel=obj.zodiacSign;
                 for(var j=0;j<zodiacGroup.length;j++){

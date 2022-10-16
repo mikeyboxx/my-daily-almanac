@@ -239,3 +239,19 @@ h2.column {
 .is-justify-content-end{
     justify-content: center;
 }
+
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+}
+
+#prefer{
+    padding: 10px;
+}
+
+#save, #cancel{
+    margin: 20px 0;
+}

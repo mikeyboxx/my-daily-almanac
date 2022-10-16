@@ -4,7 +4,7 @@
 
 html, body{
     height: 100%;
-    width: 101.5%;
+    width: 100%;
 }
 
 form *{
@@ -235,12 +235,17 @@ header.modal-card-head{
     font-family: 'EB Garamond', serif;
     font-size: 1rem;
     background-color: #2F7DB3;
+    /* height: 97%; */
 }
 
 div.column.title {
     text-align: center;
     padding: 0;
     margin: 0;
+}
+
+div.column.is-one-third {
+    text-align: end;
 }
 
 h2.column {

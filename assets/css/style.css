@@ -143,7 +143,9 @@ header.modal-card-head{
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
-
+.horoscope {
+    padding-bottom: 8px;
+}
 .drink-image {
     width: 90px;
     height: 120px;

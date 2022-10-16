@@ -90,6 +90,10 @@ header.modal-card-head{
     border-radius: 8px;
 } 
 
+.label{
+    padding: 2px;
+}
+
 #middle {
     max-height: 500px;;
     overflow: auto;
@@ -243,7 +247,7 @@ h2.column {
     font-size: 1.6em;
 }
 
-#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
+#edit-preferences, #cuisine, #zodiac, #save, #cancel, #notes, #saveNotes{
     font-family: 'EB Garamond', serif;
 }  
 

@@ -27,100 +27,106 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation" id="top">
-        <div class="navbar-brand">
+    <nav class="navbar columns is-flex " role="navigation" aria-label="main navigation" id="top">
+        <div class="navbar-brand column is-one-third">
             <img src="./assets/images/Logo.png" id="logo" alt="this is a man with a book for a head">
-            <h1>My Daily Almanac</h1>
-            <div class="navbar-item is-hoverable navbar-end"  >
+            
+        </div>
+        <h1 class="column is-one-third">My Daily Almanac</h1>
+        <div class="navbar-menu column is-one-third">
+            <div class="navbar-item is-hoverable navbar-end">
                 <a id="edit-preferences"> Edit Preferences</a>
             </div>
         </div>
     </nav>
     
-    <form  class="modal modal-background" id="preferences">
-        <div class="modal-card is-align-content-center" id="form">
-            <header class="modal-card-head">
-                <p  class="modal-card-title formHeader has-text-centered">Welcome to My Daily Almanac</p>
-            </header>
-            <section class="modal-card-body">
-                <label for="name">Enter your Name</label>
-                <input type="text" id="name">
-                <br>
-                <label for="cuisine">Select your favorite cuisine</label>
-                <select name="cuisine" id="cuisine">
-                    <option value="italian">Italian</option>
-                    <option value="french">French</option>
-                    <option value="mediteranean">Mediteranean </option>
-                    <option value="russian">Russian </option>
-                    <option value="spanish">Spanish </option>
-                    <option value="lebanese">Lebanese </option>
-                    <!-- <option value="mediteranean">Mediteranean </option> -->
-                    <option value="indian">Indian </option>
-                    <option value="japanese">Japanese </option>
-                    <option value="chinese">Chinese </option>
-                    <option value="peruvian">Peruvian </option>
-                </select><br>
-                </select>
-                <br>
-                <label for="zodiac">Select your Zodiac sign</label>
-                <select name="Zodiac" id="zodiac">
-                    <!-- generated in javascript -->
-                </select>
-                <br>
-                <p>Select your preferences<p>
-                <input type="checkbox" id="horoscope" value="Horoscope">
-                <label for="horoscope">Horoscope</label>
+    <div class="is-flex is-flex-direction-column">
+        <form  class="modal modal-background" id="preferences">
+            <div class="modal-card is-align-content-center" id="form">
+                <header class="modal-card-head">
+                    <p  class="modal-card-title formHeader has-text-centered">Welcome to My Daily Almanac</p>
+                </header>
+                <section class="modal-card-body">
+                    <label for="name">Enter your Name</label>
+                    <input type="text" id="name">
+                    <br>
+                    <label for="cuisine">Select your favorite cuisine</label>
+                    <select name="cuisine" id="cuisine">
+                        <option value="italian">Italian</option>
+                        <option value="french">French</option>
+                        <option value="mediteranean">Mediteranean </option>
+                        <option value="russian">Russian </option>
+                        <option value="spanish">Spanish </option>
+                        <option value="lebanese">Lebanese </option>
+                        <!-- <option value="mediteranean">Mediteranean </option> -->
+                        <option value="indian">Indian </option>
+                        <option value="japanese">Japanese </option>
+                        <option value="chinese">Chinese </option>
+                        <option value="peruvian">Peruvian </option>
+                    </select>
+                    <br>
+                    <label for="zodiac">Select your Zodiac sign</label>
+                    <select name="Zodiac" id="zodiac">
+                        <!-- generated in javascript -->
+                    </select>
+                    <br>
+                    <p>Select your preferences<p>
+                    <input type="checkbox" id="horoscope" value="Horoscope">
+                    <label for="horoscope">Horoscope</label>
 
-                <input type="checkbox" id="cocktail" value="Cocktail">
-                <label for="cocktail">Cocktail</label>
+                    <input type="checkbox" id="cocktail" value="Cocktail">
+                    <label for="cocktail">Cocktail</label>
 
-                <input type="checkbox" id="weather" value="Weather">
-                <label for="weather">Weather</label>
+                    <input type="checkbox" id="weather" value="Weather">
+                    <label for="weather">Weather</label>
 
-                <input type="checkbox" id="crypto" value="crypto">
-                <label for="crypto">Crypto</label><br>
+                    <input type="checkbox" id="crypto" value="crypto">
+                    <label for="crypto">Crypto</label><br>
 
-                <button class="button is-success" id="save">Save changes</button>
-                <button class="button" id="cancel">Cancel</button>
-            </section>
-        </div>
-    </form>
-
-    <!-- this will contain the content boxes with API data -->
-    <div id="middle" class="section columns is-multiline " >
-       <!-- to be generated in javascript -->
-    </div>
-
-    <!-- this will contain the text-pad  -->
-    <div class="section" id="bottom">
-        <div class="columns is-centered is-narrow-mobile is-narrow-tablet is-narrow-desktop">
-            <div class="column title">My Thoughts</div>
-            <div class="column title is-centered" id="currentDay"></div>
-            <div class="column is-flex is-justify-content-end">
-                
-                <div id="archivedList" class="dropdown ">
-                    <div class="dropdown-trigger">
-                      <button style="border: none; margin-right: 10px" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Archived Notes</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                      <div id="dropdownContent" class="dropdown-content">
-                        <!-- to be generated in javascript -->
-                      </div>
-                    </div>
-                  </div>    
-                <button class="button is-success bd-notification is-medium" id="saveNotes" type="submit">SAVE</button>
+                    <button class="button is-success" id="save">Save changes</button>
+                    <button class="button" id="cancel">Cancel</button>
+                </section>
             </div>
+        </form>
+
+        <!-- this will contain the content boxes with API data -->
+        <div id="middle" class="section columns is-multiline " >
+        <!-- to be generated in javascript -->
         </div>
-        <p id="saveMsg"></p>
-        <div class="columns is-centered">
-            <div class="column">
-                <div class="control">
-                    <textarea class="textarea is-large has-fixed-size" id="notes" placeholder="Write what you are thinking here!"></textarea>
+
+        <!-- this will contain the text-pad  -->
+        <div class="section box" id="bottom">
+            <div class="box">
+                <div class="columns is-flex">
+                    <h2 class="column is-one-third">My Thoughts</h2>
+                    <div class="column is-centered is-one-third" id="currentDay"></div>
+                    <div class="column is-one-third ">
+                        
+                        <div id="archivedList" class="dropdown is-up">
+                            <div class="dropdown-trigger">
+                                <button style="border: none; margin-right: 10px" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <span>Archived Notes</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-up" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div id="dropdownContent" class="dropdown-content">
+                                    <!-- to be generated in javascript -->
+                                </div>
+                            </div>
+                        </div>    
+                        <button class="button is-success bd-notification is-medium" id="saveNotes" type="submit">SAVE</button>
+                    </div>
+                </div>
+                <p id="saveMsg"></p>
+                <div class="columns is-centered">
+                    <div class="column">
+                        <div class="control">
+                            <textarea class="textarea is-small has-fixed-size" id="notes" placeholder="Write what you are thinking here!"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

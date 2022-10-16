@@ -270,3 +270,11 @@ h2.column {
 #save, #cancel{
     margin: 20px 0;
 }
+
+#check-boxes label {
+    padding: 0px 7px 0px 0px;
+}
+
+#prefer {
+    font-size: 1.25rem;
+}

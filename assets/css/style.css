@@ -247,6 +247,10 @@ div.column.title {
     margin: 0;
 }
 
+div.column.is-one-third {
+    text-align: end;
+}
+
 
 h2.column {
     font-size: 1.6em;

@@ -56,7 +56,7 @@ function renderCrypto(obj){
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
     .then(response => response.json())
     .then(response => resp = response)
-    .catch(err => {console.error(err); return err});
+    .catch(err => {console.error(err); clearInterval(); return err});
     for (var i=0; i<10; i++){
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[i].current_price));
         $(`#coinPrice${i}`).text(n)

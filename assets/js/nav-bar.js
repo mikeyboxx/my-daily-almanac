@@ -83,7 +83,7 @@ var zodiacDropdown=document.getElementById("zodiac");
 var horoscope=document.getElementById("horoscope");
 var cocktail=document.getElementById("cocktail");
 var weather=document.getElementById("weather");
-var crypto=document.getElementById("crypto");
+var forCrypto=document.getElementById("crypto");
 var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
 var preferenceArray;
@@ -150,12 +150,12 @@ function renderWelcomeDialog(obj, firstTime = false){
                 horoscope.checked=false;
                 cocktail.checked=false;
                 weather.checked=false;
-                crypto.checked=false;
+                forCrypto.checked=false;
 
                 // to check or uncheck checkboxes based on user's saved preferences
                 for(var i=0;i<(obj.preferences.length);i++){
                         if(obj.preferences[i]==="crypto"){
-                                crypto.checked=true;
+                                forCrypto.checked=true;
                         }
                         if(obj.preferences[i]==="horoscope"){
                                 horoscope.checked=true;

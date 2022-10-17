@@ -57,10 +57,12 @@ async function getApiDataAndRender(obj){
             .then(response => response.json())
             .then(response =>  {
                 resp = response;
-                let arr = resp.slice(0,15);    // take top 15 cryptos
+                let arr = resp.slice(0,10);    // take top 10 cryptos
                 obj.crypto = arr;  // array
                 let cryptoEl = renderCrypto(obj.crypto);
                 $('#middle').append(cryptoEl);
+
+                setInterval(function(){cryptoRefresh()},3000);  // get api data evey 3 seconds and render the page
             })
             .catch(err => {console.error(err); return err});
     }
@@ -76,7 +78,7 @@ async function getApiDataAndRender(obj){
             })
             .catch(err => {console.error(err); return err});
     }
-
+    // save the user object in local storage
     localStorage.setItem('userObj', JSON.stringify(obj));
 }
 
@@ -138,11 +140,14 @@ function start(){
                 }
             ]
         };
+        // renderWelcomeDialog resides in nav-bar.js
         renderWelcomeDialog(userObj, true);
+        // renderTextPad resides in textPad.js
         renderTextPad(userObj);
     } else {
         renderWelcomeDialog(userObj, false);
         renderTextPad(userObj);
+        // get data and render all sections
         getApiDataAndRender(userObj);
     }
 }

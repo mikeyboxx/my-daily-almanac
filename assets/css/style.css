@@ -1,11 +1,11 @@
-*{
-    font-family: 'EB Garamond', serif;}
+* {
+    font-family: 'EB Garamond', serif;
+}
 
-#top *{
-    margin: 0px;
-    padding: 15px;
-    background-color: #e6e3e6;
-    border-radius: 0px 0px 5px 5px;
+html, body{
+    height: 100%;
+    width: 100.5%;
+    margin-right: 2px;
 }
 
 form *{
@@ -13,32 +13,36 @@ form *{
     margin: 4px;
 }
 
-#preferences *{
-   padding: 10px;
+img {
+    width: 35px;
+    height: 35px;
+    padding: 1px;
 }
 
-.navbar-brand, .navbar-tabs {
-    flex-grow: 1;
+h1 {
+    font-size: 2em;
+    font-weight: bolder;
 }
 
-.navbar h1{
-    width: 100%;
-    display: block;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    font-size: 1.3rem;
+h2{
     font-weight: bold;
-    text-align: center;
 }
 
-.navbar-brand, .navbar-tabs {
-    flex-grow: 1;
+.navbar, .navbar-brand, .navbar-menu, .navbar h1  {
+    line-height: 1.1;
+    background-color: #e5eccbf0;
+    box-shadow:none;
+    padding: 0;
 }
 
-.navbar-menu {
-    flex-grow:unset;
+.navbar {
+    padding-top: 30px;
+    padding-right: 45px;
+    padding-left: 45px;
+}
+
+.navbar-brand {
+    margin-top: -15px;
 }
 
 #logo{
@@ -47,14 +51,59 @@ form *{
     padding: 0px;
 }
 
+.navbar h1{
+    padding-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-menu {
+    text-align: right;
+}
+
+.navbar-item {
+    line-height: 1.1;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.navbar-brand.column.is-one-third {
+    text-align: left;
+}
+
+#preferences *{
+   padding: 10px;
+}
+
 #preferences .formHeader{
     text-align: center;
 }
 
-@media screen and (min-width: 800px){
-    .navbar h1{
-        font-size: 2rem;
-    }
+#form {
+    margin: 20vh auto;
+}
+
+#name {
+    border: 1px solid black;
+ } 
+
+section.modal-card-body{
+    border-radius: 8px;
+}
+
+header.modal-card-head{
+    border-radius: 8px;
+} 
+
+.label{
+    padding: 2px;
+}
+
+#middle {
+    max-height: 500px;;
+    overflow: auto;
+    background-color: seashell;
+    width: 100%;
+    padding: 2%;
 }
 
 .middle-box {
@@ -62,67 +111,6 @@ form *{
     overflow: auto;
     margin: 0px;
     margin-bottom: 0;
-}
-.columns {
-    margin: 0;
-}
-
-#middle {
-    /* border: 1px solid red; */
-    height: 400px;
-    overflow: auto;
-    background-color: seashell;
-    width: 100%;
-    padding: 2%;
-}
-.columns:not(:last-child) {
-    margin-bottom: 0px;
-}
-
-#bottom {
-    background-color: antiquewhite;
-    width: 100%;
-}
-
-.card-custom {
-    flex: 20%;
-}
-
-img {
-    width: 35px;
-    height: 35px;
-    padding: 1px;
-    /* object-fit: cover; */
-}
-.drink-image {
-    width: 90px;
-    height: 120px;
-    float: right;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
-}
-
-.api-card {
-    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
-    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-.table td {
-    padding-left: 1px;
-    padding-top: 1px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-
-}
-.table th {
-    padding: 1px;
-    vertical-align: bottom;
-}
-.weather-card {
-    background: linear-gradient(208.8deg, rgba(205, 249, 61, 0.2) 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
-    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
 }
 
 .card{
@@ -139,67 +127,163 @@ img {
  text-align: center;
 }    
 
-.column-is-flex{
-    padding: 1rem;
+.card-custom {
+    flex: 20%;
 }
 
-h2{
-    font-weight: bold;
+.weather-card {
+    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
-    
+
+.api-card, #bottom .box {
+    background: linear-gradient(208.8deg, rgba(150, 245, 223, 0.2) 16.56%, rgba(91, 191, 249, 0.148) 94.74%);
+    box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#bottom .box {
+     background: linear-gradient(208.8deg, #cdf93d33 16.56%, rgba(18, 170, 255, 0.148) 94.74%);
+}
+
 .api-card-crypto {
     box-shadow: 12px 15px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    display: grid;
+}
+.horoscope {
+    padding-bottom: 8px;
+}
+.drink-image {
+    width: 90px;
+    height: 120px;
+    float: right;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgb(188, 186, 186);
+}
+.table.is-striped {
+    flex: 100%;
+}
+
+.table td {
+    padding-left: 1px;
+    padding-top: 1px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+
+}
+
+.table th {
+    padding: 1px;
+    vertical-align: bottom;
+}
+
+.columns {
+    margin: 0;
+}
+
+.columns:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+.column-is-flex{
+    padding: 1rem;
 }
 
 .column-title{
     padding: 5%;
     margin: 5%;
+    margin: 0;
+    border: 0;
+}
+
+#bottom {
+    background-color: seashell;
+    width: 100%;
+    height: 30%;
 }
 
 #bottom.section{
-    padding: 5%;
+    padding: 3%;
     margin: 0;
     border: 0;
 }
 
 #notes{
-    padding: 0;
+    font-size: 1.1em;
+    padding: 10px;
 }
 
 #currentDay{
-    margin: 0;
-    border: 0;
+    margin-top: 5px;
+    /* border: 0; */
     font-family: 'EB Garamond', serif;
-    font-size: large;
+    font-size: 1.2em;
     text-align: center;
+    font-weight: bold;
 }
 
-.column-title{
+#archivedList {
+    padding: 0;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    padding-right: 0;
+    min-width: 90%;
+}
+
+#saveNotes{
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    background-color: #2F7DB3;
+    /* height: 97%; */
+}
+
+div.column.title {
+    text-align: center;
+    padding: 0;
     margin: 0;
-    border: 0;
 }
 
-div.column.title{
-    text-align: center;
+div.column.is-one-third {
+    text-align: end;
 }
 
-#form {
-    margin: 20vh auto;
-  }
-/* 
-#form input {
-    border:0cm;
-  } */
 
- #name {
-    border: 1px solid black;
- } 
+h2.column {
+    font-size: 1.6em;
+}
 
-#edit-preferences, #cuisin, #zodiac, #save, #cancel, #notes, #saveNotes{
+#edit-preferences, #cuisine, #zodiac, #save, #cancel, #notes, #saveNotes{
     font-family: 'EB Garamond', serif;
 }  
 
 .is-justify-content-end{
-justify-content: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+}
+
+#prefer{
+    padding: 10px;
+}
+
+#save, #cancel{
+    margin: 20px 0;
+}
+
+#check-boxes label {
+    padding: 0px 7px 0px 0px;
+}
+
+#prefer {
+    font-size: 1.25rem;
 }

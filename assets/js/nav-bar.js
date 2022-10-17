@@ -88,7 +88,7 @@ var saveBtn = document.getElementById("save");
 var cancelBtn = document.getElementById("cancel");
 var preferenceArray;
 
-// function to handle welcome dialog
+// function to handle welcome dialog and Edit Prefernces dialog box
 function renderWelcomeDialog(obj, firstTime = false){
         var editPreferencesCancelHandler = function(event) {
         event.stopPropagation();
@@ -249,7 +249,7 @@ function renderWelcomeDialog(obj, firstTime = false){
         $(saveBtn).on('click', saveBtnHandler.bind(this, obj));
         $(cancelBtn).on('click', editPreferencesCancelHandler);
         $(editPreferencesForm).on('click', editPreferencesFormHandler.bind(this, obj));
-
+                
         // for the first time user
         if (firstTime){
                 preferencesForm.style.display="block";

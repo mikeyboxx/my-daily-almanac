@@ -34,11 +34,11 @@ function renderCrypto(obj){
         tableRowElement.append(tableDataElement);
 
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].current_price));
-        tableDataElement = $("<td>").text(n).css("text-align", "right");
+        tableDataElement = $("<td>").text(n).css("text-align", "right").attr('id',`coinPrice${i}`);
         tableRowElement.append(tableDataElement);
         
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(obj[i].price_change_24h));
-        tableDataElement = $("<td>").text(n).css("text-align", "right");
+        tableDataElement = $("<td>").text(n).css("text-align", "right").attr('id',`coinPriceChange${i}`);
        
         tableRowElement.append(tableDataElement);
         cryptoBodyElement.append(tableRowElement);
@@ -51,6 +51,7 @@ function renderCrypto(obj){
     return boxEl;
  }
 
+ // this function is called by the setInterval function in getApiDataAndRender
  async function cryptoRefresh(){
     await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
     .then(response => response.json())
@@ -59,13 +60,12 @@ function renderCrypto(obj){
     for (var i=0; i<10; i++){
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[i].current_price));
         $(`#coinPrice${i}`).text(n)
-        console.log(n)
+        // console.log(n)
         var n = (new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[i].price_change_24h));
         $(`#coinPriceChange${i}`).text(n)
-        
     }
-    
 }
+
 // pEl = $('<p>').text(`Price Change in Last 24 hours: ${obj[9].price_change_24h}`);
 
     // middle.append(containerEl)

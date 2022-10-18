@@ -9,9 +9,17 @@ My Daily Almanac app is a personalized site for a user to jot down his/her thoug
 N/A
 
 ## Link
-https://github.com/mikeyboxx/my-daily-almanac
-https://mikeyboxx.github.io/my-daily-almanac/
-<img src="/Users/kevinchen/bcs/group-project/my-daily-almanac/assets/images/screencapture-mikeyboxx-github-io-my-daily-almanac-2022-10-17-11_41_05.png">
+To visit site, navigate to the following HTTP address:
+
+[https://mikeyboxx.github.io/my-daily-almanac/](https://mikeyboxx.github.io/my-daily-almanac/)
+
+
+## Screenshots
+The following images show the web application’s appearance and functionality:
+
+![](assets/images/screenshot1.png)
+![](assets/images/screenshot2.png)
+
 
 ## Usage
 
